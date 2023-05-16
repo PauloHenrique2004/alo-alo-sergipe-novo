@@ -57,7 +57,7 @@
                 <div class="header--logo float--left float--sm-none text-sm-center">
                     <h1 class="h1">
                         <a href="home-1.html" class="btn-link">
-                            <img src="/images/logo.png" alt="USNews Logo">
+                            <img src="/images/logo.png" alt="USNews Logo" style="max-width: 190px;">
                             <span class="hidden">USNews Logo</span>
                         </a>
                     </h1>

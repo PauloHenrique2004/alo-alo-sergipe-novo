@@ -10,7 +10,7 @@ Author URI  : https://themeforest.net/user/themelooks
 
 ;(function ($) {
     "use strict";
-    
+
     /* ------------------------------------------------------------------------- *
      * COMMON VARIABLES
      * ------------------------------------------------------------------------- */
@@ -24,7 +24,7 @@ Author URI  : https://themeforest.net/user/themelooks
          * BACKGROUND IMAGE
          * ------------------------------------------------------------------------- */
         var $bgImg = $('[data-bg-img]');
-        
+
         $bgImg.each(function () {
             var $t = $(this);
 
@@ -40,12 +40,12 @@ Author URI  : https://themeforest.net/user/themelooks
         $('img').attr('data-rjs', 2);
 
         retinajs();
-        
+
         /* ------------------------------------------------------------------------- *
          * STICKY
          * ------------------------------------------------------------------------- */
         var $sticky = $('[data-trigger="sticky"]');
-        
+
         $sticky.each(function () {
             $(this).sticky({
                 zIndex: 999
@@ -58,12 +58,12 @@ Author URI  : https://themeforest.net/user/themelooks
         var $tooltip = $('[data-toggle="tooltip"]');
 
         $tooltip.tooltip();
-        
+
         /* ------------------------------------------------------------------------- *
          * MARQUEE
          * ------------------------------------------------------------------------- */
         var $marquee = $('[data-marquee]');
-        
+
         $marquee.marquee({
             direction: isRTL ? 'right' : 'left',
             delayBeforeStart: 0,
@@ -71,7 +71,7 @@ Author URI  : https://themeforest.net/user/themelooks
             pauseOnHover: true,
             startVisible: true
         });
-        
+
         /* ------------------------------------------------------------------------- *
          * ZOOM IMAGE
          * ------------------------------------------------------------------------- */
@@ -101,10 +101,10 @@ Author URI  : https://themeforest.net/user/themelooks
          * FORM VALIDATION
          * ------------------------------------------------------------------------- */
         var $formValidation = $('[data-form="validate"]');
-        
+
         $formValidation.each(function () {
             var $t = $(this);
-            
+
             $t.validate({
                 errorPlacement: function () {
                     return true;
@@ -141,11 +141,11 @@ Author URI  : https://themeforest.net/user/themelooks
          * AJAX FORM
          * ------------------------------------------------------------------------- */
         var $ajaxForm = $('[data-form="ajax"]');
-        
+
         $ajaxForm.each(function () {
             var $form = $(this),
                 $formStatus = $form.find('.status');
-            
+
             $form.validate({
                 errorPlacement: function () {
                     return true;
@@ -214,7 +214,7 @@ Author URI  : https://themeforest.net/user/themelooks
 
             e.preventDefault();
         });
-        
+
         /* ------------------------------------------------------------------------- *
          * CART WIDGET
          * ------------------------------------------------------------------------- */
@@ -234,7 +234,7 @@ Author URI  : https://themeforest.net/user/themelooks
                 }
             });
         });
-        
+
         /* ------------------------------------------------------------------------- *
          * FB WIDGET
          * ------------------------------------------------------------------------- */
@@ -247,39 +247,39 @@ Author URI  : https://themeforest.net/user/themelooks
                         parentWidth = $t.parent().width();
 
                     v = v.replace( $t.width(), parentWidth );
-                    
+
                     return v;
                 })
                 .attr('width', function () {
                     return $(this).parent().width();
                 });
         }
-        
+
         /* ------------------------------------------------------------------------- *
          * HOVER INTENT
          * ------------------------------------------------------------------------- */
         var $hoverIntent = $('[data-trigger="hoverIntent"]');
-        
+
         $hoverIntent.hoverIntent({
             selector: 'li.dropdown',
             over: function () {
                 $(this).addClass('open');
-            },   
+            },
             out: function () {
                 $(this).removeClass('open');
             },
             timeout: 200,
             interval: 200
         });
-        
+
         /* -------------------------------------------------------------------------*
          * COUNTDOWN
          * -------------------------------------------------------------------------*/
         var $countDown = $('[data-countdown]');
-            
+
         $countDown.each(function () {
             var $t = $(this);
-            
+
             $t.countdown($t.data('countdown'), function(e) {
                 $(this).html( '<ul>' + e.strftime('<li><strong>%D</strong><span>DAYS</span></li><li><strong>%H</strong><span>HOURS</span></li><li><strong>%M</strong><span>MINUTES</span></li><li><strong>%S</strong><span>SECONDS</span></li>') + '</ul>' );
             });
@@ -446,7 +446,7 @@ Author URI  : https://themeforest.net/user/themelooks
                     disableDefaultUI: true,
                     zoomControl: true
                 });
-                
+
                 if ( typeof $el.data('map-marker') !== 'undefined' ) {
                     var data = $el.data('map-marker'),
                         i = 0;
@@ -527,7 +527,7 @@ Author URI  : https://themeforest.net/user/themelooks
          * PRODUCTS SECTION
          * ------------------------------------------------------------------------- */
         var $productRatingSelect = $('#productRatingSelect');
-        
+
         if ( $productRatingSelect.length ) {
             $productRatingSelect.barrating({
                 theme: 'fontawesome-stars-o',
@@ -539,7 +539,7 @@ Author URI  : https://themeforest.net/user/themelooks
          * CART SECTION
          * ------------------------------------------------------------------------- */
         var $cartItems = $('.cart--items');
-        
+
         $cartItems.on('click', '.remove', function (e) {
             e.preventDefault();
 
@@ -559,7 +559,7 @@ Author URI  : https://themeforest.net/user/themelooks
          * CHECKOUT SECTION
          * ------------------------------------------------------------------------- */
         var $checkoutInfoToggle = $('.checkout--info-toggle');
-        
+
         $checkoutInfoToggle.on('click', function (e) {
             e.preventDefault();
 
@@ -656,7 +656,7 @@ Author URI  : https://themeforest.net/user/themelooks
             });
         }
     });
-    
+
     $wn.on('load', function () {
         /* ------------------------------------------------------------------------- *
          * BODY SCROLLING
@@ -676,7 +676,7 @@ Author URI  : https://themeforest.net/user/themelooks
          * ADJUST ROW
          * ------------------------------------------------------------------------- */
         var $adjustRow = $('.AdjustRow');
-        
+
         if ( $adjustRow.length ) {
             $adjustRow.isotope({
                 originLeft: isRTL ? false : true,
@@ -736,7 +736,7 @@ Author URI  : https://themeforest.net/user/themelooks
             e.preventDefault();
             e.stopPropagation();
         });
-        
+
         /* ------------------------------------------------------------------------- *
          * GOGGLE PLUS WIDGET
          * ------------------------------------------------------------------------- */
@@ -751,7 +751,7 @@ Author URI  : https://themeforest.net/user/themelooks
                 gapi.page.go();
             }
         });
-        
+
         /* ------------------------------------------------------------------------- *
          * PORTFOLIO SECTION
          * ------------------------------------------------------------------------- */

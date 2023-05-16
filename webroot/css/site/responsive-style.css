@@ -80,7 +80,7 @@ WE MAY RELEASE FUTURE UPDATES SO IT WILL OVERWRITE THIS FILE. IT'S BETTER AND SA
     body.boxed > .wrapper {
         max-width: 100%;
     }
-    
+
     /* FLOATS */
     .float--sm-none {
         float: none;
