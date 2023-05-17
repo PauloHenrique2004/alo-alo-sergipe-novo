@@ -65,11 +65,14 @@
                 <!-- Header Logo End -->
 
                 <!-- Header Ad Start -->
-                <div class="header--ad float--right float--sm-none hidden-xs">
-                    <a href="#">
-                        <img src="/images/ads-img/ad-728x90-01.jpg" alt="Advertisement">
-                    </a>
-                </div>
+                <?php foreach ($publicidadeTopo as $value): ?>
+                    <div class="header--ad float--right float--sm-none hidden-xs">
+                        <a href="<?= !empty($value->link) ? $value->link : '#'?>">
+                            <img src="/files/Publicidades/imagem/<?= $value->imagem ?>" alt="">
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+
                 <!-- Header Ad End -->
             </div>
         </div>
