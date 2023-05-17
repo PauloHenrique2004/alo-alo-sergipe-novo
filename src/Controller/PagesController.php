@@ -87,7 +87,7 @@ class PagesController extends AppController
 
 
 
-        $ultimasNoticias = $this->Noticias->find()->where(['Categorias.exibir_ultimas_noticias' => 1])->order(['Noticias.id' => 'DESC'])->limit(3)->contain(['Categorias']);
+        $ultimasNoticias = $this->Noticias->find()->where(['Categorias.exibir_ultimas_noticias' => 1])->order(['Noticias.id' => 'DESC'])->limit(4)->contain(['Categorias']);
 
         $categoriasLayout = $this->Categorias->find()->where(['Categorias.layout IS NOT NULL']);
 
