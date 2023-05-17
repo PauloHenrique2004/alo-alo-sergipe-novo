@@ -122,6 +122,8 @@
                         $pesquisa = '';
                     }
                     ?>
+                    <input type="search" name="pesquisa" placeholder="Pesquisar" class="header--search-control form-control" required>
+
                     <button type="submit" class="header--search-btn btn"><i class="header--search-icon fa fa-search"></i></button>
                 </form>
                 <!-- Header Search Form End -->
