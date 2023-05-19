@@ -27,7 +27,7 @@
           <!-- /.box-header -->
           <!-- form start -->
           <?php echo $this->Form->create($categoria, ['role' => 'form']); ?>
-            <?php $option = ['' => null, 1 => 'Slider com 3 imagens', 2 => 'Slider com imagens lado a lado', 3 => 'Slider com 4 imagens']; ?>
+            <?php $option = ['' => null, 1 => 'Slider com 3 imagens', 2 => 'Slider com imagens lado a lado', 3 => 'Slider com 4 imagens', 4 => 'Layout 4']; ?>
             <div class="box-body">
               <?php
                 echo $this->Form->control('categoria');

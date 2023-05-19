@@ -91,13 +91,13 @@ class PagesController extends AppController
 
         $categoriasLayout = $this->Categorias->find()->where(['Categorias.layout IS NOT NULL']);
 
+//        dd($categoriasLayout); exit();
+
         $videos = $this->Videos->find()->order(['Videos.id' =>'Desc'])->limit(5);
 
         $descricaoVideos = $this->DescricaoVideos->find();
 
         $title = 'Início';
-
-
 
 
         $this->set('ultimasNoticias', $ultimasNoticias);

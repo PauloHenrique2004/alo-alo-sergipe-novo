@@ -1,7 +1,7 @@
 <div class="col-md-6 ptop--30 pbottom--30">
     <!-- Post Items Title Start -->
     <div class="post--items-title" data-ajax="tab">
-        <h2 class="h4"><?= $categoria->categoria ?></h2>
+        <h2 class="h4"><?= $categoria->categoria ?>OK!</h2>
     </div>
     <!-- Post Items Title End -->
 
@@ -12,16 +12,16 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-1">
                     <div class="post--img">
-                        <a href="" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
+                        <a href="" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout4($categoria->id,1)[0]->imagem ?>" alt=""></a>
                         <a href="#" class="cat"><?= $categoria->categoria ?></a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="#"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
+                                <li><a href="#"><?= $categoriaNoticiasLayout4($categoria->id,1)[0]->data ?></a></li>
                             </ul>
 
                             <div class="title">
-                                <h3 class="h4"><a href="#" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
+                                <h3 class="h4"><a href="#" class="btn-link"><?= $categoriaNoticiasLayout4($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
                             </div>
                         </div>
                     </div>
@@ -34,11 +34,11 @@
                 <!-- Divider End -->
             </li>
 
-            <?php foreach ($categoriaNoticiasLayout1($categoria->id) as $value):?>
+            <?php foreach ($categoriaNoticiasLayout4($categoria->id) as $value):?>
 
                 <?php
-                foreach ($categoriaNoticiasLayout1($categoria->id) as $item) {
-                    $primeiraPosicao = current($categoriaNoticiasLayout1($categoria->id));
+                foreach ($categoriaNoticiasLayout4($categoria->id) as $item) {
+                    $primeiraPosicao = current($categoriaNoticiasLayout4($categoria->id));
                     break;
                 }
                 ?>
@@ -63,7 +63,9 @@
                     </li>
                 <?php endif; ?>
 
+
             <?php endforeach; ?>
+
 
             <li class="col-xs-12">
                 <!-- Divider Start -->
@@ -80,10 +82,4 @@
     </div>
     <!-- Post Items End -->
 </div>
-
-
-
-
-
-
 

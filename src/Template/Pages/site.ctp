@@ -1,8 +1,6 @@
 
 <?= $this->element('site/ultimas_noticias_topo') ?>
 
-
-
 <!-- Main Content Section Start -->
 <div class="main-content--section pbottom--30">
     <div class="container">
@@ -45,35 +43,35 @@
                     <div class="col-md-6">
                         <div class="row gutter--15">
                             <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
-                            <div class="col-xs-6 col-xss-12">
-                                <!-- Post Item Start -->
-                                <div class="post--item post--layout-1 post--title-large">
-                                    <div class="post--img">
-                                        <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>" class="thumb">
-                                            <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
-                                        </a>
+                                <div class="col-xs-6 col-xss-12">
+                                    <!-- Post Item Start -->
+                                    <div class="post--item post--layout-1 post--title-large">
+                                        <div class="post--img">
+                                            <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>" class="thumb">
+                                                <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
+                                            </a>
 
-                                        <a class="cat" href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>">
-                                            <?= $ultimasNoticia->categoria->categoria ?>
-                                        </a>
+                                            <a class="cat" href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>">
+                                                <?= $ultimasNoticia->categoria->categoria ?>
+                                            </a>
 
-                                        <div class="post--info">
-                                            <ul class="nav meta">
-                                                <li><?= $ultimasNoticia->data ?></li>
-                                            </ul>
+                                            <div class="post--info">
+                                                <ul class="nav meta">
+                                                    <li><?= $ultimasNoticia->data ?></li>
+                                                </ul>
 
-                                            <div class="title">
-                                                <h2 class="h4">
-                                                    <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>"
-                                                                  class="btn-link"><?= $ultimasNoticia->titulo_resumo ?>
-                                                    </a>
-                                                </h2>
+                                                <div class="title">
+                                                    <h2 class="h4">
+                                                        <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>"
+                                                           class="btn-link"><?= $ultimasNoticia->titulo_resumo ?>
+                                                        </a>
+                                                    </h2>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Post Item End -->
                                 </div>
-                                <!-- Post Item End -->
-                            </div>
                             <?php endforeach; ?>
                             <!-- ULTIMAS NOTICIAS END-->
                         </div>
@@ -84,28 +82,32 @@
         </div>
         <!-- Main Content End -->
 
+        <div class="ad--space pd--30-0"> <a href="#"> <img src="images/ads-img/ad-970x90.jpg" alt="" class="center-block" data-rjs="2"> </a> </div>
+
+
         <div class="row">
             <!-- Main Content Start -->
             <div class="main--content col-md-8 col-sm-7" data-sticky-content="true">
                 <div class="sticky-content-inner">
                     <div class="row">
-                        <?= $this->element('site/layout_noticia_1') ?>
+
+                        <?php foreach ($categoriasLayout as $categoria): ?>
 
 
-                        <div class="col-md-12 ptop--30 pbottom--30">
-                            <div class="ad--space">
-                                <a href="#">
-                                    <img src="/images/ads-img/ad-728x90-01.jpg" alt="" class="center-block">
-                                </a>
-                            </div>
-                        </div>
+                            <?php if($categoria->layout == 1): ?>
+                                <?= $this->element('site/layout_noticia_1', compact('categoria')) ?>
+                            <?php endif; ?>
 
 
+                            <?php if($categoria->layout == 2): ?>
+                                <?= $this->element('site/layout_noticia_2', compact('categoria')) ?>
+                            <?php endif; ?>
 
-                        <?= $this->element('site/layout_noticia_2') ?>
+                            <?php if($categoria->layout == 3): ?>
+                                <?= $this->element('site/layout_noticia_3', compact('categoria')) ?>
+                            <?php endif; ?>
 
-
-                        <?= $this->element('site/layout_noticia_1') ?>
+                        <?php endforeach; ?>
 
                     </div>
                 </div>

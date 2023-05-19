@@ -114,9 +114,12 @@ class AppController extends Controller
 
         $categorias = $this->Categorias->find('all')->order(['menu_ordem' => 'ASC'])->where(['ocultar' => 0, 'menu_outros' => 0])->toArray();
 
+        $categoriaNoticiasLayout1 = function ($categoriaId, $qtd = 5) {
+            return $this->Noticias->find()->where(['categoria_id' => $categoriaId])->order(['id' => 'DESC'])->limit($qtd)->toArray();
+        };
 
-        $categoriaNoticiasLayoutSlider = function ($categoria) {
-            return $this->Noticias->find()->where(['categoria_id' => $categoria->id])->order(['id' => 'DESC'])->limit(15);
+        $categoriaNoticiasLayout4 = function ($categoriaId, $qtd = 5) {
+            return $this->Noticias->find()->where(['categoria_id' => $categoriaId])->order(['id' => 'DESC'])->limit($qtd)->toArray();
         };
 
 
@@ -128,7 +131,8 @@ class AppController extends Controller
             return $this->Noticias->find()->where(['categoria_id' => $categoria->id])->order(['id' => 'DESC'])->limit(15);
         };
 
-        $this->set(compact('categorias','categoriaNoticiasLayoutSlider','categoriaNoticiasLayoutLadoLado', 'categoriaNoticiasLayoutSliderQuatro', 'categoriaOutros','exibirMenumais'));
+        $this->set(compact('categorias','categoriaNoticiasLayout1','categoriaNoticiasLayoutLadoLado',
+            'categoriaNoticiasLayoutSliderQuatro', 'categoriaOutros','exibirMenumais','categoriaNoticiasLayout4'));
     }
 
     public function ultimasNoticiasTopo(){
