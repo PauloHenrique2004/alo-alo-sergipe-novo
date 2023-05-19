@@ -60,6 +60,7 @@
                                     <div class="title">
                                         <h3 class="h4"><a href="#" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
+                                    <div style="height: 20px"></div>
                                 </div>
                             </div>
                         </div>
@@ -67,12 +68,7 @@
                         <?php endif; ?>
                         <?php endforeach; ?>
                     </li>
-                    
-                    <li class="col-xs-12">
-                        <!-- Divider Start -->
-                        <hr class="divider">
-                        <!-- Divider End -->
-                    </li>
+
                 </ul>
             </li>
         </ul>
