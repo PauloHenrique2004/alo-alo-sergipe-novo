@@ -122,6 +122,11 @@ class AppController extends Controller
             return $this->Noticias->find()->where(['categoria_id' => $categoriaId])->order(['id' => 'DESC'])->limit($qtd)->toArray();
         };
 
+        $categoriaNoticiasLayout2 = function ($categoriaId, $qtd = 5) {
+            return $this->Noticias->find()->where(['categoria_id' => $categoriaId])->order(['id' => 'DESC'])->limit($qtd)->toArray();
+        };
+
+
 
         $categoriaNoticiasLayoutLadoLado = function ($categoria) {
             return $this->Noticias->find()->where(['categoria_id' => $categoria->id])->order(['id' => 'DESC'])->limit(4);
@@ -132,7 +137,7 @@ class AppController extends Controller
         };
 
         $this->set(compact('categorias','categoriaNoticiasLayout1','categoriaNoticiasLayoutLadoLado',
-            'categoriaNoticiasLayoutSliderQuatro', 'categoriaOutros','exibirMenumais','categoriaNoticiasLayout4'));
+            'categoriaNoticiasLayoutSliderQuatro', 'categoriaOutros','exibirMenumais','categoriaNoticiasLayout4','categoriaNoticiasLayout2'));
     }
 
     public function ultimasNoticiasTopo(){

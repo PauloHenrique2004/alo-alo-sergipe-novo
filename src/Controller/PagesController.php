@@ -99,7 +99,6 @@ class PagesController extends AppController
 
         $title = 'Início';
 
-
         $this->set('ultimasNoticias', $ultimasNoticias);
 
         $this->set('categoriasLayout', $categoriasLayout);

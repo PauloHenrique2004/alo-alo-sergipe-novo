@@ -1,19 +1,7 @@
 <div class="col-md-12 ptop--30 pbottom--30">
     <!-- Post Items Title Start -->
     <div class="post--items-title" data-ajax="tab">
-        <h2 class="h4">Finance</h2>
-
-        <div class="nav">
-            <a href="#" class="prev btn-link" data-ajax-action="load_prev_finance_posts">
-                <i class="fa fa-long-arrow-left"></i>
-            </a>
-
-            <span class="divider">/</span>
-
-            <a href="#" class="next btn-link" data-ajax-action="load_next_finance_posts">
-                <i class="fa fa-long-arrow-right"></i>
-            </a>
-        </div>
+        <h2 class="h4"><?= $categoria->categoria ?></h2>
     </div>
     <!-- Post Items Title End -->
 
@@ -24,18 +12,16 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-2">
                     <div class="post--img">
-                        <a href="news-single-v1.html" class="thumb"><img src="/images/home-img/finance-01.jpg" alt=""></a>
-                        <a href="#" class="cat">Business</a>
-                        <a href="#" class="icon"><i class="fa fa-star-o"></i></a>
+                        <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
+                        <a href="#" class="cat"><?= $categoria->categoria ?></a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="#">Vassago</a></li>
-                                <li><a href="#">Today 03:30 am</a></li>
+                                <li><a href="#"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
                             </ul>
 
                             <div class="title">
-                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas.</a></h3>
+                                <h3 class="h4"><a href="#" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
                             </div>
                         </div>
                     </div>
@@ -50,95 +36,42 @@
                         <hr class="divider">
                         <!-- Divider End -->
                     </li>
+                    <?php foreach ($categoriaNoticiasLayout1($categoria->id) as $value):?>
 
-                    <li class="col-xs-6">
+                    <?php
+                    foreach ($categoriaNoticiasLayout1($categoria->id) as $item) {
+                        $primeiraPosicao = current($categoriaNoticiasLayout1($categoria->id));
+                        break;
+                    }
+                    ?>
+
+                     <?php if($value != $primeiraPosicao): ?>
+                     <li class="col-xs-6">
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="news-single-v1.html" class="thumb"><img src="/images/home-img/finance-02.jpg" alt=""></a>
+                                <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="#">Zepar</a></li>
-                                        <li><a href="#">Today 03:52 pm</a></li>
+                                        <li><a href="#"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
+                                        <h3 class="h4"><a href="#" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Post Item End -->
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                     </li>
-
-                    <li class="col-xs-6">
-                        <!-- Post Item Start -->
-                        <div class="post--item post--layout-2">
-                            <div class="post--img">
-                                <a href="news-single-v1.html" class="thumb"><img src="/images/home-img/finance-03.jpg" alt=""></a>
-
-                                <div class="post--info">
-                                    <ul class="nav meta">
-                                        <li><a href="#">Demiurge</a></li>
-                                        <li><a href="#">Today 03:02 pm</a></li>
-                                    </ul>
-
-                                    <div class="title">
-                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Post Item End -->
-                    </li>
-
+                    
                     <li class="col-xs-12">
                         <!-- Divider Start -->
                         <hr class="divider">
                         <!-- Divider End -->
-                    </li>
-
-                    <li class="col-xs-6">
-                        <!-- Post Item Start -->
-                        <div class="post--item post--layout-2">
-                            <div class="post--img">
-                                <a href="news-single-v1.html" class="thumb"><img src="/images/home-img/finance-04.jpg" alt=""></a>
-
-                                <div class="post--info">
-                                    <ul class="nav meta">
-                                        <li><a href="#">Demiurge</a></li>
-                                        <li><a href="#">Today 02:05 am</a></li>
-                                    </ul>
-
-                                    <div class="title">
-                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Post Item End -->
-                    </li>
-
-                    <li class="col-xs-6">
-                        <!-- Post Item Start -->
-                        <div class="post--item post--layout-2">
-                            <div class="post--img">
-                                <a href="news-single-v1.html" class="thumb"><img src="/images/home-img/finance-05.jpg" alt=""></a>
-
-                                <div class="post--info">
-                                    <ul class="nav meta">
-                                        <li><a href="#">Zepar</a></li>
-                                        <li><a href="#">Today 12:35 am</a></li>
-                                    </ul>
-
-                                    <div class="title">
-                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Post Item End -->
                     </li>
                 </ul>
             </li>
