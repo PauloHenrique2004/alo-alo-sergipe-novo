@@ -85,7 +85,32 @@ class PagesController extends AppController
 
         $this->loadModel('DescricaoVideos');
 
+        $categoriasExibidas = [];
 
+        $obterCategoriasExibidas = function () use (&$categoriasExibidas) {
+            return $categoriasExibidas;
+        };
+
+        $proximaCategoriaIrma = function ($layout, $categoriaId) use (&$categoriasExibidas) {
+            $categoriasExibidas[] = $categoriaId;
+            $idsNotIn = join(', ', $categoriasExibidas);
+
+            $categoria = $this->Categorias->find('all')
+                ->order(['menu_ordem' => 'ASC'])
+                ->limit(1)
+                ->where(['layout' => $layout, "id NOT IN ({$idsNotIn})"])
+                ->toArray();
+
+            if(sizeof($categoria) == 1) {
+                $categoria = $categoria[0];
+                $categoriasExibidas[] = $categoria->id;
+            }
+            else {
+                $categoria = null;
+            }
+
+            return $categoria;
+        };
 
         $ultimasNoticias = $this->Noticias->find()->where(['Categorias.exibir_ultimas_noticias' => 1])->order(['Noticias.id' => 'DESC'])->limit(4)->contain(['Categorias']);
 
@@ -108,6 +133,9 @@ class PagesController extends AppController
         $this->set('descricaoVideos', $descricaoVideos);
 
         $this->set('title', $title);
+
+        $this->set('obterCategoriasExibidas', $obterCategoriasExibidas);
+        $this->set('proximaCategoriaIrma', $proximaCategoriaIrma);
 
 
         $this->loadPublicDependencies();

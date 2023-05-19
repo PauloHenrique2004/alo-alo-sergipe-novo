@@ -92,11 +92,9 @@
                     <div class="row">
 
                         <?php foreach ($categoriasLayout as $categoria): ?>
-
-                            <?php if($categoria->layout == 1): ?>
+                            <?php if($categoria->layout == 1 && !in_array($categoria->id, $obterCategoriasExibidas(), true)): ?>
                                 <?= $this->element('site/layout_noticia_1', compact('categoria')) ?>
                             <?php endif; ?>
-
 
                             <?php if($categoria->layout == 2): ?>
                                 <?= $this->element('site/layout_noticia_2', compact('categoria')) ?>
