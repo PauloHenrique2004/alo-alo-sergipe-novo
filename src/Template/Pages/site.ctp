@@ -103,7 +103,6 @@
                             <?php if($categoria->layout == 3): ?>
                                 <?= $this->element('site/layout_noticia_3', compact('categoria')) ?>
                             <?php endif; ?>
-
                         <?php endforeach; ?>
 
                     </div>
@@ -116,16 +115,6 @@
             <!-- Main Sidebar End -->
         </div>
 
-        <div class="row">
-            <!-- Main Content Start -->
-            <div class="main--content col-md-12 col-sm-7" data-sticky-content="true">
-                <div class="sticky-content-inner">
-                    <div class="row">
-                        <?= $this->element('site/layout_noticia_3') ?>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="main--content pd--30-0">
             <!-- Post Items Title Start -->
