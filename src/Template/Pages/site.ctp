@@ -82,7 +82,12 @@
         </div>
         <!-- Main Content End -->
 
-        <div class="ad--space pd--30-0"> <a href="#"> <img src="images/ads-img/ad-970x90.jpg" alt="" class="center-block" data-rjs="2"> </a> </div>
+        <div class="ad--space pd--30-0"> <a href="#">
+                <?php foreach ($publicidadeAbaixoBannerPrincipal as $value): ?>
+                    <img src="/files/Publicidades/imagem/<?= $value->imagem ?>" alt="" class="center-block" data-rjs="2">
+                <?php endforeach; ?>
+            </a>
+        </div>
 
 
         <div class="row">

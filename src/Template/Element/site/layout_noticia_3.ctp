@@ -2,18 +2,6 @@
     <!-- Post Items Title Start -->
     <div class="post--items-title" data-ajax="tab">
         <h2 class="h4"><?= $categoria->categoria ?></h2>
-
-        <div class="nav">
-            <a href="#" class="prev btn-link" data-ajax-action="load_prev_food_resturent_posts">
-                <i class="fa fa-long-arrow-left"></i>
-            </a>
-
-            <span class="divider">/</span>
-
-            <a href="#" class="next btn-link" data-ajax-action="load_next_food_resturent_posts">
-                <i class="fa fa-long-arrow-right"></i>
-            </a>
-        </div>
     </div>
     <!-- Post Items Title End -->
 

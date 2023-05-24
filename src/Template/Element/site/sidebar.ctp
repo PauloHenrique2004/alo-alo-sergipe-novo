@@ -1,71 +1,53 @@
 <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true">
     <div class="sticky-content-inner">
-        <!-- Widget Start -->
-        <div class="widget">
-            <!-- Ad Widget Start -->
-            <div class="ad--widget">
-                <a href="#">
-                    <img src="/images/ads-img/ad-300x250-1.jpg" alt="">
-                </a>
-            </div>
-            <!-- Ad Widget End -->
-        </div>
-        <!-- Widget End -->
-
-        <!-- Widget Start -->
         <div class="widget">
             <div class="widget--title">
-                <h2 class="h4">Stay Connected</h2>
+                <h2 class="h4">Siga-nos</h2>
                 <i class="icon fa fa-share-alt"></i>
             </div>
 
             <!-- Social Widget Start -->
-            <div class="social--widget style--1">
-                <ul class="nav">
-                    <li class="facebook">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-facebook-f"></i></span>
-                            <span class="count">521</span>
-                            <span class="title">Likes</span>
-                        </a>
-                    </li>
-                    <li class="twitter">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-twitter"></i></span>
-                            <span class="count">3297</span>
-                            <span class="title">Followers</span>
-                        </a>
-                    </li>
-                    <li class="google-plus">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-google-plus"></i></span>
-                            <span class="count">596282</span>
-                            <span class="title">Followers</span>
-                        </a>
-                    </li>
-                    <li class="rss">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-rss"></i></span>
-                            <span class="count">521</span>
-                            <span class="title">Subscriber</span>
-                        </a>
-                    </li>
-                    <li class="vimeo">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-vimeo"></i></span>
-                            <span class="count">3297</span>
-                            <span class="title">Followers</span>
-                        </a>
-                    </li>
-                    <li class="youtube">
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-youtube-square"></i></span>
-                            <span class="count">596282</span>
-                            <span class="title">Subscriber</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php foreach ($configuracoes as $configuracoe): ?>
+                <div class="social--widget style--1">
+                    <ul class="nav">
+                        <?php if(!empty($configuracoe->facebook)): ?>
+                            <li class="facebook">
+                                <a href="<?= $configuracoe->facebook ?>" target="_blank">
+                                    <span class="icon"><i class="fa fa-facebook-f"></i></span>
+                                    <span class="count">Facebook</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if(!empty($configuracoe->twitter)): ?>
+                            <li class="twitter">
+                                <a href="<?= $configuracoe->twitter ?>" target="_blank">
+                                    <span class="icon"><i class="fa fa-twitter"></i></span>
+                                    <span class="count">Twitter</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if(!empty($configuracoe->instagram)): ?>
+                            <li class="google-plus">
+                                <a href="<?= $configuracoe->instagram ?>" target="_blank">
+                                    <span class="icon"><i class="fa fa-instagram"></i></span>
+                                    <span class="count">Instagram</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if(!empty($configuracoe->youtube)): ?>
+                            <li class="youtube">
+                                <a href="<?= $configuracoe->youtube ?>" target="_blank">
+                                    <span class="icon"><i class="fa fa-youtube-square"></i></span>
+                                    <span class="count">youtube</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
             <!-- Social Widget End -->
         </div>
         <!-- Widget End -->
@@ -102,139 +84,75 @@
         <!-- Widget Start -->
         <div class="widget">
             <div class="widget--title">
-                <h2 class="h4">Featured News</h2>
+                <h2 class="h4">Últimas notícias</h2>
                 <i class="icon fa fa-newspaper-o"></i>
             </div>
 
             <!-- List Widgets Start -->
-            <div class="list--widget list--widget-1">
-                <div class="list--widget-nav" data-ajax="tab">
-                    <ul class="nav nav-justified">
+
+            <!-- Post Items Start -->
+            <div class="post--items post--items-3" data-ajax-content="outer">
+                <ul class="nav" data-ajax-content="inner">
+
+                    <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
                         <li>
-                            <a href="#" data-ajax-action="load_widget_hot_news">Hot News</a>
+                            <!-- Post Item Start -->
+                            <div class="post--item post--layout-3">
+                                <div class="post--img">
+                                    <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>" class="thumb">
+                                        <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
+                                    </a>
+
+                                    <div class="post--info">
+                                        <ul class="nav meta">
+                                            <li><a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->categoria->categoria ?></a></li>
+                                            <li><a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->data ?></a></li>
+                                        </ul>
+
+                                        <div class="title">
+                                            <h3 class="h4">
+                                                <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
+                                                    <?= $ultimasNoticia->titulo_resumo ?>
+                                                </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Post Item End -->
                         </li>
-                        <li class="active">
-                            <a href="#" data-ajax-action="load_widget_trendy_news">Trendy News</a>
-                        </li>
-                        <li>
-                            <a href="#" data-ajax-action="load_widget_most_watched">Most Watched</a>
-                        </li>
-                    </ul>
+                    <?php endforeach; ?>
+                </ul>
+
+                <!-- Preloader Start -->
+                <div class="preloader bg--color-0--b" data-preloader="1">
+                    <div class="preloader--inner"></div>
                 </div>
-
-                <!-- Post Items Start -->
-                <div class="post--items post--items-3" data-ajax-content="outer">
-                    <ul class="nav" data-ajax-content="inner">
-                        <li>
-                            <!-- Post Item Start -->
-                            <div class="post--item post--layout-3">
-                                <div class="post--img">
-                                    <a href="news-single-v1.html" class="thumb"><img src="/images/widgets-img/news-widget-01.jpg" alt=""></a>
-
-                                    <div class="post--info">
-                                        <ul class="nav meta">
-                                            <li><a href="#">Ninurta</a></li>
-                                            <li><a href="#">16 April 2017</a></li>
-                                        </ul>
-
-                                        <div class="title">
-                                            <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Post Item End -->
-                        </li>
-                        <li>
-                            <!-- Post Item Start -->
-                            <div class="post--item post--layout-3">
-                                <div class="post--img">
-                                    <a href="news-single-v1.html" class="thumb"><img src="/images/widgets-img/news-widget-02.jpg" alt=""></a>
-
-                                    <div class="post--info">
-                                        <ul class="nav meta">
-                                            <li><a href="#">Orcus</a></li>
-                                            <li><a href="#">16 April 2017</a></li>
-                                        </ul>
-
-                                        <div class="title">
-                                            <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Post Item End -->
-                        </li>
-                        <li>
-                            <!-- Post Item Start -->
-                            <div class="post--item post--layout-3">
-                                <div class="post--img">
-                                    <a href="news-single-v1.html" class="thumb"><img src="/images/widgets-img/news-widget-03.jpg" alt=""></a>
-
-                                    <div class="post--info">
-                                        <ul class="nav meta">
-                                            <li><a href="#">Rahab</a></li>
-                                            <li><a href="#">16 April 2017</a></li>
-                                        </ul>
-
-                                        <div class="title">
-                                            <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Post Item End -->
-                        </li>
-                        <li>
-                            <!-- Post Item Start -->
-                            <div class="post--item post--layout-3">
-                                <div class="post--img">
-                                    <a href="news-single-v1.html" class="thumb"><img src="/images/widgets-img/news-widget-04.jpg" alt=""></a>
-
-                                    <div class="post--info">
-                                        <ul class="nav meta">
-                                            <li><a href="#">Tannin</a></li>
-                                            <li><a href="#">16 April 2017</a></li>
-                                        </ul>
-
-                                        <div class="title">
-                                            <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Post Item End -->
-                        </li>
-                    </ul>
-
-                    <!-- Preloader Start -->
-                    <div class="preloader bg--color-0--b" data-preloader="1">
-                        <div class="preloader--inner"></div>
-                    </div>
-                    <!-- Preloader End -->
-                </div>
-                <!-- Post Items End -->
+                <!-- Preloader End -->
             </div>
-            <!-- List Widgets End -->
+            <!-- Post Items End -->
         </div>
-        <!-- Widget End -->
-
-        <!-- Widget Start -->
-        <div class="widget">
-            <div class="widget--title">
-                <h2 class="h4">Advertisement</h2>
-                <i class="icon fa fa-bullhorn"></i>
-            </div>
-
-            <!-- Ad Widget Start -->
-            <div class="ad--widget">
-                <a href="#">
-                    <img src="/images/ads-img/ad-300x250-2.jpg" alt="">
-                </a>
-            </div>
-
-            <!-- Ad Widget End -->
-        </div>
-        <!-- Widget End -->
+        <!-- List Widgets End -->
     </div>
+    <!-- Widget End -->
+
+    <!-- Widget Start -->
+    <div class="widget">
+        <div class="widget--title">
+            <h2 class="h4" style="visibility: hidden">Advertisement</h2>
+            <i class="icon fa fa-bullhorn"></i>
+        </div>
+
+        <!-- Ad Widget Start -->
+        <div class="ad--widget">
+            <?php foreach ($publicidadeLateral as $value): ?>
+                <a href="<?= !empty($value->link) ? $value->link : '#'?>">
+                    <img src="/files/Publicidades/imagem/<?= $value->imagem ?>" alt="">
+                </a>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Ad Widget End -->
+    </div>
+    <!-- Widget End -->
 </div>
