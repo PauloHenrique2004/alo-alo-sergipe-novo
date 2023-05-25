@@ -1,4 +1,4 @@
-<div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true">
+<div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30">
     <div class="sticky-content-inner">
         <div class="widget">
             <div class="widget--title">
@@ -150,6 +150,9 @@
                     <img src="/files/Publicidades/imagem/<?= $value->imagem ?>" alt="">
                 </a>
             <?php endforeach; ?>
+        </div>
+
+        <div class="ad--widget">
         </div>
 
         <!-- Ad Widget End -->
