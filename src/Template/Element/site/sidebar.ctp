@@ -55,27 +55,29 @@
         <!-- Widget Start -->
         <div class="widget">
             <div class="widget--title">
-                <h2 class="h4">Get Newsletter</h2>
+                <h2 class="h4"> Newsletter</h2>
                 <i class="icon fa fa-envelope-open-o"></i>
             </div>
 
             <!-- Subscribe Widget Start -->
             <div class="subscribe--widget">
                 <div class="content">
-                    <p>Subscribe to our newsletter to get  latest news, popular news and exclusive updates.</p>
+                    <p>Assine a nossa newsletter</p>
                 </div>
 
-                <form action="https://themelooks.us13.list-manage.com/subscribe/post?u=79f0b132ec25ee223bb41835f&id=f4e0e93d1d" method="post" name="mc-embedded-subscribe-form" target="_blank" data-form="mailchimpAjax">
-                    <div class="input-group">
-                        <input type="email" name="EMAIL" placeholder="E-mail address" class="form-control" autocomplete="off" required>
-
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-lg btn-default active"><i class="fa fa-paper-plane-o"></i></button>
-                        </div>
+                <?php echo $this->Form->create(null, ['role' => 'form', 'url' =>['controller' => 'Newsletters', 'action' => 'newsletter'],'class' => 'newsletter']); ?>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control input-newsletter" autocomplete="off" required>
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-lg btn-default active"><i class="fa fa-paper-plane-o"></i></button>
                     </div>
-
-                    <div class="status"></div>
-                </form>
+                </div>
+                <div class="status"></div>
+                <div class="recaptcha recaptcha-newsletter" style="justify-content: center; margin-bottom: 20px; margin-top: 10px; display: none">
+                    <?= $this->Recaptcha->display() ?>
+                </div>
+                <?= $this->Flash->render('newsletter') ?>
+                <?php echo $this->Form->End()?>
             </div>
             <!-- Subscribe Widget End -->
         </div>
@@ -87,11 +89,10 @@
                 <h2 class="h4">Últimas notícias</h2>
                 <i class="icon fa fa-newspaper-o"></i>
             </div>
-
             <!-- List Widgets Start -->
 
             <!-- Post Items Start -->
-            <div class="post--items post--items-3" data-ajax-content="outer">
+            <div class="post--items post--items-3" data-ajax-content="outer" style="margin-bottom: 50px">
                 <ul class="nav" data-ajax-content="inner">
 
                     <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>

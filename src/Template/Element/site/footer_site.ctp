@@ -254,5 +254,15 @@
 <!-- ==== Main JavaScript ==== -->
 <script src="/js/site/main.js"></script>
 
+<script>
+    $(".newsletter").on("keyup", function() {
+        if ($(".input-newsletter").val() !== "") {
+            $(".recaptcha-newsletter").show();
+        }else{
+            $(".recaptcha-newsletter").hide();
+        }
+    });
+</script>
+
 </body>
 </html>
