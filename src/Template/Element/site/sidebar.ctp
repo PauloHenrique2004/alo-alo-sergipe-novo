@@ -69,7 +69,7 @@
                 <div class="input-group">
                     <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control input-newsletter" autocomplete="off" required>
                     <div class="input-group-btn">
-                        <button type="submit" class="btn btn-lg btn-default active"><i class="fa fa-paper-plane-o"></i></button>
+                        <button  style="border-color: #ffcb02;"  type="submit" class="btn btn-lg btn-default active"><i class="fa fa-paper-plane-o"></i></button>
                     </div>
                 </div>
                 <div class="status"></div>
