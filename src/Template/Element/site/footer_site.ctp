@@ -9,7 +9,7 @@
                     <!-- Widget Start -->
                     <div class="widget">
                         <div class="widget--title">
-                            <h2 class="h4">About Us</h2>
+                            <h2 class="h4">Sobre</h2>
 
                             <i class="icon fa fa-exclamation"></i>
                         </div>
@@ -17,26 +17,33 @@
                         <!-- About Widget Start -->
                         <div class="about--widget">
                             <div class="content">
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium laborum et dolorum fuga.</p>
+                                <?php foreach ($configuracoes as $configuracoe): ?>
+                                    <p><?= $configuracoe->sobre_rodape ?></p>
+                                <?php endforeach; ?>
                             </div>
 
-                            <div class="action">
+                            <div class="action" style="visibility: hidden">
                                 <a href="#" class="btn-link">Read More<i class="fa flm fa-angle-double-right"></i></a>
                             </div>
 
                             <ul class="nav">
-                                <li>
-                                    <i class="fa fa-map"></i>
-                                    <span>143/C, Fake Street, Melborne, Australia</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope-o"></i>
-                                    <a href="mailto:example@example.com">example@example.com</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="tel:+123456789">+123 456 (789)</a>
-                                </li>
+                                <!--                                <li>-->
+                                <!--                                    <i class="fa fa-map"></i>-->
+                                <!--                                    <span>143/C, Fake Street, Melborne, Australia</span>-->
+                                <!--                                </li>-->
+                                <!--                                <li>-->
+                                <!--                                    <i class="fa fa-envelope-o"></i>-->
+                                <!--                                    <a href="mailto:example@example.com">example@example.com</a>-->
+                                <!--                                </li>-->
+
+                                <?php foreach ($configuracoes as $configuracoe): ?>
+                                    <?php if(!empty($configuracoe->telefone)): ?>
+                                        <li>
+                                            <i class="fa fa-phone"></i>
+                                            <a href="tel:+<?= $configuracoe->telefone ?>"> <?= $configuracoe->telefone ?></a>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                         <!-- About Widget End -->
@@ -48,74 +55,16 @@
                     <!-- Widget Start -->
                     <div class="widget">
                         <div class="widget--title">
-                            <h2 class="h4">Usefull Info Links</h2>
-
-                            <i class="icon fa fa-expand"></i>
-                        </div>
-
-                        <!-- Links Widget Start -->
-                        <div class="links--widget">
-                            <ul class="nav">
-                                <li><a href="#" class="fa-angle-right">Gadgets</a></li>
-                                <li><a href="#" class="fa-angle-right">Shop</a></li>
-                                <li><a href="#" class="fa-angle-right">Term and Conditions</a></li>
-                                <li><a href="#" class="fa-angle-right">Forums</a></li>
-                                <li><a href="#" class="fa-angle-right">Top News of This Week</a></li>
-                                <li><a href="#" class="fa-angle-right">Special Recipes</a></li>
-                                <li><a href="#" class="fa-angle-right">Sign Up</a></li>
-                            </ul>
-                        </div>
-                        <!-- Links Widget End -->
-                    </div>
-                    <!-- Widget End -->
-                </div>
-
-                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
-                    <!-- Widget Start -->
-                    <div class="widget">
-                        <div class="widget--title">
-                            <h2 class="h4">Advertisements</h2>
+                            <h2 class="h4">Anuncie conosco</h2>
 
                             <i class="icon fa fa-bullhorn"></i>
                         </div>
 
                         <!-- Links Widget Start -->
                         <div class="links--widget">
-                            <ul class="nav">
-                                <li><a href="#" class="fa-angle-right">Post an Add</a></li>
-                                <li><a href="#" class="fa-angle-right">Adds Renew</a></li>
-                                <li><a href="#" class="fa-angle-right">Price of Advertisements</a></li>
-                                <li><a href="#" class="fa-angle-right">Adds Closed</a></li>
-                                <li><a href="#" class="fa-angle-right">Monthly or Yearly</a></li>
-                                <li><a href="#" class="fa-angle-right">Trial Adds</a></li>
-                                <li><a href="#" class="fa-angle-right">Add Making</a></li>
-                            </ul>
-                        </div>
-                        <!-- Links Widget End -->
-                    </div>
-                    <!-- Widget End -->
-                </div>
-
-                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
-                    <!-- Widget Start -->
-                    <div class="widget">
-                        <div class="widget--title">
-                            <h2 class="h4">Career</h2>
-
-                            <i class="icon fa fa-user-o"></i>
-                        </div>
-
-                        <!-- Links Widget Start -->
-                        <div class="links--widget">
-                            <ul class="nav">
-                                <li><a href="#" class="fa-angle-right">Available Post</a></li>
-                                <li><a href="#" class="fa-angle-right">Career Details</a></li>
-                                <li><a href="#" class="fa-angle-right">How to Apply?</a></li>
-                                <li><a href="#" class="fa-angle-right">Freelence Job</a></li>
-                                <li><a href="#" class="fa-angle-right">Be a Member</a></li>
-                                <li><a href="#" class="fa-angle-right">Apply Now</a></li>
-                                <li><a href="#" class="fa-angle-right">Send Your Resume</a></li>
-                            </ul>
+                            <button style="border-color: #ffcb02" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
+                                Anuncie aqui
+                            </button>
                         </div>
                         <!-- Links Widget End -->
                     </div>
@@ -131,20 +80,32 @@
         <div class="social--bg bg--color-1"></div>
 
         <div class="container">
-            <p class="text float--left">&copy; 2017 <a href="#">USNEWS</a>. All Rights Reserved.</p>
+            <p class="text float--left">&copy; <?= date('Y') ?>  Alô Alô Sergipe. Todos os direitos reservados.</p>
 
             <ul class="nav social float--right">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                <?php foreach ($configuracoes as $configuracoe): ?>
+
+                    <?php if(!empty($configuracoe->facebook)): ?>
+                        <li><a href="<?= $configuracoe->facebook ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <?php endif; ?>
+
+                    <?php if(!empty($configuracoe->twitter)): ?>
+                        <li><a href="<?= $configuracoe->twitter ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <?php endif; ?>
+
+                    <?php if(!empty($configuracoe->instagram)): ?>
+                        <li><a href="<?= $configuracoe->instagram ?>"><i class="fa fa-instagram"></i></a></li>
+                    <?php endif; ?>
+
+                    <?php if(!empty($configuracoe->youtube)): ?>
+                        <li><a href=" <?= $configuracoe->youtube ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                    <?php endif; ?>
+
+                <?php endforeach; ?>
             </ul>
 
             <ul class="nav links float--right">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Support</a></li>
+                <li><a href="/politica-de-privacidade/1">POLÍTICA DE PRIVACIDADE</a></li>
             </ul>
         </div>
     </div>
@@ -157,51 +118,85 @@
 <!-- Sticky Social Start -->
 <div id="stickySocial" class="sticky--right">
     <ul class="nav">
-        <li>
-            <a href="#">
-                <i class="fa fa-facebook"></i>
-                <span>Follow Us On Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-twitter"></i>
-                <span>Follow Us On Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-google-plus"></i>
-                <span>Follow Us On Google Plus</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-rss"></i>
-                <span>Follow Us On RSS</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-vimeo"></i>
-                <span>Follow Us On Vimeo</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-youtube-play"></i>
-                <span>Follow Us On Youtube Play</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-linkedin"></i>
-                <span>Follow Us On LinkedIn</span>
-            </a>
-        </li>
+        <?php foreach ($configuracoes as $configuracoe): ?>
+
+            <?php if(!empty($configuracoe->facebook)): ?>
+                <li>
+                    <a href="<?= $configuracoe->facebook ?>" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                        <span>Siga-nos no Facebook </span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
+
+            <?php if(!empty($configuracoe->twitter)): ?>
+                <li>
+                    <a href="<?= $configuracoe->twitter ?>" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <span>Siga-nos no Twitter</span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
+            <?php if(!empty($configuracoe->instagram)): ?>
+                <li>
+                    <a href="<?= $configuracoe->instagram ?>" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <span>Siga-nos no Instagram</span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
+        <?php if(!empty($configuracoe->youtube)): ?>
+            <li>
+                <a href="<?= $configuracoe->youtube ?>" target="_blank">
+                    <i class="fa fa-youtube-play"></i>
+                    <span>Siga-nos no Youtube</span>
+                </a>
+            </li>
+            <?php endif; ?>
+
+        <?php endforeach; ?>
     </ul>
 </div>
 <!-- Sticky Social End -->
+
+<div class="modal fade" id="anuncie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="widget">
+                    <div class="widget--title" style="border-top: none;">
+                        <h2 class="h4">Anuncie conosco</h2>
+                        <i class="icon fa fa-bullhorn"></i>
+                    </div>
+                    <div class="subscribe--widget">
+                        <?= $this->Form->create(null, ['role' => 'form', 'url' =>['controller' => 'Contacts', 'action' => 'anuncieConosoco'],'class' => 'formAnuncie']) ?>
+                        <input type="text" name="nome" placeholder="Nome" class="form-control" autocomplete="off" required="" aria-required="true">
+                        <input type="text" name="tel" placeholder="Telefone" class="form-control" autocomplete="off" required="" aria-required="true">
+                        <input type="email" name="email" placeholder="email" class="form-control" autocomplete="off" required="" aria-required="true">
+                        <textarea style="width: -webkit-fill-available; margin-top: 20px;" class="single-textarea input-anuncie" name="mensagem" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mensagem" required=""></textarea>
+                        <div class="recaptcha recaptcha-anuncie" style="justify-content: center; margin-bottom: 20px; margin-top: 20px;">
+                            <?= $this->Recaptcha->display() ?>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-block btn-default active">Enviar</button>
+                        <?= $this->Flash->render('anuncie') ?>
+                        <!--                        <div class="status"></div>-->
+                        <?= $this->Form->end() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Back To Top Button Start -->
 <div id="backToTop">
@@ -263,6 +258,5 @@
         }
     });
 </script>
-
 </body>
 </html>

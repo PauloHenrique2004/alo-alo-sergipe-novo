@@ -2,6 +2,7 @@
 <div class="wrapper">
     <!-- Header Section Start -->
     <header class="header--section header--style-3">
+        <?= $this->Flash->render() ?>
         <!-- Header Topbar Start -->
         <div class="header--topbar bg--color-1">
             <div class="container">

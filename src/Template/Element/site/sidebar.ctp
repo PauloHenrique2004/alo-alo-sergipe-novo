@@ -12,7 +12,7 @@
                     <ul class="nav">
                         <?php if(!empty($configuracoe->facebook)): ?>
                             <li class="facebook">
-                                <a href="<?= $configuracoe->facebook ?>" target="_blank">
+                                    <a href="<?= $configuracoe->facebook ?>" target="_blank">
                                     <span class="icon"><i class="fa fa-facebook-f"></i></span>
                                     <span class="count">Facebook</span>
                                 </a>

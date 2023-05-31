@@ -124,19 +124,19 @@
         <div class="main--content pd--30-0">
             <!-- Post Items Title Start -->
             <div class="post--items-title" data-ajax="tab">
-                <h2 class="h4">Audio &amp; Videos</h2>
+                <h2 class="h4">Videos</h2>
 
-                <div class="nav">
-                    <a href="#" class="prev btn-link" data-ajax-action="load_prev_audio_video_posts">
-                        <i class="fa fa-long-arrow-left"></i>
-                    </a>
-
-                    <span class="divider">/</span>
-
-                    <a href="#" class="next btn-link" data-ajax-action="load_next_audio_video_posts">
-                        <i class="fa fa-long-arrow-right"></i>
-                    </a>
-                </div>
+<!--                <div class="nav">-->
+<!--                    <a href="#" class="prev btn-link" data-ajax-action="load_prev_audio_video_posts">-->
+<!--                        <i class="fa fa-long-arrow-left"></i>-->
+<!--                    </a>-->
+<!---->
+<!--                    <span class="divider">/</span>-->
+<!---->
+<!--                    <a href="#" class="next btn-link" data-ajax-action="load_next_audio_video_posts">-->
+<!--                        <i class="fa fa-long-arrow-right"></i>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
             <!-- Post Items Title End -->
 
@@ -265,5 +265,6 @@
             <!-- Post Items End -->
         </div>
     </div>
+
 </div>
 <!-- Main Content Section End -->

@@ -20,9 +20,9 @@ class ContactsController extends AppController
                 if ($this->Recaptcha->verify()) {
                     $formData = $this->request->getData();
                         $email = new Email('default');
-                        $email->setFrom(['naoresponda@site.vidavoce.com.br' => 'Anuncie conosco'])
-                            ->setTo('dhiegosmith@hotmail.com')
-                            ->setSubject('Vida e Você - anuncie conosco')
+                        $email->setFrom(['naoresponda@site.alo-alo-sergipe.com.br' => 'Anuncie conosco'])
+                            ->setTo('teste@hotmail.com')
+                            ->setSubject('Alo Alo Sergipe - anuncie conosco')
                             ->send('Nome: ' . $formData['nome']
                                 . "\n" . ' Email:' . $formData['email']
                                 . "\n" . ' Telefone: ' . $formData['tel']
