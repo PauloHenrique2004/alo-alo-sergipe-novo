@@ -91,6 +91,9 @@
                 <div id="headerNav" class="navbar-collapse collapse float--left">
                     <!-- Header Menu Links Start -->
                     <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent">
+                        <?php foreach ($categorias as $categoria): ?>
+                            <li><a href="/noticias/<?= $categoria->categoria ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
+                        <?php endforeach; ?>
                         <li><a href="/albuns">Galerias</a></li>
                         <li><a href="/videos">Videos</a></li>
                         <li><a href="/agenda">Agenda</a></li>
