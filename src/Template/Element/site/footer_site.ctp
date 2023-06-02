@@ -172,7 +172,7 @@
             </div>
             <div class="modal-body">
                 <div class="widget">
-                    <div class="widget--title" style="border-top: none;">
+                    <div class="widget--title" style="border-top: none !important;">
                         <h2 class="h4">Anuncie conosco</h2>
                         <i class="icon fa fa-bullhorn"></i>
                     </div>
@@ -185,7 +185,7 @@
                         <div class="recaptcha recaptcha-anuncie" style="justify-content: center; margin-bottom: 20px; margin-top: 20px;">
                             <?= $this->Recaptcha->display() ?>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-block btn-default active">Enviar</button>
+                        <button type="submit" class="btn btn-lg btn-block btn-default active" style="border-color: #ffcb02 !important;">Enviar</button>
                         <?= $this->Flash->render('anuncie') ?>
                         <!--                        <div class="status"></div>-->
                         <?= $this->Form->end() ?>
