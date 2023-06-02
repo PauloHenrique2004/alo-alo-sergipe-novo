@@ -1805,7 +1805,7 @@ body.boxed > .wrapper {
 .widget--title {
     position: relative;
     padding: 12px 24px 13px 0;
-    border-top: 2px solid #da0000;
+    border-top: 2px solid #231f20 !important;
     z-index: 0;
 }
 
@@ -4529,7 +4529,7 @@ ul.header--menu-links.nav > li.open > a:focus {
 .post--items-title {
     position: relative;
     padding: 12px 57px 13px 0;
-    border-top: 2px solid #da0000;
+    border-top: 2px solid #231f20 !important;
     z-index: 0;
 }
 
