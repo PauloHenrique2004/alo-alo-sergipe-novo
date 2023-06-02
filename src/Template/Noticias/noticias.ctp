@@ -1,63 +1,96 @@
-<section class="whats-news-area pt-50 pb-20">
+<!-- Main Content Section Start -->
+<div class="main-content--section pbottom--30">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="section-tittle mb-30">
-                            <h3><?= $nomeCategoria->categoria ?></h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Nav Card -->
-                        <div class="tab-content" id="nav-tabContent">
-                            <!-- card one -->
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <?php foreach ($noticias as $noticia): ?>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="single-what-news mb-100">
-                                                    <div class="what-img">
-                                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
-                                                            <img class="img-noticias-lista" src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="what-cap">
-                                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
-                                                            <span class="color1"><?= $nomeCategoria->categoria ?></span>
-                                                        </a>
-                                                        <h4 class="padding"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
-                                                                <?= $noticia->titulo ?>
-                                                            </a>
-                                                        </h4>
-                                                    </div>
-                                                </div>
+            <!-- Main Content Start -->
+            <div class="main--content col-md-12 col-sm-12" data-sticky-content="true">
+                <div class="sticky-content-inner">
+                    <!-- Post Items Start -->
+                    <div class="post--items post--items-2 pd--30-0">
+                        <ul class="nav row AdjustRow">
+                            <?php foreach ($noticias as $noticia): ?>
+                            <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
+                                <!-- Post Item Start -->
+                                <div class="post--item post--layout-1 post--title-large">
+                                    <div class="post--img">
+                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="thumb">
+                                            <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
+                                        </a>
+                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="cat"><?= $nomeCategoria->categoria ?></a>
+
+                                        <div class="post--info">
+                                            <ul class="nav meta">
+                                                <li><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>"><?= $noticia->data ?></a></li>
+                                            </ul>
+
+                                            <div class="title">
+                                                <h2 class="h4"><a href=/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
                                             </div>
-                                        <?php endforeach; ?>
+                                        </div>
                                     </div>
+
+<!--                                    <div class="post--content">-->
+<!--                                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="post--action">-->
+<!--                                        <a href="news-single-v1.html">Continue Reading...</a>-->
+<!--                                    </div>-->
+                                </div>
+                                <!-- Post Item End -->
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <!-- Post Items End -->
+
+                    <!-- Pagination Start -->
+                    <div class="pagination--wrapper clearfix bdtop--1 bd--color-2 ptop--60 pbottom--30">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                                <div class="paginator">
+                                    <ul class="pagination">
+                                        <?= $this->Paginator->numbers() ?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Nav Card -->
                     </div>
+                    <!-- Pagination End -->
                 </div>
             </div>
-            <?= $this->element('site/publicidade') ?>
+            <!-- Main Content End -->
         </div>
     </div>
-</section>
+</div>
+<!-- Main Content Section End -->
+
+
 
 <style>
-    @media(min-width: 769px) {
-        .img-noticias-lista{
-            height: 431px !important;
-            object-fit: cover;
-        }
-    }
+.pagination li a:hover{
+    border-color: #ffcb02 !important;
+}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php $this->start('script-head'); ?>
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
 <meta property="og:title" content= "Vida e Você - <?= $title ?>"/>

@@ -46,7 +46,7 @@ class NoticiasController extends AppController
         $this->viewBuilder()->setLayout('site');
 
         $this->paginate = [
-            'limit' => 10,
+            'limit' => 9,
             'order' => [
                 'id' => 'Desc'
             ]

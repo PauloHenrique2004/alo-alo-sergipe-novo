@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/css/site/fontawesome-stars-o.min.css">
 
     <!-- ==== Main Stylesheet ==== -->
-    <link rel="stylesheet" href="css/site/style.css">
+    <link rel="stylesheet" href="/css/site/style.css">
 
     <!-- ==== Responsive Stylesheet ==== -->
     <link rel="stylesheet" href="/css/site/responsive-style.css">
