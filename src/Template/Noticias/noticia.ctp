@@ -25,9 +25,9 @@
                     <div class="post--item post--single post--title-largest pd--30-0">
                         <div class="post--img">
                             <?php if(!empty($noticia->imagem_visualizacao)): ?>
-                                <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" alt="">
+                                <img style="width: -webkit-fill-available;" src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" alt="">
                             <?php else: ?>
-                                <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
+                                <img style="width: -webkit-fill-available;" src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
                             <?php endif; ?>
 
                         </div>

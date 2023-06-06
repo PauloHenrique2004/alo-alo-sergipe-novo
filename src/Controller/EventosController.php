@@ -29,7 +29,7 @@ class EventosController extends AppController
         $this->viewBuilder()->setLayout('site');
         $evento = $this->Eventos->get($id);
 
-        $maisEventos = $this->Eventos->find()->order('rand()');
+        $maisEventos = $this->Eventos->find()->order('rand()')->limit(3);
 
         $title = $evento->titulo;
 
