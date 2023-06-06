@@ -6,7 +6,7 @@
                     <div class="blog_left_sidebar">
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <iframe class="active-youtube" width="366" height="216" src="https://www.youtube.com/embed/<?= $value->link ?>" allowfullscreen></iframe>
+                                <img src="https://i.ytimg.com/vi/<?= $value->link ?>/hqdefault.jpg" class="play-youtube" data-video="<?= $value->link ?>">
                             </div>
                             <div class="blog_details" style="padding: initial !important; margin-top: 7px; border-radius: 15px">
                                 <h2><?= $value->titulo ?></h2>
@@ -67,4 +67,40 @@
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
 <meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
 <meta property="og:description" content="Vida e Você, seu portal de notícias!"/>
+<?php $this->end(); ?>
+
+<?php $this->start('script-footer'); ?>
+<script>
+    $.fn.YouTubePopUp = function (options) {
+        var YouTubePopUpOptions = $.extend({
+            autoplay: 1
+        }, options);
+        $(this).off('click');
+        $(this).on('click', function (e) {
+
+            var cleanVideoID = $(this).attr("data-video");
+
+            var videoEmbedLink = "https://www.youtube.com/embed/" + cleanVideoID + "?autoplay=" + YouTubePopUpOptions.autoplay + "";
+
+            $("body").append('<div class="YouTubePopUp-Wrap YouTubePopUp-animation"><div class="YouTubePopUp-Content"><span class="YouTubePopUp-Close"></span><iframe src="' + videoEmbedLink + '" allowfullscreen allow="autoplay"></iframe></div></div>');
+
+            if ($('.YouTubePopUp-Wrap').hasClass('YouTubePopUp-animation')) {
+                setTimeout(function () {
+                    $('.YouTubePopUp-Wrap').removeClass("YouTubePopUp-animation");
+                }, 600);
+            }
+
+            $(".YouTubePopUp-Wrap, .YouTubePopUp-Close").on('click', function () {
+                $(".YouTubePopUp-Wrap").addClass("YouTubePopUp-Hide").delay(515).queue(function () {
+                    $(this).remove();
+                });
+            });
+
+            e.preventDefault();
+
+        });
+    };
+    $('.play-youtube').YouTubePopUp({ autoplay: 1 });
+
+</script>
 <?php $this->end(); ?>

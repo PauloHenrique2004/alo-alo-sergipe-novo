@@ -24,7 +24,7 @@
                                             </ul>
 
                                             <div class="title">
-                                                <h2 class="h4"><a href=/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
+                                                <h2 class="h4"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
                                             </div>
                                         </div>
                                     </div>

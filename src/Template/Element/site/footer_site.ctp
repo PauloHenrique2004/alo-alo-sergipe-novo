@@ -259,5 +259,6 @@
         }
     });
 </script>
+<?= $this->fetch('script-footer') ?>
 </body>
 </html>
