@@ -67,7 +67,6 @@
  .descN a:hover{
      color: #fff !important;
  }
-    
 </style>
 
 
