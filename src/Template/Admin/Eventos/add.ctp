@@ -34,10 +34,10 @@
                     echo $this->Form->control('data');
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date']);
                     echo $this->Form->control('capa', ['type' => 'file']);
-                    echo "<span style='color: red;  position: absolute; margin-top: -15px'>Adicionar imagens com as dimensões 750 x 375px</span><br>";
+                    echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";
 
                     echo $this->Form->control('imagem', ['type' => 'file']);
-                    echo "<span style='color: red;  position: absolute; margin-top: -15px'>Adicionar imagens com as dimensões 750 x 375px</span><br>";
+                    echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";
 
                     //                    echo $this->Form->control('outros_eventos');
                     ?>

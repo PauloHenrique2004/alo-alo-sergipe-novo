@@ -41,12 +41,12 @@
 
                     <div>
                         <input type="radio" id="dewey" name="local" value=2>
-                        <label for="dewey">Lateral - Dimensões recomendadas 300 x 755px</label>
+                        <label for="dewey">Lateral - Dimensões recomendadas 300 x 250px</label>
                     </div>
 
                     <div>
                         <input type="radio" id="dewey" name="local" value=3 <?= $publicidade->local == 3 ? 'checked' : '' ?>>
-                        <label for="dewey">Abaixo do banner principal - Dimensões recomendadas 1112 x 137px</label>
+                        <label for="dewey">Abaixo do banner principal - Dimensões recomendadas 970 x 90px</label>
                     </div>
                 </fieldset>
             </div>

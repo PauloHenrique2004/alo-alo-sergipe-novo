@@ -34,7 +34,7 @@
               //  echo $this->Form->control('resumo',['maxlength' => 180]);
                 echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date']);
                 echo $this->Form->control('imagem', ['type' => 'file']);
-                echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 750 x 362px</span><br>";
+                 echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";
               ?>
             </div>
             <!-- /.box-body -->

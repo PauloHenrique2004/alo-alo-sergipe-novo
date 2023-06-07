@@ -109,7 +109,6 @@
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . "/files/Noticias/imagem/" . $noticia->imagem   ?>"/>
 <meta property="og:title" content= "<?= $noticia->titulo ?>"/>
 <meta property="og:description" content="<?= strip_tags(substr($noticia->descricao, 0, 60))  ?>"/>
-
 <?php $this->end(); ?>
 
 

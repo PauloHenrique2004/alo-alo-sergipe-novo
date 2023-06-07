@@ -1,7 +1,7 @@
 <?php $this->layout = 'AdminLTE.login'; ?>
 <!-- /.box-body -->
 <div class = "logo-adm">
- <img src="/images/logo-vida.png" style="max-width: 180px; image-rendering: -webkit-optimize-contrast; ">
+ <img src="/images/logo.png" style="max-width: 180px; image-rendering: -webkit-optimize-contrast; ">
 </div>
     <?php echo $this->Form->create(); ?>
     <div class="box-body" style="">
@@ -20,6 +20,11 @@
 
 
 <style>
+
+    .login-page, .register-page{
+        background: #000 !important;
+    }
+
     label {
         color: #000;
     }

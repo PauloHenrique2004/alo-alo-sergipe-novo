@@ -46,7 +46,7 @@ use Cake\View\Helper\UrlHelper;
                     </div>
 
                     <div class="col-md-12">
-                        <?php echo "<span style='color: red;  position: absolute;'>Adicionar imagens com as dimensões 370 x 431px</span><br>"; ?>
+                        <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
                     </div>
 
                     <div class="col-md-12">
@@ -61,7 +61,7 @@ use Cake\View\Helper\UrlHelper;
                         </div>
                     <?php endif; ?>
                     <div class="col-md-12">
-                        <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 770 x 411px</span><br>"; ?>
+                        <?php echo "<span style='color: red; position: absolute; margin-top: -18px; margin-bottom: 20px;'>Adicionar imagens com as dimensões 1200 x 830px</span><br>";?>
                     </div>
 
                     <div class="col-md-12">
@@ -77,7 +77,7 @@ use Cake\View\Helper\UrlHelper;
                     <?php endif; ?>
 
                     <div class="col-md-12" style="margin-bottom: 30px">
-                        <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 770 x 411px</span><br>";?>
+                        <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
                     </div>
 
                     <?php foreach ($noticiaRelacionda as $rel): ?>
