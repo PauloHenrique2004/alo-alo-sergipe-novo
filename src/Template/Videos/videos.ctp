@@ -1,65 +1,50 @@
-<section class="blog_area section-padding">
+<!-- Main Breadcrumb Start -->
+<div class="main--breadcrumb" style="text-align: center;">
     <div class="container">
-        <div class="row">
-            <?php foreach ($videos as $value): ?>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img src="https://i.ytimg.com/vi/<?= $value->link ?>/hqdefault.jpg" class="play-youtube" data-video="<?= $value->link ?>">
-                            </div>
-                            <div class="blog_details" style="padding: initial !important; margin-top: 7px; border-radius: 15px">
-                                <h2><?= $value->titulo ?></h2>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <ul class="breadcrumb">
+            <li><a href="/" class="btn-link"><i class="fa fm fa-home"></i>Home</a></li>
+            <li class="active"><span>Videos</span></li>
+        </ul>
+    </div>
+</div>
+<!-- Main Breadcrumb End -->
 
-        <div class="row">
-            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
-                <div class="paginator">
-                    <ul class="pagination">
-                        <?= $this->Paginator->numbers() ?>
-                    </ul>
+<div class="main-content--section pbottom--30">
+    <div class="container">
+        <div class="main--content">
+            <div class="post--item post--single pd--30-0">
+                <div class="row">
+                    <?php foreach ($videos as $value): ?>
+                    <div class="col-md-4">
+                            <img style="width: -webkit-fill-available; cursor: pointer" src="https://i.ytimg.com/vi/<?= $value->link ?>/hqdefault.jpg" class="play-youtube" data-video="<?= $value->link ?>">
+
+                        <div class="post--info" style="margin-bottom: 30px;">
+                            <div class="title">
+                                <h2 class="h4"><?= $value->titulo ?></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
+
+        <!-- Pagination Start -->
+        <div class="pagination--wrapper clearfix bdtop--1 bd--color-2">
+            <div class="row">
+                <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                    <div class="paginator">
+                        <ul class="pagination">
+                            <?= $this->Paginator->numbers() ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination End -->
     </div>
-</section>
+</div>
 
-<style>
-    .pagination a{
-        width: 45px;
-        height: 45px;
-        margin: 0 2px;
-        display: inline-block;
-        background-color: #ffffff;
-        line-height: 48px;
-        color: #000000;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .pagination .active a{
-        background: #000 !important;
-        color: #ffffff;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        z-index: 999;
-
-    }
-
-    .active-youtube{
-        border-radius: 10px !important;
-    }
-</style>
 
 
 <?php $this->start('script-head'); ?>
