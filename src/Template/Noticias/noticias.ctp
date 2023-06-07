@@ -64,12 +64,10 @@
     border-color: #ffcb02 !important;
 }
 
-
  .descN a:hover{
      color: #fff !important;
  }
-
-
+    
 </style>
 
 
