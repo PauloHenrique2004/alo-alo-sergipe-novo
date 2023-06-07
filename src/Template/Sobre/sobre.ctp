@@ -41,7 +41,7 @@
         </div>
     </div>
 </div>
-    <!-- Main Content Section End -->
+<!-- Main Content Section End -->
 
     <?php $this->start('script-head'); ?>
     <meta property="og:image" content="http://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
