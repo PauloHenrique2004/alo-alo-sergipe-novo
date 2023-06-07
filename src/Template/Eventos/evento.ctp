@@ -53,18 +53,18 @@
                                 <li class="col-sm-4 pbottom--30">
                                     <div class="post--item post--layout-1">
                                         <div class="post--img">
-                                            <a href="/evento/<?= $item->titulo ?><?= $item->id ?>" class="thumb"><img src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
+                                            <a href="/evento/<?= $item->titulo ?>/<?= $item->id ?>" class="thumb"><img src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a href="/evento/<?= $item->titulo ?><?= $item->id ?>">
+                                                        <a href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
                                                             <?= $evento->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h3 class="h4">
-                                                        <a href="/evento/<?= $item->titulo ?><?= $item->id ?>">
+                                                        <a href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
                                                             <?= $item->titulo ?>
                                                         </a>
                                                     </h3>
