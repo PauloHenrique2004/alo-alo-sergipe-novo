@@ -1,38 +1,50 @@
-<section id="about" style="margin-top: 50px">
-    <div class="about-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Trending Tittle -->
-                    <div class="about-right mb-90">
-                        <div class="about-img">
-                            <img src="/files/Sobre/imagem/<?= $sobre->imagem ?>" alt="">
+<!-- Main Breadcrumb Start -->
+<div class="main--breadcrumb" style="text-align: center;">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/" class="btn-link"><i class="fa fm fa-home"></i>Home</a></li>
+            <li class="active"><span>Sobre nós</span></li>
+        </ul>
+    </div>
+</div>
+<!-- Main Breadcrumb End -->
+
+<!-- Main Content Section Start -->
+<div class="main-content--section pbottom--30">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content Start -->
+            <div class="main--content col-md-12" data-sticky-content="true">
+                <div class="sticky-content-inner">
+                    <!-- Post Item Start -->
+                    <div class="post--item post--single post--title-largest pd--30-0">
+                        <div class="post--img">
+                            <img src="/files/Sobre/imagem/<?= $sobre->imagem ?>" alt="" style="width: -webkit-fill-available;">
                         </div>
-                        <div class="section-tittle mb-30 pt-30">
-                            <h3><?= $sobre->titulo ?></h3>
+
+                        <div class="post--info">
+                            <div class="title">
+                                <h2 class="h4"><?= $sobre->titulo ?></h2>
+                            </div>
                         </div>
-                        <div class="about-prea">
+
+                        <div class="post--content">
+                            <span style="text-align: justify">
                                 <?= $sobre->descricao ?>
+                            </span>
                         </div>
+
                     </div>
                 </div>
-
-                <?= $this->element('site/publicidade') ?>
             </div>
+            <!-- Main Content End -->
+
         </div>
     </div>
-</section>
+    <!-- Main Content Section End -->
 
-
-<style>
-    p{
-        color: #506172 !important;
-        text-align: justify !important;
-    }
-</style>
-
-<?php $this->start('script-head'); ?>
-<meta property="og:image" content="http://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
-<meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
-<meta property="og:description" content="Vida e Você, seu portal de notícias!"/>
-<?php $this->end() ?>
+    <?php $this->start('script-head'); ?>
+    <meta property="og:image" content="http://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
+    <meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
+    <meta property="og:description" content="Vida e Você, seu portal de notícias!"/>
+    <?php $this->end() ?>
