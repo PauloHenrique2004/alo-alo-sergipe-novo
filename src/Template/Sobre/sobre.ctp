@@ -38,9 +38,9 @@
                 </div>
             </div>
             <!-- Main Content End -->
-
         </div>
     </div>
+</div>
     <!-- Main Content Section End -->
 
     <?php $this->start('script-head'); ?>
