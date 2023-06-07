@@ -13,6 +13,15 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
+    <?= $this->fetch('script-footer') ?>
+
+
+    <?php if($_SERVER['REQUEST_URI'] == '/'): ?>
+        <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/meta.png' ?>"/>
+        <meta property="og:title" content= "alÔ alÔ Sergipe"/>
+        <meta property="og:description" content="alÔ alÔ Sergipe, seu portal!"/>
+    <?php endif; ?>
+
     <!-- ==== Favicons ==== -->
     <link rel="icon" href="/images/iconeA.png" type="image/png">
 
@@ -39,6 +48,8 @@
 
     <!-- ==== Custom Stylesheet ==== -->
     <link rel="stylesheet" href="/css/site/custom.css">
+
+
 
     <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
     <!--[if lt IE 9]>

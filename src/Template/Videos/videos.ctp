@@ -48,9 +48,9 @@
 
 
 <?php $this->start('script-head'); ?>
-<meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
-<meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
-<meta property="og:description" content="Vida e Você, seu portal de notícias!"/>
+<meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/meta.png' ?>"/>
+<meta property="og:title" content= "alÔ alÔ Sergipe"/>
+<meta property="og:description" content="alÔ alÔ Sergipe, seu portal!"/>
 <?php $this->end(); ?>
 
 <?php $this->start('script-footer'); ?>
