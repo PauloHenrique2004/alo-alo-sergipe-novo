@@ -1,141 +1,129 @@
-<section class="whats-news-area pt-50 pb-20">
+<!-- Main Breadcrumb Start -->
+<div class="main--breadcrumb" style="text-align: center;">
     <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/" class="btn-link"><i class="fa fm fa-home"></i>Home</a></li>
+            <li class="active"><span><?= $album->titulo ?></span></li>
+        </ul>
+    </div>
+</div>
+<!-- Main Breadcrumb End -->
 
-            <div class="about-area">
+<!-- Main Content Section Start -->
+<div class="main-content--section">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content Start -->
+            <div class="main--content col-md-12" data-sticky-content="true">
+                <div class="sticky-content-inner">
+                    <!-- Post Item Start -->
+                    <div class="post--item post--single post--title-largest pd--30-0">
+                        <div class="post--img">
+                            <img style="width: -webkit-fill-available;" src="/files/Albuns/imagem/<?= $album->imagem ?>" alt="">
+                        </div>
 
-                <div class="container box-album-topo">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12" style="padding-left: inherit;">
-                            <div class="section-tittle mb-30">
-                                <h3><?= $album->titulo ?></h3>
+                        <div class="post--info">
+                            <ul class="nav meta">
+                                <li><a href="#"><?= $album->data ?></a></li>
+                            </ul>
+                            <div class="title">
+                                <h2 class="h4"><?= $album->titulo ?></h2>
                             </div>
                         </div>
-                        <div class="col-lg-6" style="padding-left: inherit;">
-                            <!-- Trending Tittle -->
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $album->imagem ?>" alt="capa">
-                                <a href="/fotos/" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-6" style="padding-right: inherit;">
-                            <div class="about-prea">
+                        <div class="post--content">
+                            <span style="text-align: justify">
                                 <?= $album->descricao ?>
-                            </div>
+                            </span>
                         </div>
 
                     </div>
                 </div>
             </div>
+            <!-- Main Content End -->
+        </div>
+    </div>
+</div>
+<!-- Main Content Section End -->
 
-
+<div class="main-content--section pbottom--30">
+    <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="whats-news-caption">
-                                    <div class="row">
-                                        <?php foreach ($fotos as $foto): ?>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="single-what-news mb-100">
-                                                    <div class="what-img">
-                                                        <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip"> <img  class="img-lado" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="Imagem"></a>
-                                                    </div>
-                                                    <div class="what-cap">
-                                                        <h4 style="font-size: 18px"><?= $foto->titulo ?></h4>
-                                                    </div>
+            <!-- Main Content Start -->
+            <div class="main--content col-md-12 col-sm-12" data-sticky-content="true">
+                <div class="sticky-content-inner">
+                    <!-- Post Items Start -->
+                    <div class="post--items post--items-2 pd--30-0">
+                        <ul class="nav row AdjustRow">
+                            <?php foreach ($fotos as $foto): ?>
+                                <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
+                                    <!-- Post Item Start -->
+                                    <div class="post--item post--layout-1 post--title-large">
+                                        <div class="post--img">
+                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                                <img class="card-img rounded-0" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
+                                            </a>
+                                            <div class="post--info">
+                                                <ul class="nav meta">
+                                                    <li>
+                                                        <?= $foto->data ?>
+                                                    </li>
+                                                </ul>
+                                                <div class="title">
+                                                    <h2 class="h4">
+                                                        <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                                            <?= $foto->titulo ?>
+                                                        </a>
+                                                    </h2>
                                                 </div>
                                             </div>
-                                        <?php endforeach; ?>
+                                        </div>
                                     </div>
+                                    <!-- Post Item End -->
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <!-- Post Items End -->
+
+                    <!-- Pagination Start -->
+                    <div class="pagination--wrapper clearfix bdtop--1 bd--color-2">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                                <div class="paginator">
+                                    <ul class="pagination">
+                                        <?= $this->Paginator->numbers() ?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                        <div class="col-lg-12">
-                            <nav class="blog-pagination justify-content-center d-flex">
-                                <ul class="pagination">
-                                    <?= $this->Paginator->numbers() ?>
-                                </ul>
-                            </nav>
-                        </div>
-
+                    <!-- Pagination End -->
                 </div>
             </div>
-            <?= $this->element('site/publicidade') ?>
+            <!-- Main Content End -->
         </div>
     </div>
-</section>
+</div>
 <style>
-    @media(min-width: 769px){
-        .btn-todos{
-            width: fit-content !important;
-            float: right !important;
-        }
-
+    p{
+        color: #506172 !important;
+        text-align: justify !important;
     }
 
-    @media(min-width: 769px){
-        .img-lado{
-            width: 370px !important;
-            height: 344px !important;
-            object-fit: cover;
-        }
-
+    .ti-time:before {
+        margin-right: 3px;
     }
 
-    .pagination a{
-        width: 45px;
-        height: 45px;
-        margin: 0 2px;
-        display: inline-block;
-        background-color: #ffffff;
-        line-height: 48px;
-        color: #000000;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: center;
+    .ti-calendar:before {
+        margin-right: -1px;
     }
-
-    .pagination .active a{
-        background: #000 !important;
-        color: #ffffff;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        z-index: 999;
-    }
-
-    @media(min-width: 769px){
-        .box-album-topo{
-            margin-bottom: 70px !important;
-        }
-    }
-
-    @media(max-width: 769px){
-        .blog_item_img{
-            margin-bottom: 30px !important;
-        }
-    }
-
-
-
-
 </style>
 
 <link rel="stylesheet" media="all" href="/lightbox/lightbox.min.css">
 
 <?php $this->start('script-footer') ?>
-    <script type="text/javascript" src="/lightbox/lightbox.min.js"></script>
+<script type="text/javascript" src="/lightbox/lightbox.min.js"></script>
 <?php $this->end() ?>
 
 <?php $this->start('script-head'); ?>

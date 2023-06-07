@@ -1,79 +1,86 @@
-<section class="blog_area section-padding">
+<!-- Main Content Section Start -->
+<div class="main-content--section pbottom--30">
     <div class="container">
         <div class="row">
-            <?php foreach ($albuns as $albun): ?>
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <a href="/fotos/<?= $albun->id ?>">
-                                <div class="blog_item_img">
-                                    <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $albun->imagem ?>" alt="capa">
-                                </div>
-                            </a>
+            <!-- Main Content Start -->
+            <div class="main--content col-md-12 col-sm-12" data-sticky-content="true">
+                <div class="sticky-content-inner">
+                    <!-- Post Items Start -->
+                    <div class="post--items post--items-2 pd--30-0">
+                        <ul class="nav row AdjustRow">
+                            <?php foreach ($albuns as $albun): ?>
+                                <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
+                                    <!-- Post Item Start -->
+                                    <div class="post--item post--layout-1 post--title-large">
+                                        <div class="post--img">
+                                            <a href="/fotos/<?= $albun->id ?>">
+                                                <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $albun->imagem ?>" alt="capa">
+                                            </a>
 
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="/fotos/<?= $albun->id ?>">
-                                    <h2><?= $albun->titulo ?></h2>
-                                </a>
-                                <a href="/fotos/<?= $albun->id ?>">
-                                    <p>  <?= $albun->resumo ?></p>
-                                </a>
-                                <ul class="blog-info-link">
-                                    <li><a href="/fotos/<?= $albun->id ?>"><i class="ti-view-grid"></i> Ver album</a></li>
-                                </ul>
-                            </div>
+                                            <div class="post--info">
+                                                <ul class="nav meta">
+                                                    <li>
+                                                        <a href="/fotos/<?= $albun->id ?>">
+                                                            <?= $albun->data ?>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="title">
+                                                    <h2 class="h4">
+                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link">
+                                                            <?= $albun->titulo ?>
+                                                        </a>
+                                                    </h2>
+                                                </div>
 
-                        </article>
+                                                <div class="title">
+                                                    <h2 class="h4">
+                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link">
+                                                            Ver álbum
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Post Item End -->
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                    <!-- Post Items End -->
 
-        <div class="row">
-            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
-                <div class="paginator">
-                    <ul class="pagination">
-                        <?= $this->Paginator->numbers() ?>
-                    </ul>
+                    <!-- Pagination Start -->
+                    <div class="pagination--wrapper clearfix bdtop--1 bd--color-2 ptop--60 pbottom--30">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                                <div class="paginator">
+                                    <ul class="pagination">
+                                        <?= $this->Paginator->numbers() ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination End -->
                 </div>
             </div>
+            <!-- Main Content End -->
         </div>
     </div>
-</section>
+</div>
+<!-- Main Content Section End -->
+
 
 
 <style>
-    .pagination a{
-        width: 45px;
-        height: 45px;
-        margin: 0 2px;
-        display: inline-block;
-        background-color: #ffffff;
-        line-height: 48px;
-        color: #000000;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .pagination .active a{
-        background: #000 !important;
-        color: #ffffff;
-        -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
-        box-shadow: 0 2px 10px 0 #d8dde6;
-        z-index: 999;
-    }
-
-    @media (min-width: 768px){
-        .blog_details {
-            padding: 30px 30px 35px 35px !important;
-        }
+    .pagination li a:hover{
+        border-color: #ffcb02 !important;
     }
 </style>
+
+
 
 <?php $this->start('script-head'); ?>
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>

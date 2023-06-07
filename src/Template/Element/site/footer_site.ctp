@@ -245,7 +245,7 @@
 <script src="/js/site/retina.min.js"></script>
 
 <!-- ==== Google Map API ==== -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK9f7sXWmqQ1E-ufRXV3VpXOn_ifKsDuc"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK9f7sXWmqQ1E-ufRXV3VpXOn_ifKsDuc"></script>-->
 
 <!-- ==== Main JavaScript ==== -->
 <script src="/js/site/main.js"></script>

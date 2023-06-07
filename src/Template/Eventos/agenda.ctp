@@ -73,7 +73,6 @@
 </style>
 
 
-
 <?php $this->start('script-head'); ?>
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
 <meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
@@ -107,9 +106,3 @@
         z-index: 999;
     }
 </style>
-
-<?php $this->start('script-head'); ?>
-<meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/og-image.jpeg' ?>"/>
-<meta property="og:title" content= "Vida e Você - <?= $title ?>"/>
-<meta property="og:description" content="Vida e Você, seu portal de notícias!"/>
-<?php $this->end(); ?>

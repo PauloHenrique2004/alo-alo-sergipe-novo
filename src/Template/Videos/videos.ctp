@@ -11,7 +11,6 @@
                             <div class="blog_details" style="padding: initial !important; margin-top: 7px; border-radius: 15px">
                                 <h2><?= $value->titulo ?></h2>
                             </div>
-
                         </article>
                     </div>
                 </div>
