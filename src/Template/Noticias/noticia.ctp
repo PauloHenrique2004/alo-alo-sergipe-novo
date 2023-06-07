@@ -39,7 +39,7 @@
                             </ul>
 
                             <div class="title">
-                                <h2 class="h4"><?= $noticia->titulo ?></h2>
+                                <h2 class="h4 descN"><?= $noticia->titulo ?></h2>
                             </div>
                         </div>
 
@@ -76,7 +76,7 @@
                                                 </ul>
                                                 <div class="title">
                                                     <h3 class="h4">
-                                                        <a href="#" class="btn-link">
+                                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link">
                                                             <?= $noticiaRelacionada->noticia->titulo ?>
                                                         </a>
                                                     </h3>
@@ -143,3 +143,4 @@
     // `)
 </script>
 <?php $this->end(); ?>
+

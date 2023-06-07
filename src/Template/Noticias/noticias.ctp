@@ -24,18 +24,10 @@
                                             </ul>
 
                                             <div class="title">
-                                                <h2 class="h4"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
+                                                <h2 class="h4 descN"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
                                             </div>
                                         </div>
                                     </div>
-
-<!--                                    <div class="post--content">-->
-<!--                                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="post--action">-->
-<!--                                        <a href="news-single-v1.html">Continue Reading...</a>-->
-<!--                                    </div>-->
                                 </div>
                                 <!-- Post Item End -->
                             </li>
@@ -71,6 +63,13 @@
 .pagination li a:hover{
     border-color: #ffcb02 !important;
 }
+
+
+ .descN a:hover{
+     color: #fff !important;
+ }
+
+
 </style>
 
 
