@@ -57,7 +57,7 @@
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a href="/evento/<?= $item->id ?>">
+                                                        <a href="/evento/<?= $item->titulo ?><?= $item->id ?>">
                                                             <?= $evento->data ?>
                                                         </a>
                                                     </li>

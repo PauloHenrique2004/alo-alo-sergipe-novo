@@ -135,6 +135,7 @@ class PagesController extends AppController
         $this->set('title', $title);
 
         $this->set('obterCategoriasExibidas', $obterCategoriasExibidas);
+
         $this->set('proximaCategoriaIrma', $proximaCategoriaIrma);
 
 

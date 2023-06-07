@@ -55,7 +55,6 @@
                 <div class="post--related ptop--30">
                     <div class="post--items-title" data-ajax="tab">
                         <h2 class="h4"><?= $relacionados ? 'Relacionadas' : '' ?></h2>
-                        <div class="nav"> <a href="#" class="prev btn-link" data-ajax-action="load_prev_related_posts"> <i class="fa fa-long-arrow-left"></i> </a> <span class="divider">/</span> <a href="#" class="next btn-link" data-ajax-action="load_next_related_posts"> <i class="fa fa-long-arrow-right"></i> </a> </div>
                     </div>
                     <div class="post--items post--items-2" data-ajax-content="outer">
                         <ul class="nav row" data-ajax-content="inner">
