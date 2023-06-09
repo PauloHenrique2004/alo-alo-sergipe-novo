@@ -14,16 +14,27 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-1">
                     <div class="post--img">
-                        <a href="" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
-                        <a href="#" class="cat"><?= $categoria->categoria ?></a>
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
+                            <?= $categoria->categoria ?>
+                        </a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="#"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
+                                <li>
+                                    <a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>">
+                                        <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?>
+                                    </a>
+                                </li>
                             </ul>
 
                             <div class="title">
-                                <h3 class="h4"><a href="#" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
+                                <h3 class="h4">
+                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"
+                                       class="btn-link hover-fff">
+                                        <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?>
+                                    </a>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -49,15 +60,15 @@
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="#"><?= $value->data ?></a></li>
+                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
+                                        <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -98,16 +109,21 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-1">
                     <div class="post--img">
-                        <a href="" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->imagem ?>" alt=""></a>
-                        <a href="#" class="cat"><?= $proximaCategoria->categoria ?></a>
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
+                            <img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->imagem ?>" alt="">
+                        </a>
+                        <a  href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat hover-fff"><?= $proximaCategoria->categoria ?></a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="#"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->data ?></a></li>
+                                <li><a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->data ?></a></li>
                             </ul>
 
                             <div class="title">
-                                <h3 class="h4"><a href="#" class="btn-link"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->titulo_resumo  ?></a></h3>
+                                <h3 class="h4">
+                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link hover-fff"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->titulo_resumo  ?>
+                                    </a>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -133,15 +149,15 @@
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="#"><?= $value->data ?></a></li>
+                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
+                                        <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 <div class="col-md-6 ptop--30 pbottom--30">
     <!-- Post Items Title Start -->
     <div class="post--items-title" data-ajax="tab">
-        <h2 class="h4"><?= $categoria->categoria ?>OK!</h2>
+        <h2 class="h4"><?= $categoria->categoria ?></h2>
     </div>
     <!-- Post Items Title End -->
 
@@ -47,15 +47,15 @@
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="#"><?= $value->data ?></a></li>
+                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
+                                        <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>
