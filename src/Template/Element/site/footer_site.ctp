@@ -11,7 +11,7 @@
                         <div class="widget--title">
                             <h2 class="h4">Sobre</h2>
 
-                            <i class="icon fa fa-exclamation"></i>
+                            <i class="icon fa fa-users"></i>
                         </div>
 
                         <!-- About Widget Start -->
