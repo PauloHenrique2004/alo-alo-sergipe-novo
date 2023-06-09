@@ -51,52 +51,55 @@
 
                     </div>
                 </div>
-
-                <div class="post--related ptop--30">
-                    <div class="post--items-title" data-ajax="tab">
-                        <h2 class="h4"><?= $relacionados ? 'Relacionadas' : '' ?></h2>
-                    </div>
-                    <div class="post--items post--items-2" data-ajax-content="outer">
-                        <ul class="nav row" data-ajax-content="inner">
-
-                            <?php foreach ($relacionados as $noticiaRelacionada): ?>
-                                <li class="col-sm-4 pbottom--30">
-                                    <div class="post--item post--layout-1">
-                                        <div class="post--img">
-                                            <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
-                                            <a href="#" class="cat">Fitness</a> <a href="#" class="icon"></a>
-                                            <div class="post--info">
-                                                <ul class="nav meta">
-                                                    <li>
-                                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>">
-                                                            <?= $noticiaRelacionada->noticia->data ?>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <div class="title">
-                                                    <h3 class="h4">
-                                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link">
-                                                            <?= $noticiaRelacionada->noticia->titulo ?>
-                                                        </a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <div class="preloader bg--color-0--b" data-preloader="1">
-                            <div class="preloader--inner"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Main Content End -->
 
             <!-- Main Sidebar Start -->
             <?= $this->element('site/sidebar') ?>
             <!-- Main Sidebar End -->
+        </div>
+
+        <!-- Main Relacionadis Start -->
+        <div class="main--content col-md-12">
+            <div class="post--related ptop--30">
+                <div class="post--items-title" data-ajax="tab">
+                    <h2 class="h4"><?= $relacionados ? 'Relacionadas' : '' ?></h2>
+                </div>
+                <div class="post--items post--items-2" data-ajax-content="outer">
+                    <ul class="nav row" data-ajax-content="inner">
+
+                        <?php foreach ($relacionados as $noticiaRelacionada): ?>
+                            <li class="col-sm-4 pbottom--30">
+                                <div class="post--item post--layout-1">
+                                    <div class="post--img">
+                                        <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
+                                        <a href="#" class="cat">Fitness</a> <a href="#" class="icon"></a>
+                                        <div class="post--info">
+                                            <ul class="nav meta">
+                                                <li>
+                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>">
+                                                        <?= $noticiaRelacionada->noticia->data ?>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="title">
+                                                <h3 class="h4">
+                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link">
+                                                        <?= $noticiaRelacionada->noticia->titulo ?>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <div class="preloader bg--color-0--b" data-preloader="1">
+                        <div class="preloader--inner"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
