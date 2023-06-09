@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <!-- Main Content Start -->
-            <div class="main--content col-md-12" data-sticky-content="true">
+            <div class="main--content col-md-8" data-sticky-content="true">
                 <div class="sticky-content-inner">
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
@@ -41,7 +41,15 @@
 
                     </div>
                 </div>
+            </div>
 
+            <!-- Main Sidebar Start -->
+            <?= $this->element('site/sidebar') ?>
+            <!-- Main Sidebar End -->
+        </div>
+
+        <div class="main--content col-md-12">
+            <div class="main-content--section pbottom--30">
                 <div class="post--related ptop--30">
                     <div class="post--items-title" data-ajax="tab">
                         <h2 class="h4">Veja mais eventos</h2>
@@ -81,11 +89,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Main Content End -->
-
-            <!-- Main Sidebar Start -->
-
-            <!-- Main Sidebar End -->
         </div>
     </div>
 </div>
