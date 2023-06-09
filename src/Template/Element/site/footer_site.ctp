@@ -5,9 +5,9 @@
     <div class="footer--widgets pd--30-0 bg--color-2">
         <div class="container">
             <div class="row AdjustRow">
-                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget">
+                    <div class="widget" style="border-top: solid #fff;">
                         <div class="widget--title">
                             <h2 class="h4">Sobre</h2>
 
@@ -51,9 +51,9 @@
                     <!-- Widget End -->
                 </div>
 
-                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget">
+                    <div class="widget" style="border-top: solid #fff;">
                         <div class="widget--title">
                             <h2 class="h4">Anuncie conosco</h2>
 
@@ -67,6 +67,62 @@
                             </button>
                         </div>
                         <!-- Links Widget End -->
+                    </div>
+                    <!-- Widget End -->
+                </div>
+
+
+                <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
+                    <!-- Widget Start -->
+                    <div class="widget" style="border-top: solid #fff;">
+                        <div class="widget--title">
+                            <h2 class="h4">Siga-nos</h2>
+                            <i class="icon fa fa-share-alt"></i>
+                        </div>
+
+                        <!-- Social Widget Start -->
+                        <?php foreach ($configuracoes as $configuracoe): ?>
+                            <div class="social--widget style--1">
+                                <ul class="nav" style="background: transparent">
+                                    <?php if(!empty($configuracoe->facebook)): ?>
+                                        <li class="facebook">
+                                            <a href="<?= $configuracoe->facebook ?>" target="_blank" style="border: none !important;" class="social-footer">
+                                                <span class="icon"><i class="fa fa-facebook-f"></i></span>
+                                                <span class="count" style="color: #fff !important;">Facebook</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if(!empty($configuracoe->twitter)): ?>
+                                        <li class="twitter">
+                                            <a href="<?= $configuracoe->twitter ?>" target="_blank" class="social-footer">
+                                                <span class="icon"><i class="fa fa-twitter"></i></span>
+                                                <span class="count" style="color: #fff !important;">Twitter</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if(!empty($configuracoe->instagram)): ?>
+                                        <li class="google-plus">
+                                            <a href="<?= $configuracoe->instagram ?>" target="_blank" class="social-footer">
+                                                <span class="icon"><i class="fa fa-instagram"></i></span>
+                                                <span class="count" style="color: #fff !important;">Instagram</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if(!empty($configuracoe->youtube)): ?>
+                                        <li class="youtube">
+                                            <a href="<?= $configuracoe->youtube ?>" target="_blank" style="border: none !important;" class="social-footer">
+                                                <span class="icon"><i class="fa fa-youtube-square"></i></span>
+                                                <span class="count" style="color: #fff !important;">youtube</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                        <?php endforeach; ?>
+                        <!-- Social Widget End -->
                     </div>
                     <!-- Widget End -->
                 </div>
@@ -260,5 +316,10 @@
     });
 </script>
 <?= $this->fetch('script-footer') ?>
+<style>
+    .social-footer:before{
+        border: none !important;
+    }
+</style>
 </body>
 </html>
