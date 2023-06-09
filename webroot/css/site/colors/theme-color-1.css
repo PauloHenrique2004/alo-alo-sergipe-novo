@@ -188,5 +188,5 @@ a:focus,
 .header--menu-links > li.open > a,
 .header--menu-links > li.open > a:hover,
 .header--menu-links > li.open > a:focus {
-    border-bottom-color: #da0000;
+    border-bottom-color: #231f20;
 }
