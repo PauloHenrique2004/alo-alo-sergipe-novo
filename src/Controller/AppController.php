@@ -102,6 +102,8 @@ class AppController extends Controller
 
         $this->noticiaBanner();
 
+        $this->ultimasNoticias();
+
     }
 
 
@@ -175,6 +177,17 @@ class AppController extends Controller
         $this->loadModel('Noticias');
         $noticiaBanner = $this->Noticias->find()->where(['banner_imagem IS NOT NULL','sub_banner' => 0])->limit(1)->order(['Noticias.id' => 'DESC'])->contain(['Categorias'])->first();
         $this->set('noticiaBanner', $noticiaBanner);
+    }
+
+    public function ultimasNoticias(){
+        $this->loadModel('Noticias');
+        $this->loadModel('Categorias');
+        $ultimasNoticias = $this->Noticias->find()->where(['Categorias.exibir_ultimas_noticias' => 1])->order(['Noticias.id' => 'DESC'])->limit(4)->contain(['Categorias']);
+        $this->set('ultimasNoticias', $ultimasNoticias);
+
+
+
+
     }
 
 

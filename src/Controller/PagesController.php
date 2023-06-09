@@ -112,7 +112,6 @@ class PagesController extends AppController
             return $categoria;
         };
 
-        $ultimasNoticias = $this->Noticias->find()->where(['Categorias.exibir_ultimas_noticias' => 1])->order(['Noticias.id' => 'DESC'])->limit(4)->contain(['Categorias']);
 
         $categoriasLayout = $this->Categorias->find()->where(['Categorias.layout IS NOT NULL']);
 
@@ -123,8 +122,6 @@ class PagesController extends AppController
         $descricaoVideos = $this->DescricaoVideos->find();
 
         $title = 'Início';
-
-        $this->set('ultimasNoticias', $ultimasNoticias);
 
         $this->set('categoriasLayout', $categoriasLayout);
 

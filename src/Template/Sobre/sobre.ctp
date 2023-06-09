@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <!-- Main Content Start -->
-            <div class="main--content col-md-12" data-sticky-content="true">
+            <div class="main--content col-md-8" data-sticky-content="true">
                 <div class="sticky-content-inner">
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
@@ -38,6 +38,9 @@
                 </div>
             </div>
             <!-- Main Content End -->
+
+            <?= $this->element('site/sidebar') ?>
+
         </div>
     </div>
 </div>
