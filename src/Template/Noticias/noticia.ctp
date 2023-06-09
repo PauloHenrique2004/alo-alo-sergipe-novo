@@ -72,8 +72,8 @@
                             <li class="col-sm-4 pbottom--30">
                                 <div class="post--item post--layout-1">
                                     <div class="post--img">
-                                        <a href="#" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
-                                        <a href="#" class="cat">Fitness</a> <a href="#" class="icon"></a>
+                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
+                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="cat">Fitness</a> <a href="#" class="icon"></a>
                                         <div class="post--info">
                                             <ul class="nav meta">
                                                 <li>
