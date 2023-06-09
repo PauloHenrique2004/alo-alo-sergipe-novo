@@ -13,7 +13,7 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-1 post--title-larger">
                             <div class="post--img">
-                                <a class="thumb" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>">
+                                <a class="thumb hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>">
                                     <img src="/files/Noticias/banner_imagem/<?= $noticiaBanner->banner_imagem ?>" alt="Banner_topo">
                                 </a>
                                 <a class="cat" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>">
@@ -22,11 +22,11 @@
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href=""> <?= $noticiaBanner->data ?></a></li>
+                                        <li><a class="hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>"> <?= $noticiaBanner->data ?></a></li>
                                     </ul>
                                     <div class="title">
                                         <h2 class="h4">
-                                            <a class="btn-link" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>">
+                                            <a class="btn-link hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticiaBanner->titulo_resumo ?>/<?= $noticiaBanner->id ?>">
                                                 <?= $noticiaBanner->titulo ?>
                                             </a>
                                         </h2>
@@ -51,7 +51,7 @@
                                                 <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                             </a>
 
-                                            <a class="cat" href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>">
+                                            <a class="cat hover-fff" href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>">
                                                 <?= $ultimasNoticia->categoria->categoria ?>
                                             </a>
 
@@ -63,7 +63,7 @@
                                                 <div class="title">
                                                     <h2 class="h4">
                                                         <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $ultimasNoticia->titulo_resumo ?>/<?= $ultimasNoticia->id ?>"
-                                                           class="btn-link"><?= $ultimasNoticia->titulo_resumo ?>
+                                                           class="btn-link hover-fff"><?= $ultimasNoticia->titulo_resumo ?>
                                                         </a>
                                                     </h2>
                                                 </div>

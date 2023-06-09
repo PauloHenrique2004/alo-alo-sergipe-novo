@@ -17,11 +17,11 @@
 
                             <div class="post--info">
                                 <ul class="nav meta">
-                                    <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
+                                    <li><a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                 </ul>
 
                                 <div class="title">
-                                    <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo  ?></a></h3>
+                                    <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link hover-fff"><?= $value->titulo_resumo  ?></a></h3>
                                 </div>
                             </div>
                         </div>
