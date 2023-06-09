@@ -7553,3 +7553,6 @@ body.logged-in .YouTubePopUp-Wrap{
     }
 }
 
+.hover-fff:hover{
+    color: #fff !important;
+}

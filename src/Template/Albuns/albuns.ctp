@@ -20,14 +20,14 @@
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a href="/fotos/<?= $albun->id ?>">
+                                                        <a class="hover-fff" href="/fotos/<?= $albun->id ?>">
                                                             <?= $albun->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link">
+                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link hover-fff">
                                                             <?= $albun->titulo ?>
                                                         </a>
                                                     </h2>
@@ -35,7 +35,7 @@
 
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link">
+                                                        <a href="/fotos/<?= $albun->id ?>" class="btn-link hover-fff">
                                                             Ver álbum
                                                         </a>
                                                     </h2>

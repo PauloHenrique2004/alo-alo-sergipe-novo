@@ -26,6 +26,7 @@
                         <div class="post--info">
                             <ul class="nav meta">
                                 <li><a href="#"><?= $evento->data ?></a></li>
+                                <li><a href="#"><?= $evento->hora ?></a></li>
                             </ul>
 
                             <div class="title">
@@ -65,14 +66,20 @@
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
+                                                        <a class="hover-fff" href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
+                                                            <?= $evento->data ?>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="hover-fff" href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
                                                             <?= $evento->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h3 class="h4">
-                                                        <a href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
+                                                        <a class="hover-fff" href="/evento/<?= $item->titulo ?>/<?= $item->id ?>">
                                                             <?= $item->titulo ?>
                                                         </a>
                                                     </h3>

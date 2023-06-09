@@ -14,20 +14,20 @@
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
                                             <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>">
-                                                <img class="card-img rounded-0" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
+                                                <img class="card-img rounded-0 hover-fff" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
                                             </a>
 
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>">
+                                                        <a class="hover-fff" href="/evento/<?= $value->titulo?>/<?= $value->id ?>">
                                                             <?= $value->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>" class="btn-link">
+                                                        <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>" class="btn-link hover-fff">
                                                             <?= $value->titulo ?>
                                                         </a>
                                                     </h2>

@@ -40,7 +40,7 @@
                                     <?php if(!empty($configuracoe->telefone)): ?>
                                         <li>
                                             <i class="fa fa-phone"></i>
-                                            <a href="tel:+<?= $configuracoe->telefone ?>"> <?= $configuracoe->telefone ?></a>
+                                            <a class="hover-fff" href="tel:+<?= $configuracoe->telefone ?>"> <?= $configuracoe->telefone ?></a>
                                         </li>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
