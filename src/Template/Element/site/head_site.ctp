@@ -13,8 +13,6 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <?= $this->fetch('script-footer') ?>
-
 
     <?php if($_SERVER['REQUEST_URI'] == '/'): ?>
         <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/meta.png' ?>"/>

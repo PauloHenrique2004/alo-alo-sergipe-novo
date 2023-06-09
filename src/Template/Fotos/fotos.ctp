@@ -124,14 +124,16 @@
     }
 </style>
 
-<link rel="stylesheet" media="all" href="/lightbox/lightbox.min.css">
-
-<?php $this->start('script-footer') ?>
-<script type="text/javascript" src="/lightbox/lightbox.min.js"></script>
-<?php $this->end() ?>
 
 <?php $this->start('script-head'); ?>
 <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . "/files/Albuns/imagem/" . $album->imagem   ?>"/>
 <meta property="og:title" content= "<?= $album->titulo  ?>"/>
 <meta property="og:description" content="<?= strip_tags(substr($album->descricao, 0, 60))  ?>"/>
 <?php $this->end(); ?>
+
+
+<link rel="stylesheet" media="all" href="/lightbox/lightbox.min.css">
+
+<?php $this->start('script-footer') ?>
+<script type="text/javascript" src="/lightbox/lightbox.min.js"></script>
+<?php $this->end() ?>
