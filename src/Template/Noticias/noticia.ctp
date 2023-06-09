@@ -77,14 +77,14 @@
                                         <div class="post--info">
                                             <ul class="nav meta">
                                                 <li>
-                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>">
+                                                    <a class="hover-fff" href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>">
                                                         <?= $noticiaRelacionada->noticia->data ?>
                                                     </a>
                                                 </li>
                                             </ul>
                                             <div class="title">
                                                 <h3 class="h4">
-                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link">
+                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
                                                         <?= $noticiaRelacionada->noticia->titulo ?>
                                                     </a>
                                                 </h3>
