@@ -3626,7 +3626,7 @@ div#flickr_badge_wrapper {
 
 .header--navbar .navbar-toggle.collapsed {
     background-color: transparent;
-    border-color: #222;
+    border-color: #fff;
 }
 
 .header--style-6 .navbar-toggle.collapsed {
@@ -3643,7 +3643,7 @@ div#flickr_badge_wrapper {
 }
 
 .header--navbar .navbar-toggle.collapsed .icon-bar {
-    background-color: #222;
+    background-color: #fff;
 }
 
 .header--style-6 .navbar-toggle.collapsed .icon-bar {

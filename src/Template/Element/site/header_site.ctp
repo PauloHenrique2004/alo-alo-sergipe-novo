@@ -90,7 +90,7 @@
 
                 <div id="headerNav" class="navbar-collapse collapse float--left">
                     <!-- Header Menu Links Start -->
-                    <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent">
+                    <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent" style="background: #000 !important;">
                         <?php foreach ($categorias as $categoria): ?>
                             <li><a href="/noticias/<?= $categoria->categoria ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
                         <?php endforeach; ?>
@@ -125,7 +125,7 @@
                     ?>
                     <input type="search" name="pesquisa" placeholder="Pesquisar" class="header--search-control form-control" required>
 
-                    <button type="submit" class="header--search-btn btn"><i class="header--search-icon fa fa-search"></i></button>
+                    <button type="submit" class="header--search-btn btn"><i class="header--search-icon fa fa-search" style="color: #fff"></i></button>
                 </form>
                 <!-- Header Search Form End -->
             </div>
