@@ -3708,6 +3708,7 @@ div#flickr_badge_wrapper {
 .header--menu-links > li > a {
     padding: 18px 15px 19px;
     border-bottom: 2px solid transparent;
+    color: #fff;
 }
 
 .header--style-4 .header--menu-links > li > a {
@@ -7555,4 +7556,11 @@ body.logged-in .YouTubePopUp-Wrap{
 
 .hover-fff:hover{
     color: #fff !important;
+}
+
+
+@media(min-width: 768px) {
+   .top-b{
+       margin-bottom: -32px !important;
+   }
 }

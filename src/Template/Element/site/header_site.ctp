@@ -1,10 +1,10 @@
 <!-- Wrapper Start -->
 <div class="wrapper">
     <!-- Header Section Start -->
-    <header class="header--section header--style-3">
+    <header class="header--section header--style-3" style="background: #000 !important;">
         <?= $this->Flash->render() ?>
         <!-- Header Topbar Start -->
-        <div class="header--topbar bg--color-1">
+        <div class="header--topbar bg--color-1 top-b" style="background: #000 !important;">
             <div class="container">
 
                 <div class="float--right float--xs-none text-xs-center">
@@ -56,7 +56,7 @@
                 <div class="header--logo float--left float--sm-none text-sm-center">
                     <h1 class="h1">
                         <a href="/" class="btn-link">
-                            <img src="/images/logo.png" alt="USNews Logo" style="max-width: 190px;">
+                            <img src="/images/logo-b.png" alt="USNews Logo" style="max-width: 190px;">
                         </a>
                     </h1>
                 </div>
@@ -77,7 +77,7 @@
         <!-- Header Mainbar End -->
 
         <!-- Header Navbar Start -->
-        <div class="header--navbar navbar bd--color-1 bg--color-0" data-trigger="sticky">
+        <div class="header--navbar navbar bd--color-1 bg--color-0" data-trigger="sticky" style="background: #000">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerNav" aria-expanded="false" aria-controls="headerNav">
