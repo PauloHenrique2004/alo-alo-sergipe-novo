@@ -45,6 +45,15 @@
                                 </a>
                             </li>
                         <?php endif; ?>
+
+                        <?php if(!empty($configuracoe->tiktok)): ?>
+                            <li class="youtube">
+                                <a href="<?= $configuracoe->tiktok ?>" target="_blank">
+                                    <span class="icon"><i class="fa fa-ticket"></i></span>
+                                    <span class="count">Tik Tok</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             <?php endforeach; ?>

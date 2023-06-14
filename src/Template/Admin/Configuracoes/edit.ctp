@@ -36,7 +36,8 @@
                 echo $this->Form->control('twitter');
                 echo $this->Form->control('instagram');
                 echo $this->Form->control('youtube');
-                echo $this->Form->control('facebook');
+                echo $this->Form->control('facebook', ['label' => 'Tik Tok']);
+                echo $this->Form->control('tiktok');
                 echo $this->Form->control('sobre_rodape', ['label' => 'Sobre rodapé']);
               ?>
             </div>

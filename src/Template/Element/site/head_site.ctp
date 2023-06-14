@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
 
     <!-- ==== Font Awesome ==== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/site/font-awesome.min.css">
 
     <!-- ==== Bootstrap Framework ==== -->
@@ -46,8 +47,6 @@
 
     <!-- ==== Custom Stylesheet ==== -->
     <link rel="stylesheet" href="/css/site/custom.css">
-
-
 
     <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
     <!--[if lt IE 9]>

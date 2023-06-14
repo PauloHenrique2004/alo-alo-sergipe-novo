@@ -119,6 +119,15 @@
                                             </a>
                                         </li>
                                     <?php endif; ?>
+
+                                    <?php if(!empty($configuracoe->tiktok)): ?>
+                                        <li class="youtube">
+                                            <a href="<?= $configuracoe->tiktok ?>" target="_blank" style="border: none !important;" class="social-footer">
+                                                <span class="icon"><i class="fa fa-tiktok"></i></span>
+                                                <span class="count" style="color: #fff !important;">Tik Tok</span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         <?php endforeach; ?>
@@ -155,6 +164,10 @@
 
                     <?php if(!empty($configuracoe->youtube)): ?>
                         <li><a href=" <?= $configuracoe->youtube ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                    <?php endif; ?>
+
+                    <?php if(!empty($configuracoe->tiktok)): ?>
+                        <li><a href=" <?= $configuracoe->tiktok ?>" target="_blank"><i class="fa fa-times"></i></a></li>
                     <?php endif; ?>
 
                 <?php endforeach; ?>
@@ -205,13 +218,22 @@
                 </li>
             <?php endif; ?>
 
-        <?php if(!empty($configuracoe->youtube)): ?>
-            <li>
-                <a href="<?= $configuracoe->youtube ?>" target="_blank">
-                    <i class="fa fa-youtube-play"></i>
-                    <span>Siga-nos no Youtube</span>
-                </a>
-            </li>
+            <?php if(!empty($configuracoe->youtube)): ?>
+                <li>
+                    <a href="<?= $configuracoe->youtube ?>" target="_blank">
+                        <i class="fa fa-youtube-play"></i>
+                        <span>Siga-nos no Youtube</span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
+            <?php if(!empty($configuracoe->tiktok)): ?>
+                <li>
+                    <a href="<?= $configuracoe->tiktok ?>" target="_blank" class="tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                        <span class="spn-tik-tok">Siga-nos no Tik Tok</span>
+                    </a>
+                </li>
             <?php endif; ?>
 
         <?php endforeach; ?>
@@ -244,7 +266,6 @@
                         </div>
                         <button type="submit" class="btn btn-lg btn-block btn-default active" style="border-color: #ffcb02 !important;">Enviar</button>
                         <?= $this->Flash->render('anuncie') ?>
-                        <!--                        <div class="status"></div>-->
                         <?= $this->Form->end() ?>
                     </div>
                 </div>
@@ -316,10 +337,12 @@
     });
 </script>
 <?= $this->fetch('script-footer') ?>
+
 <style>
     .social-footer:before{
         border: none !important;
     }
 </style>
+
 </body>
 </html>

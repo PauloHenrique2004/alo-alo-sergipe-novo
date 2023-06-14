@@ -41,6 +41,14 @@
                                 </li>
                             <?php endif; ?>
 
+                            <?php if(!empty($configuracoe->tiktok)): ?>
+                                <li>
+                                    <a href="<?= $configuracoe->tiktok ?>" target="_blank">
+                                        <i class="fa fa-ticket"></i>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+
                         <?php endforeach; ?>
                     </ul>
                     <!-- Header Topbar Social End -->

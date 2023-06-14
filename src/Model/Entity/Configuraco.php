@@ -37,6 +37,7 @@ class Configuraco extends Entity
         'instagram' => true,
         'youtube' => true,
         'facebook' => true,
+        'tiktok' => true,
         'sobre_rodape' => true
     ];
 }
