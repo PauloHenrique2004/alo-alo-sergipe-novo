@@ -44,7 +44,7 @@
                             <?php if(!empty($configuracoe->tiktok)): ?>
                                 <li>
                                     <a href="<?= $configuracoe->tiktok ?>" target="_blank">
-                                        <i class="fa fa-ticket"></i>
+                                        <i class="fa-brands fa-tiktok"></i>
                                     </a>
                                 </li>
                             <?php endif; ?>

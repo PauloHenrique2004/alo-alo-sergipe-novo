@@ -167,7 +167,7 @@
                     <?php endif; ?>
 
                     <?php if(!empty($configuracoe->tiktok)): ?>
-                        <li><a href=" <?= $configuracoe->tiktok ?>" target="_blank"><i class="fa fa-times"></i></a></li>
+                        <li><a href=" <?= $configuracoe->tiktok ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
                     <?php endif; ?>
 
                 <?php endforeach; ?>
