@@ -250,7 +250,7 @@ a:active, .btn-link:active {
 }
 
 .nav li a {
-    color: inherit;
+    color: #fff;
 }
 
 .nav li a:focus,
