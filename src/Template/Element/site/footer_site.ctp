@@ -7,45 +7,12 @@
             <div class="row AdjustRow">
                 <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget" style="border-top: solid #fff;">
-                        <div class="widget--title">
-                            <h2 class="h4">Sobre</h2>
-
-                            <i class="icon fa fa-users"></i>
-                        </div>
+                    <div class="widget" style="border-top: solid #fff; padding-top: 19px;">
 
                         <!-- About Widget Start -->
-                        <div class="about--widget">
-                            <div class="content">
-                                <?php foreach ($configuracoes as $configuracoe): ?>
-                                    <p><?= $configuracoe->sobre_rodape ?></p>
-                                <?php endforeach; ?>
-                            </div>
-
-                            <div class="action" style="visibility: hidden">
-                                <a href="#" class="btn-link">Read More<i class="fa flm fa-angle-double-right"></i></a>
-                            </div>
-
-                            <ul class="nav">
-                                <!--                                <li>-->
-                                <!--                                    <i class="fa fa-map"></i>-->
-                                <!--                                    <span>143/C, Fake Street, Melborne, Australia</span>-->
-                                <!--                                </li>-->
-                                <!--                                <li>-->
-                                <!--                                    <i class="fa fa-envelope-o"></i>-->
-                                <!--                                    <a href="mailto:example@example.com">example@example.com</a>-->
-                                <!--                                </li>-->
-
-                                <?php foreach ($configuracoes as $configuracoe): ?>
-                                    <?php if(!empty($configuracoe->telefone)): ?>
-                                        <li>
-                                            <i class="fa fa-phone"></i>
-                                            <a class="hover-fff" href="tel:+<?= $configuracoe->telefone ?>"> <?= $configuracoe->telefone ?></a>
-                                        </li>
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
+                        <a href="/" class="btn-link">
+                            <img src="/images/logo-b.png" alt="USNews Logo" style="max-width: 190px;" data-rjs="2">
+                        </a>
                         <!-- About Widget End -->
                     </div>
                     <!-- Widget End -->
@@ -62,7 +29,7 @@
 
                         <!-- Links Widget Start -->
                         <div class="links--widget">
-                            <button style="border-color: #ffcb02" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
+                            <button style="border-color: #ffcb02; background: #222" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
                                 Anuncie aqui
                             </button>
                         </div>
@@ -142,39 +109,18 @@
 
     <!-- Footer Copyright Start -->
     <div class="footer--copyright bg--color-3">
-        <div class="social--bg bg--color-1"></div>
+        <div class="social--bg bg--color-3"></div>
 
         <div class="container">
             <p class="text float--left">&copy; <?= date('Y') ?>  Alô Alô Sergipe. Todos os direitos reservados.</p>
 
             <ul class="nav social float--right">
-                <?php foreach ($configuracoes as $configuracoe): ?>
-
-                    <?php if(!empty($configuracoe->facebook)): ?>
-                        <li><a href="<?= $configuracoe->facebook ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <?php endif; ?>
-
-                    <?php if(!empty($configuracoe->twitter)): ?>
-                        <li><a href="<?= $configuracoe->twitter ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <?php endif; ?>
-
-                    <?php if(!empty($configuracoe->instagram)): ?>
-                        <li><a href="<?= $configuracoe->instagram ?>"><i class="fa fa-instagram"></i></a></li>
-                    <?php endif; ?>
-
-                    <?php if(!empty($configuracoe->youtube)): ?>
-                        <li><a href=" <?= $configuracoe->youtube ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
-                    <?php endif; ?>
-
-                    <?php if(!empty($configuracoe->tiktok)): ?>
-                        <li><a href=" <?= $configuracoe->tiktok ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                    <?php endif; ?>
-
-                <?php endforeach; ?>
+                <p>Desenvolvido <i style="color: #f27420" class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://wetech.com.br/" target="_blank" style="color: #f27420"> Wetech</a>
+                </p>
             </ul>
 
             <ul class="nav links float--right">
-                <li><a href="/politica-de-privacidade/1">POLÍTICA DE PRIVACIDADE</a></li>
+                <li><a class="hover-fff" href="/politica-de-privacidade/1">POLÍTICA DE PRIVACIDADE</a></li>
             </ul>
         </div>
     </div>

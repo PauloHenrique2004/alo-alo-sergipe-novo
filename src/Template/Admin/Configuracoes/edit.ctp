@@ -38,7 +38,7 @@
                 echo $this->Form->control('youtube');
                 echo $this->Form->control('facebook');
                 echo $this->Form->control('tiktok', ['label' => 'Tik Tok']);
-                echo $this->Form->control('sobre_rodape', ['label' => 'Sobre rodapé']);
+//                echo $this->Form->control('sobre_rodape', ['label' => 'Sobre rodapé']);
               ?>
             </div>
             <!-- /.box-body -->
