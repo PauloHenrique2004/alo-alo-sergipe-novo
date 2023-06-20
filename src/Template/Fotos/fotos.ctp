@@ -75,7 +75,7 @@
                                                 </ul>
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                                        <a href="/files/Fotos/imagem/<?= $foto->imagem ?>">
                                                             <?= $foto->titulo ?>
                                                         </a>
                                                     </h2>
@@ -130,7 +130,6 @@
 <meta property="og:title" content= "<?= $album->titulo  ?>"/>
 <meta property="og:description" content="<?= strip_tags(substr($album->descricao, 0, 60))  ?>"/>
 <?php $this->end(); ?>
-
 
 <link rel="stylesheet" media="all" href="/lightbox/lightbox.min.css">
 
