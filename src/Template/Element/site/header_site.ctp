@@ -64,7 +64,7 @@
                 <div class="header--logo float--left float--sm-none text-sm-center">
                     <h1 class="h1">
                         <a href="/" class="btn-link">
-                            <img src="/images/logo-b.png" alt="USNews Logo" style="max-width: 190px;">
+                            <img src="/images/ba.png" alt="USNews Logo" style="max-width: 190px;">
                         </a>
                     </h1>
                 </div>
@@ -113,7 +113,7 @@
 
                                 <ul class="dropdown-menu">
                                     <?php foreach ($categoriaOutros as $value): ?>
-                                        <li><a href="/noticias/<?= $value->categoria ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
+                                        <li><a style="color: #fff" href="/noticias/<?= $value->categoria ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </li>

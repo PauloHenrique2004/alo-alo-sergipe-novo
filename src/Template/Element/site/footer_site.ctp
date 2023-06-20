@@ -11,7 +11,7 @@
 
                         <!-- About Widget Start -->
                         <a href="/" class="btn-link">
-                            <img src="/images/logo-b.png" alt="USNews Logo" style="max-width: 190px;" data-rjs="2">
+                            <img src="/images/ba.png" alt="USNews Logo" style="max-width: 190px;" data-rjs="2">
                         </a>
                         <!-- About Widget End -->
                     </div>
@@ -122,6 +122,11 @@
             <ul class="nav links float--right">
                 <li><a class="hover-fff" href="/politica-de-privacidade/1">POLÍTICA DE PRIVACIDADE</a></li>
             </ul>
+
+
+                <p class="desenvolvido">Desenvolvido <i style="color: #f27420" class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://wetech.com.br/" target="_blank" style="color: #f27420"> Wetech</a>
+                </p>
+
         </div>
     </div>
     <!-- Footer Copyright End -->
@@ -382,6 +387,19 @@
             width: 100%;
             margin: 15px 0 0;
             height: auto;
+        }
+    }
+
+    .desenvolvido{
+        display: none;
+        margin-top: -25px;
+        margin-bottom: 20px !important;
+        margin-left: -8%;
+    }
+
+    @media(max-width: 480px){
+        .desenvolvido{
+            display: block;
         }
     }
 

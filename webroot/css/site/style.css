@@ -253,12 +253,12 @@ a:active, .btn-link:active {
     color: inherit;
 }
 
-@media(max-width: 768px) {
-    .nav li a {
-        color: #fff !important;
-    }
+/*@media(max-width: 768px) {*/
+/*    .nav li a {*/
+/*        color: #fff !important;*/
+/*    }*/
 
-}
+/*}*/
 
 .nav li a:focus,
 .nav li.active > a:focus,
