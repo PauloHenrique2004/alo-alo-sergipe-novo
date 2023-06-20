@@ -58,7 +58,7 @@
 
 <!-- Preloader Start -->
 <div id="preloader">
-    <div class="preloader bg--color-1--b" data-preloader="1">
+    <div class="preloader bg--color-1--b" data-preloader="1"  style="background: #000 !important;" >
         <div class="preloader--inner"></div>
     </div>
 </div>

@@ -118,7 +118,7 @@ a:focus,
 #backToTop a:hover,
 .header--navbar .navbar-collapse:before,
 .feature--item .icon {
-    background-color: #ffcb02;
+    background-color: #000;
 }
 
 ::-moz-selection {
