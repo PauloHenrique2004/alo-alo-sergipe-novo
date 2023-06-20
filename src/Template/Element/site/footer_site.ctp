@@ -395,6 +395,7 @@
         margin-top: -25px;
         margin-bottom: 20px !important;
         margin-left: -8%;
+        text-align: center !important;
     }
 
     @media(max-width: 480px){
