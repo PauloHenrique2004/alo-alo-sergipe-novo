@@ -7,7 +7,7 @@
             <div class="row AdjustRow">
                 <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget" style="border-top: solid #fff; padding-top: 19px;">
+                    <div class="widget w-footer" style="border-top: solid #fff; padding-top: 19px;">
 
                         <!-- About Widget Start -->
                         <a href="/" class="btn-link">
@@ -29,7 +29,7 @@
 
                         <!-- Links Widget Start -->
                         <div class="links--widget">
-                            <button style="border-color: #ffcb02; background: #222" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
+                            <button style="border-color: #ffcb02; background: #ffcb02; color: #000" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
                                 Anuncie aqui
                             </button>
                         </div>
@@ -402,6 +402,13 @@
             display: block;
         }
     }
+
+    @media(max-width: 480px){
+        .w-footer{
+            text-align: center;
+        }
+    }
+
 
 </style>
 
