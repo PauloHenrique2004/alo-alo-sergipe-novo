@@ -325,17 +325,6 @@
 
 
 
-    // VERIFICAR SE O SPLASH JÁ FOI EXEBIDO, SE SIM NÃO EXIBE MAIS
-    if (!localStorage.getItem('splashShown')) {
-        // Mostra o splash
-        document.getElementById('preloader').style.display = 'block';
-
-        // Define a flag indicando que o splash foi exibido
-        localStorage.setItem('splashShown', 'true');
-    }else{
-        document.getElementById('preloader').style.display = 'none';
-    }
-
 </script>
 <?= $this->fetch('script-footer') ?>
 
