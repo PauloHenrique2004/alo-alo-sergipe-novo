@@ -24,7 +24,7 @@
                                 <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
                             </ul>
 
-                            <div class="title">
+                            <div class="title" style="min-height: 90px">
                                 <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
                             </div>
                         </div>
