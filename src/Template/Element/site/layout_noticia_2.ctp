@@ -61,8 +61,8 @@
                                         <li><a href="#"><?= $value->data ?></a></li>
                                     </ul>
 
-                                    <div class="title" style="min-height: 90px">
-                                        <h3 class="h4">
+                                    <div class="title">
+                                        <h3 class="h4" style="min-height: 90px;">
                                             <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link">
                                                 <?= $value->titulo_resumo ?>
                                             </a>
