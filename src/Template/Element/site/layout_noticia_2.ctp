@@ -25,7 +25,7 @@
                             </ul>
 
                             <div class="title">
-                                <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
+                                <h3 class="h4" style="min-height: 90px"><a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?></a></h3>
                             </div>
                         </div>
                     </div>
