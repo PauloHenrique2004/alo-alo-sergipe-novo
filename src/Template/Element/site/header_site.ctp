@@ -113,7 +113,7 @@
 
                                 <ul class="dropdown-menu">
                                     <?php foreach ($categoriaOutros as $value): ?>
-                                        <li><a style="color: #fff" href="/noticias/<?= $value->categoria ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
+                                        <li><a href="/noticias/<?= $value->categoria ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </li>
