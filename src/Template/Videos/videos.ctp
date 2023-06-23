@@ -16,7 +16,7 @@
                 <div class="row">
                     <?php foreach ($videos as $value): ?>
                     <div class="col-md-4">
-                            <img style="width: -webkit-fill-available; cursor: pointer" src="https://i.ytimg.com/vi/<?= $value->link ?>/hqdefault.jpg" class="play-youtube" data-video="<?= $value->link ?>">
+                            <img style="width: -webkit-fill-available; cursor: pointer; object-fit: cover; height: 200px" src="https://i.ytimg.com/vi/<?= $value->link ?>/hqdefault.jpg" class="play-youtube" data-video="<?= $value->link ?>">
 
                         <div class="post--info" style="margin-bottom: 30px;">
                             <div class="title">
