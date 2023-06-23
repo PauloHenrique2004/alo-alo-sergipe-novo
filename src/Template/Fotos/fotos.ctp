@@ -64,7 +64,7 @@
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip" class="img-galeria">
                                                 <img class="card-img rounded-0" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
                                             </a>
                                             <div class="post--info">
@@ -121,6 +121,20 @@
 
     .ti-calendar:before {
         margin-right: -1px;
+    }
+
+    .img-galeria{
+        height: 240px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    @media(max-width: 480px){
+        .img-galeria{
+            width: -webkit-fill-available;
+            height: 240px;
+            object-fit: cover;
+        }
     }
 </style>
 
