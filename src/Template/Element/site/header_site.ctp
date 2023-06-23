@@ -103,7 +103,7 @@
                             <li><a href="/noticias/<?= $categoria->categoria ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
                         <?php endforeach; ?>
                         <li><a href="/albuns">Galerias</a></li>
-                        <li><a href="/videos">Alô Alô TV</a></li>
+                        <li><a href="/alo-alo-tv">Alô Alô TV</a></li>
                         <li><a href="/agenda">Agenda</a></li>
                         <li><a href="/sobre/1">Sobre nós</a></li>
 

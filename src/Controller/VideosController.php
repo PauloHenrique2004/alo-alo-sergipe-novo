@@ -12,7 +12,7 @@ class VideosController extends AppController
         ];
         $this->viewBuilder()->setLayout('site');
         $videos = $this->paginate($this->Videos->find()->order(['id' => 'Desc']));
-        $title = 'Videos';
+        $title = 'alÔ alÔ TV';
         $this->set(compact('videos','title'));
 
     }

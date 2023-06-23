@@ -49,7 +49,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/academia/:id', ['controller' => 'Academias', 'action' => 'academia'])->setPass(['id']);
     $routes->connect('/vantagens', ['controller' => 'Vantagens', 'action' => 'vantagens']);
 //    $routes->connect('/blog', ['controller' => 'Blogs', 'action' => 'noticias']);
-    $routes->connect('/videos', ['controller' => 'Videos', 'action' => 'videos']);
+    $routes->connect('/alo-alo-tv', ['controller' => 'Videos', 'action' => 'videos']);
 //    $routes->connect('/post/:id', ['controller' => 'Blogs', 'action' => 'detalhes'])->setPass(['id']);
     $routes->connect('/albuns', ['controller' => 'Albuns', 'action' => 'albuns']);
     $routes->connect('/fotos/:albun_id', ['controller' => 'Fotos', 'action' => 'fotos'])->setPass(['albun_id']);

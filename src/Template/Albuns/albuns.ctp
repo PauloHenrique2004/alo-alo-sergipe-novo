@@ -14,7 +14,7 @@
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
                                             <a href="/fotos/<?= $albun->id ?>">
-                                                <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $albun->imagem ?>" alt="capa">
+                                                <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $albun->imagem ?>" alt="capa" style="height: 240px; object-fit: cover; width: 100%;">
                                             </a>
 
                                             <div class="post--info">
