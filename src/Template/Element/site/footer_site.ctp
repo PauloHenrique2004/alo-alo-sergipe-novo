@@ -211,7 +211,7 @@
                         <input type="text" name="nome" placeholder="Nome" class="form-control" autocomplete="off" required="" aria-required="true">
                         <input type="text" name="tel" placeholder="Telefone" class="form-control" autocomplete="off" required="" aria-required="true">
                         <input type="email" name="email" placeholder="email" class="form-control" autocomplete="off" required="" aria-required="true">
-                        <textarea style="width: -webkit-fill-available; margin-top: 20px;" class="single-textarea input-anuncie" name="mensagem" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mensagem" required=""></textarea>
+                        <textarea style="width: -webkit-fill-available; margin-top: 20px;background: #eee; border: none;" class="single-textarea input-anuncie" name="mensagem" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mensagem" required=""></textarea>
                         <div class="recaptcha recaptcha-anuncie" style="justify-content: center; margin-bottom: 20px; margin-top: 20px;">
                             <?= $this->Recaptcha->display() ?>
                         </div>
