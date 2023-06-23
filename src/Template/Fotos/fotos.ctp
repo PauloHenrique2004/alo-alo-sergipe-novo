@@ -19,7 +19,7 @@
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
                         <div class="post--img">
-                            <img style="width: -webkit-fill-available;" src="/files/Albuns/imagem/<?= $album->imagem ?>" alt="">
+                            <img style="width: -webkit-fill-available;" src="/files/Albuns/imagem/<?= $album->imagem ?>" alt="" class="img-galeria">
                         </div>
 
                         <div class="post--info">
@@ -64,8 +64,8 @@
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip" class="img-galeria">
-                                                <img class="card-img rounded-0" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
+                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                                <img class="card-img rounded-0 img-galeria-2" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
                                             </a>
                                             <div class="post--info">
                                                 <ul class="nav meta">
@@ -124,18 +124,23 @@
     }
 
     .img-galeria{
+        height: 500px;
+        object-fit: cover;
+    }
+
+    @media(max-width: 480px){
+        .img-galeria{
+            height: 240px;
+            object-fit: cover;
+        }
+    }
+
+    .img-galeria-2{
         height: 240px;
         object-fit: cover;
         width: 100%;
     }
 
-    @media(max-width: 480px){
-        .img-galeria{
-            width: -webkit-fill-available;
-            height: 240px;
-            object-fit: cover;
-        }
-    }
 </style>
 
 
