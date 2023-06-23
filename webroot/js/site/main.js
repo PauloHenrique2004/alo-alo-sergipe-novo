@@ -37,7 +37,7 @@ Author URI  : https://themeforest.net/user/themelooks
         /* ------------------------------------------------------------------------- *
          * RETINAJS
          * ------------------------------------------------------------------------- */
-        $('img').attr('data-rjs', 2);
+        $('img:not(.play-youtube)').attr('data-rjs', 2);
 
         retinajs();
 
