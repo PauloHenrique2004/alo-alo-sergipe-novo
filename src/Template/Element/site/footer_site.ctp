@@ -54,7 +54,7 @@
                                     <?php if(!empty($configuracoe->facebook)): ?>
                                         <li class="facebook">
                                             <a href="<?= $configuracoe->facebook ?>" target="_blank" style="border: none !important;" class="social-footer">
-                                                <span class="icon"><i class="fa fa-facebook-f"></i></span>
+                                                <span class="icon" style="border-color:#fff"><i class="fa fa-facebook-f" style="color:#fff"></i></span>
                                                 <span class="count" style="color: #fff !important;">Facebook</span>
                                             </a>
                                         </li>
@@ -63,7 +63,7 @@
                                     <?php if(!empty($configuracoe->twitter)): ?>
                                         <li class="twitter">
                                             <a href="<?= $configuracoe->twitter ?>" target="_blank" class="social-footer">
-                                                <span class="icon"><i class="fa fa-twitter"></i></span>
+                                                <span class="icon" style="border-color:#fff"><i class="fa fa-twitter" style="color:#fff"></i></span>
                                                 <span class="count" style="color: #fff !important;">Twitter</span>
                                             </a>
                                         </li>
@@ -72,7 +72,7 @@
                                     <?php if(!empty($configuracoe->instagram)): ?>
                                         <li class="google-plus">
                                             <a href="<?= $configuracoe->instagram ?>" target="_blank" class="social-footer">
-                                                <span class="icon"><i class="fa fa-instagram"></i></span>
+                                                <span class="icon" style="border-color:#fff"><i class="fa fa-instagram" style="color: #fff"></i></span>
                                                 <span class="count" style="color: #fff !important;">Instagram</span>
                                             </a>
                                         </li>
@@ -81,7 +81,7 @@
                                     <?php if(!empty($configuracoe->youtube)): ?>
                                         <li class="youtube">
                                             <a href="<?= $configuracoe->youtube ?>" target="_blank" style="border: none !important;" class="social-footer">
-                                                <span class="icon"><i class="fa fa-youtube-square"></i></span>
+                                                <span class="icon" style="border-color:#fff"><i class="fa fa-youtube-square" style="color:#fff"></i></span>
                                                 <span class="count" style="color: #fff !important;">youtube</span>
                                             </a>
                                         </li>
@@ -90,7 +90,7 @@
                                     <?php if(!empty($configuracoe->tiktok)): ?>
                                         <li class="youtube">
                                             <a href="<?= $configuracoe->tiktok ?>" target="_blank" style="border: none !important;" class="social-footer">
-                                                <span class="icon"><i class="fa fa-tiktok"></i></span>
+                                                <span class="icon" style="border-color:#fff"><i class="fa fa-tiktok" style="color:#fff"></i></span>
                                                 <span class="count" style="color: #fff !important;">Tik Tok</span>
                                             </a>
                                         </li>

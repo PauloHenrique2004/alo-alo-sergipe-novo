@@ -2445,7 +2445,7 @@ body.boxed > .wrapper {
 .social--widget.style--5 .nav > li.facebook > a:before,
 #stickySocial ul.nav > li > a:hover > .fa-facebook,
 #stickySocial ul.nav > li > a > .fa-facebook + span {
-    background-color: #3b5998;
+    background-color: #111;
 }
 
 .social--widget.style--1 .nav > li.facebook > a > span.icon,
@@ -2480,7 +2480,7 @@ body.boxed > .wrapper {
 .social--widget.style--5 .nav > li.twitter > a:before,
 #stickySocial ul.nav > li > a:hover > .fa-twitter,
 #stickySocial ul.nav > li > a > .fa-twitter + span {
-    background-color: #00aced;
+    background-color: #111;
 }
 
 .social--widget.style--1 .nav > li.twitter > a > span.icon,
@@ -2515,7 +2515,7 @@ body.boxed > .wrapper {
 .social--widget.style--5 .nav > li.google-plus > a:before,
 #stickySocial ul.nav > li > a:hover > .fa-google-plus,
 #stickySocial ul.nav > li > a > .fa-google-plus + span {
-    background-color: #d34836;
+    background-color: #111;
 }
 
 .social--widget.style--1 .nav > li.google-plus > a > span.icon,
@@ -2620,7 +2620,7 @@ body.boxed > .wrapper {
 .social--widget.style--5 .nav > li.youtube > a:before,
 #stickySocial ul.nav > li > a:hover > .fa-youtube-play,
 #stickySocial ul.nav > li > a > .fa-youtube-play + span {
-    background-color: #bb0000;
+    background-color: #111;
 }
 
 .social--widget.style--1 .nav > li.youtube > a > span.icon,
