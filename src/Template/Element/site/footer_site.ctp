@@ -7,7 +7,7 @@
             <div class="row AdjustRow">
                 <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget w-footer" style="border-top: solid #fff; padding-top: 19px;">
+                    <div class="widget w-footer">
 
                         <!-- About Widget Start -->
                         <a href="/" class="btn-link">
@@ -20,7 +20,7 @@
 
                 <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget" style="border-top: solid #fff;">
+                    <div class="widget" style="border-top: solid #fff 1px;">
                         <div class="widget--title">
                             <h2 class="h4">Anuncie conosco</h2>
 
@@ -29,8 +29,8 @@
 
                         <!-- Links Widget Start -->
                         <div class="links--widget">
-                            <button style="border-color: #ffcb02; background: #ffcb02; color: #000" type="submit" class="btn btn-lg btn-block btn-primary"  data-toggle="modal" data-target="#anuncie">
-                                Anuncie aqui
+                            <button style="border-color: #ffcb02; background: #ffcb02; color: #000; font-size: 23px;" type="submit" class="btn btn-lg btn-block btn-primary btn-footer-m"  data-toggle="modal" data-target="#anuncie">
+                                ANUNCIE AQUI
                             </button>
                         </div>
                         <!-- Links Widget End -->
@@ -41,7 +41,7 @@
 
                 <div class="col-md-4 col-xs-4 col-xxs-12 ptop--30 pbottom--30">
                     <!-- Widget Start -->
-                    <div class="widget" style="border-top: solid #fff;">
+                    <div class="widget" style="border-top: solid #fff 1px;">
                         <div class="widget--title">
                             <h2 class="h4">Siga-nos</h2>
                             <i class="icon fa fa-share-alt"></i>
@@ -406,11 +406,26 @@
         }
     }
 
+    .w-footer{
+        border-top: solid #fff 1px;
+        padding-top: 19px
+    }
+
     @media(max-width: 480px){
         .w-footer{
             text-align: center;
+            border: none;
         }
     }
+
+    @media(max-width: 480px){
+        .btn-footer-m{
+            margin-top: 19px;
+        }
+    }
+
+
+
 
 
 </style>
