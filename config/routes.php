@@ -53,7 +53,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/alo-alo-tv', ['controller' => 'Videos', 'action' => 'videos']);
 //    $routes->connect('/post/:id', ['controller' => 'Blogs', 'action' => 'detalhes'])->setPass(['id']);
     $routes->connect('/albuns', ['controller' => 'Albuns', 'action' => 'albuns']);
-    $routes->connect('/fotos/:albun_id', ['controller' => 'Fotos', 'action' => 'fotos'])->setPass(['albun_id']);
+    $routes->connect('/fotos/:titulo/:albun_id', ['controller' => 'Fotos', 'action' => 'fotos'])->setPass(['titulo','albun_id']);
     $routes->connect('/agenda', ['controller' => 'Eventos', 'action' => 'agenda']);
     $routes->connect('/evento/:titulo/:id', ['controller' => 'Eventos', 'action' => 'evento'])->setPass(['titulo','id']);
     $routes->connect('/politica-de-privacidade/:id', ['controller' => 'Privacidades', 'action' => 'privacidade'])->setPass(['id']);

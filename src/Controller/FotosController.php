@@ -16,7 +16,7 @@ class FotosController extends AppController
 
 
 
-    public function fotos($albun_id = null){
+    public function fotos($titulo, $albun_id = null){
 
         $this->loadModel('Albuns');
         $album =  $this->Albuns->get($albun_id);
@@ -24,7 +24,7 @@ class FotosController extends AppController
         $this->paginate = [
             'limit'=> 6,
         ];
-
+        
         $this->viewBuilder()->setLayout('site');
         $fotos =  $this->paginate($this->Fotos->find()->where(['albun_id' => $albun_id]));
         $title = $album->titulo;

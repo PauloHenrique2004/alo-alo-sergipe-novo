@@ -9,25 +9,27 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($agenda as $value): ?>
+                                <?php $nome = Cake\Utility\Text::slug($value->titulo); ?>
+
                                 <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>">
+                                            <a href="/evento/<?= $nome?>/<?= $value->id ?>">
                                                 <img class="card-img rounded-0 hover-fff" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
                                             </a>
 
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a class="hover-fff" href="/evento/<?= $value->titulo?>/<?= $value->id ?>">
+                                                        <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $value->id ?>">
                                                             <?= $value->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/evento/<?= $value->titulo?>/<?= $value->id ?>" class="btn-link hover-fff">
+                                                        <a href="/evento/<?= $nome ?>/<?= $value->id ?>" class="btn-link hover-fff">
                                                             <?= $value->titulo ?>
                                                         </a>
                                                     </h2>
