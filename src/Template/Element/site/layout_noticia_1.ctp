@@ -14,15 +14,17 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-1">
                     <div class="post--img">
-                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
-                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
+                        <?php $nome = Cake\Utility\Text::slug($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo); ?>
+
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
                             <?= $categoria->categoria ?>
                         </a>
 
                         <div class="post--info">
                             <ul class="nav meta">
                                 <li>
-                                    <a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>">
+                                    <a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>">
                                         <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?>
                                     </a>
                                 </li>
@@ -30,7 +32,7 @@
 
                             <div class="title">
                                 <h3 class="h4">
-                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"
+                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"
                                        class="btn-link hover-fff">
                                         <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?>
                                     </a>
@@ -48,6 +50,8 @@
             </li>
 
             <?php foreach ($categoriaNoticiasLayout1($categoria->id) as $value):?>
+                <?php $nome = Cake\Utility\Text::slug($value->titulo_resumo); ?>
+
 
                 <?php
                 foreach ($categoriaNoticiasLayout1($categoria->id) as $item) {
@@ -56,19 +60,21 @@
                 }
                 ?>
 
+                <?php $nome = Cake\Utility\Text::slug($value->titulo_resumo); ?>
+
                 <?php if($value != $primeiraPosicao): ?>
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
+                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
+                                        <h3 class="h4" style="min-height: 90px"><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -95,6 +101,8 @@
 </div>
 
 <?php if($proximaCategoria): ?>
+    <?php $nome = Cake\Utility\Text::slug($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo); ?>
+
 <div class="col-md-6 ptop--30 pbottom--30">
     <!-- Post Items Title Start -->
     <div class="post--items-title" data-ajax="tab">
@@ -109,19 +117,19 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-1">
                     <div class="post--img">
-                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
+                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
                             <img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->imagem ?>" alt="">
                         </a>
-                        <a  href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat hover-fff"><?= $proximaCategoria->categoria ?></a>
+                        <a  href="/noticia/<?= $categoria->categoria ?>/<?= $nome?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat hover-fff"><?= $proximaCategoria->categoria ?></a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->data ?></a></li>
+                                <li><a class="hover-fff" href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->data ?></a></li>
                             </ul>
 
                             <div class="title">
                                 <h3 class="h4">
-                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link hover-fff"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->titulo_resumo  ?>
+                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link hover-fff"><?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->titulo_resumo  ?>
                                     </a>
                                 </h3>
                             </div>
@@ -138,6 +146,8 @@
 
             <?php foreach ($categoriaNoticiasLayout1($proximaCategoria->id) as $value):?>
 
+
+
                 <?php
                 foreach ($categoriaNoticiasLayout1($proximaCategoria->id) as $item) {
                     $primeiraPosicao = current($categoriaNoticiasLayout1($proximaCategoria->id));
@@ -145,19 +155,21 @@
                 }
                 ?>
 
+                <?php $nome = $value->titulo_resumo; ?>
+
                 <?php if($value != $primeiraPosicao): ?>
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
+                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>"><?= $value->data ?></a></li>
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4"><a href="/noticia/<?= $categoria->categoria ?>/<?= $value->titulo_resumo ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
+                                        <h3 class="h4" style="min-height: 90px"><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $value->id ?>" class="btn-link"><?= $value->titulo_resumo ?></a></h3>
                                     </div>
                                 </div>
                             </div>

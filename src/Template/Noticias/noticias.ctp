@@ -9,22 +9,23 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($noticias as $noticia): ?>
+                            <?php $nome = Cake\Utility\Text::slug($noticia->titulo_resumo); ?>
                             <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                 <!-- Post Item Start -->
                                 <div class="post--item post--layout-1 post--title-large">
                                     <div class="post--img">
-                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="thumb">
+                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="thumb">
                                             <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
                                         </a>
-                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="cat"><?= $nomeCategoria->categoria ?></a>
+                                        <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="cat"><?= $nomeCategoria->categoria ?></a>
 
                                         <div class="post--info">
                                             <ul class="nav meta">
-                                                <li><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>"><?= $noticia->data ?></a></li>
+                                                <li><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>"><?= $noticia->data ?></a></li>
                                             </ul>
 
                                             <div class="title">
-                                                <h2 class="h4 descN"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
+                                                <h2 class="h4 descN"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
                                             </div>
                                         </div>
                                     </div>

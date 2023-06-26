@@ -8,9 +8,11 @@
         <div class="news-updates--list" data-marquee="true">
             <ul class="nav">
                 <?php foreach ($ultimasNoticiasTopo as $item): ?>
+                    <?php $nome = Cake\Utility\Text::slug($item->titulo_resumo); ?>
+
                     <li>
                         <h3 class="h3">
-                            <a href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $item->titulo_resumo ?>/<?= $item->id ?>">
+                            <a href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $nome ?>/<?= $item->id ?>">
                                 <?= strlen($item->titulo_resumo) > 180 ? strip_tags(substr($item->titulo_resumo,  0, 180))."..." : strip_tags($item->titulo_resumo) ?>
                             </a>
                         </h3>
