@@ -15,7 +15,7 @@
                                 <div class="post--item post--layout-1 post--title-large">
                                     <div class="post--img">
                                         <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="thumb">
-                                            <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
+                                            <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="" style="height: 244px; object-fit: cover;">
                                         </a>
                                         <a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="cat"><?= $nomeCategoria->categoria ?></a>
 
