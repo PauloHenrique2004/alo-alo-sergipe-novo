@@ -9,7 +9,9 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($noticias as $noticia): ?>
-                            <?php $nome = Cake\Utility\Text::slug($noticia->titulo_resumo); ?>
+                            <?php $nome = Cake\Utility\Text::slug(strtolower($noticia->titulo_resumo));
+
+                            ?>
                             <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                 <!-- Post Item Start -->
                                 <div class="post--item post--layout-1 post--title-large">

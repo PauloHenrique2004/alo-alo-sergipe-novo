@@ -105,25 +105,25 @@
                 <ul class="nav" data-ajax-content="inner">
 
                     <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
-                        <?php $nome = Cake\Utility\Text::slug($ultimasNoticia->titulo_resumo); ?>
+                        <?php $nome = Cake\Utility\Text::slug(strtolower($ultimasNoticia->titulo_resumo)); ?>
 
                         <li>
                             <!-- Post Item Start -->
                             <div class="post--item post--layout-3">
                                 <div class="post--img">
-                                    <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
+                                    <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
                                         <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                     </a>
 
                                     <div class="post--info">
                                         <ul class="nav meta">
-                                            <li><a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->categoria->categoria ?></a></li>
-                                            <li><a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->data ?></a></li>
+                                            <li><a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->categoria->categoria ?></a></li>
+                                            <li><a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->data ?></a></li>
                                         </ul>
 
                                         <div class="title">
                                             <h3 class="h4">
-                                                <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
+                                                <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
                                                     <?= $ultimasNoticia->titulo_resumo ?>
                                                 </a>
                                             </h3>

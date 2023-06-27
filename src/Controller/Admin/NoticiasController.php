@@ -49,7 +49,7 @@ class NoticiasController extends AdminController
             $query = "'%" . $searchTerm . "%'";
             $where[] = "(Noticias.titulo LIKE " . $query . "OR Noticias.titulo_resumo LIKE" . $query . ')';
         }
-        
+
         if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
             $where['Noticias.categoria_id'] = $_GET['categoria'];
         }

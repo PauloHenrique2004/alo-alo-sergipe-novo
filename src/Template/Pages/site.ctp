@@ -13,21 +13,21 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-1 post--title-larger">
                             <div class="post--img">
-                                <?php $nome = Cake\Utility\Text::slug($noticiaBanner->titulo_resumo); ?>
-                                <a class="thumb hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
+                                <?php $nome = Cake\Utility\Text::slug(strtolower($noticiaBanner->titulo_resumo)); ?>
+                                <a class="thumb hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
                                     <img src="/files/Noticias/banner_imagem/<?= $noticiaBanner->banner_imagem ?>" alt="Banner_topo">
                                 </a>
-                                <a class="cat" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $nome?>/<?= $noticiaBanner->id ?>">
+                                <a class="cat" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria)?>/<?= $nome?>/<?= $noticiaBanner->id ?>">
                                     <?= $noticiaBanner->categoria->categoria ?>
                                 </a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a class="hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>"> <?= $noticiaBanner->data ?></a></li>
+                                        <li><a class="hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>"> <?= $noticiaBanner->data ?></a></li>
                                     </ul>
                                     <div class="title">
                                         <h2 class="h4">
-                                            <a class="btn-link hover-fff" href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
+                                            <a class="btn-link hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
                                                 <?= $noticiaBanner->titulo ?>
                                             </a>
                                         </h2>
@@ -44,17 +44,17 @@
                     <div class="col-md-6">
                         <div class="row gutter--15">
                             <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
-                                <?php $nome = Cake\Utility\Text::slug($ultimasNoticia->titulo_resumo); ?>
+                                <?php $nome = Cake\Utility\Text::slug(strtolower($ultimasNoticia->titulo_resumo)); ?>
 
                                 <div class="col-xs-6 col-xss-12">
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
+                                            <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
                                                 <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                             </a>
 
-                                            <a class="cat hover-fff" href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>">
+                                            <a class="cat hover-fff" href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>">
                                                 <?= $ultimasNoticia->categoria->categoria ?>
                                             </a>
 
@@ -65,7 +65,7 @@
 
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/noticia/<?= $ultimasNoticia->categoria->categoria ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"
+                                                        <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"
                                                            class="btn-link hover-fff"><?= $ultimasNoticia->titulo_resumo ?>
                                                         </a>
                                                     </h2>

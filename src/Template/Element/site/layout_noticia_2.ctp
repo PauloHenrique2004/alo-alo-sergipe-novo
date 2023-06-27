@@ -4,7 +4,8 @@
         <h2 class="h4"><?= $categoria->categoria ?></h2>
     </div>
     <!-- Post Items Title End -->
-    <?php $nome = Cake\Utility\Text::slug($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo); ?>
+
+     <?php $nome = Cake\Utility\Text::slug(strtolower($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo)); ?>
 
     <!-- Post Items Start -->
     <div class="post--items post--items-2" data-ajax-content="outer">
@@ -13,21 +14,21 @@
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-2">
                     <div class="post--img">
-                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
+                        <a href="/noticia/<?= strtolower($categoria->categoria)?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
                             <img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt="">
                         </a>
-                        <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
+                        <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
                             <?= $categoria->categoria ?>
                         </a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
+                                <li><a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
                             </ul>
 
                             <div class="title">
                                 <h3 class="h4" style="min-height: 90px">
-                                    <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link">
+                                    <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link">
                                         <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?>
                                     </a>
                                 </h3>
@@ -47,8 +48,7 @@
                     </li>
                     <?php foreach ($categoriaNoticiasLayout1($categoria->id) as $value):?>
 
-                    <?php $nome2 = Cake\Utility\Text::slug($value->titulo_resumo); ?>
-
+                    <?php $nome2 = Cake\Utility\Text::slug(strtolower($value->titulo_resumo)); ?>
 
                     <?php
                     foreach ($categoriaNoticiasLayout1($categoria->id) as $item) {
@@ -62,11 +62,11 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome2 ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
+                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="/noticia/<?= $categoria->categoria ?>/<?= $nome2 ?>/<?= $value->id ?>">
+                                        <li><a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>">
                                                 <?= $value->data ?>
                                             </a>
                                         </li>
@@ -74,7 +74,7 @@
 
                                     <div class="title">
                                         <h3 class="h4" style="min-height: 90px;">
-                                            <a href="/noticia/<?= $categoria->categoria ?>/<?= $nome2 ?>/<?= $value->id ?>" class="btn-link">
+                                            <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="btn-link">
                                                 <?= $value->titulo_resumo ?>
                                             </a>
                                         </h3>

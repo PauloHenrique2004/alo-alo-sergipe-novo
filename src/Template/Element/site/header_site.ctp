@@ -100,7 +100,7 @@
                     <!-- Header Menu Links Start -->
                     <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent" style="background: #000 !important;">
                         <?php foreach ($categorias as $categoria): ?>
-                            <li><a href="/noticias/<?= $categoria->categoria ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
+                            <li><a href="/noticias/<?= strtolower($categoria->categoria) ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
                         <?php endforeach; ?>
                         <li><a href="/albuns">Galerias</a></li>
                         <li><a href="/alo-alo-tv">Alô Alô TV</a></li>
@@ -113,7 +113,7 @@
 
                                 <ul class="dropdown-menu">
                                     <?php foreach ($categoriaOutros as $value): ?>
-                                        <li><a href="/noticias/<?= $value->categoria ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
+                                        <li><a href="/noticias/<?= strtolower($value->categoria) ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </li>
