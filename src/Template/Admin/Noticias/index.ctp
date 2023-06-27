@@ -50,6 +50,7 @@
             <thead>
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('titulo_resumo') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('capa') ?></th>
               </tr>
             </thead>
@@ -57,6 +58,7 @@
               <?php foreach ($noticias as $noticia): ?>
                 <tr>
                   <td><?= h($noticia->titulo) ?></td>
+                  <td><?= h($noticia->titulo_resumo) ?></td>
                     <td><img style="width: 70px; border-radius: 10px" src="/files/Noticias/imagem/<?= $noticia->imagem ?>"></td>
                   <td class="actions text-right">
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $noticia->id], ['class'=>'btn btn-warning']) ?>

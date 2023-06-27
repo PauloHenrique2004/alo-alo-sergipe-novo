@@ -39,16 +39,22 @@ class NoticiasController extends AdminController
 
         $where = [];
 
-        if (isset($_GET['pesquisa'])) {
-            $query = '"%' . $_GET['pesquisa'] . '%"';
-            $where[] = 'Noticias.titulo LIKE' . $query ;
+//        if (isset($_GET['pesquisa'])) {
+//            $query = '"%' . $_GET['pesquisa'] . '%"';
+//            $where[] = 'Noticias.titulo LIKE' . $query ;
+//        }
+
+        if (isset($_GET['pesquisa']) && !empty($_GET['pesquisa']) ) {
+            $searchTerm = $_GET['pesquisa'];
+            $query = "'%" . $searchTerm . "%'";
+            $where[] = "(Noticias.titulo LIKE " . $query . "OR Noticias.titulo_resumo LIKE" . $query . ')';
+        }
+        
+        if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
+            $where['Noticias.categoria_id'] = $_GET['categoria'];
         }
 
-        if (isset($_GET['categoria'])) {
-            $query = '"%' . $_GET['categoria'] . '%"';
-            $where[] = 'Noticias.categoria_id LIKE' . $query;
-        }
-
+//        var_dump($where); exit();
 
         $noticias = $this->paginate($this->Noticias->find()->where($where));
 
