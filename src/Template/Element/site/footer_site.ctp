@@ -303,7 +303,7 @@
     });
 
 
-    $(document).ready(function() {
+
         function lgpdAceito() {
             return localStorage.getItem('lgpd-aceito') === 'sim';
         }
@@ -321,7 +321,7 @@
             localStorage.setItem('lgpd-aceito', 'sim');
             lgpdElement.css('display', 'none');
         });
-    });
+
 
 
 
