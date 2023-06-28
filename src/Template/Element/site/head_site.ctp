@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,9 @@
     <title><?= $title ?> - alÔ alÔ Sergipe</title>
 
     <!-- ==== Document Meta ==== -->
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="author" content="Wetech">
+    <meta name="description" content="Alô Alô Sergipe é um site de notícias que traz as últimas informações sobre eventos, cultura, política, esportes e muito mais em Sergipe. Fique por dentro de todas as novidades e acontecimentos do estado.">
+    <meta name="keywords" content="Alô Alô Sergipe, notícias Sergipe, eventos Sergipe, cultura Sergipe, política Sergipe, esportes Sergipe">
 
 
     <?php if($_SERVER['REQUEST_URI'] == '/'): ?>
