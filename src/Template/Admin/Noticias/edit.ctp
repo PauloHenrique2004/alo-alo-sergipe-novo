@@ -62,7 +62,7 @@ use Cake\View\Helper\UrlHelper;
                     <?php endif; ?>
                     <div class="col-md-12">
                         <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
-Adiciona a imagem caso queira que a notícia exiba no banner principal , dimensões 1200 x 830px
+Adicionar a imagem caso queira que a notícia exiba no banner principal , dimensões 1200 x 830px
 </span><br>";?>
                     </div>
 
