@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="/css/site/fontawesome-stars-o.min.css">
 
     <!-- ==== Main Stylesheet ==== -->
-    <link rel="stylesheet" href="/css/site/style.css?id=2">
+    <link rel="stylesheet" href="/css/site/style.css?id=3">
 
     <!-- ==== Responsive Stylesheet ==== -->
     <link rel="stylesheet" href="/css/site/responsive-style.css">
