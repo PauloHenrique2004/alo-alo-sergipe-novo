@@ -9,13 +9,13 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($agenda as $value): ?>
-                                <?php $nome = Cake\Utility\Text::slug($value->titulo); ?>
+                                <?php $nome = Cake\Utility\Text::slug(strtolower($value->titulo)); ?>
 
                                 <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/evento/<?= $nome?>/<?= $value->id ?>">
+                                            <a href="/evento/<?= $nome ?>/<?= $value->id ?>">
                                                 <img class="card-img rounded-0 hover-fff" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
                                             </a>
 

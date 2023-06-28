@@ -70,23 +70,25 @@
                     <ul class="nav row" data-ajax-content="inner">
 
                         <?php foreach ($relacionados as $noticiaRelacionada): ?>
+                        <?php $nome = Cake\Utility\Text::slug(strtolower(strtolower($noticiaRelacionada->noticia->titulo_resumo))); ?>
+
                             <li class="col-sm-4 pbottom--30">
                                 <div class="post--item post--layout-1">
                                     <div class="post--img">
-                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
-                                        <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>"
+                                        <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
+                                        <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>"
                                            class="cat"><?= $noticiaRelacionada->noticia->categoria->categoria ?></a> <a href="#" class="icon"></a>
                                         <div class="post--info">
                                             <ul class="nav meta">
                                                 <li>
-                                                    <a class="hover-fff" href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>">
+                                                    <a class="hover-fff" href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>">
                                                         <?= $noticiaRelacionada->noticia->data ?>
                                                     </a>
                                                 </li>
                                             </ul>
                                             <div class="title">
                                                 <h3 class="h4">
-                                                    <a href="/noticia/<?= $noticiaRelacionada->noticia->categoria->categoria ?>/<?= $noticiaRelacionada->noticia->titulo_resumo ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
+                                                    <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
                                                         <?= $noticiaRelacionada->noticia->titulo ?>
                                                     </a>
                                                 </h3>
