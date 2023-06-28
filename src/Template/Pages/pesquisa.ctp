@@ -58,7 +58,7 @@
 
         <?php if (count($pesquisaNoticia) === 0 && count($pesquisaAgenda) === 0): ?>
             <div class="page--title pd--30-0" style="padding-bottom: 56px;">
-                <h2 class="h2"><span style="font-weight: 100;">Não foi possível encontrar conteúdo com o termo</span> <?= $_GET['pesquisa'] ?></h2>
+                <h2 class="h2"><span style="font-weight: 100;">Não foi possível encontrar conteúdo com o termo</span> <?= $_GET['pesquisa'] ?>.</h2>
                 <div class="content"></div>
             </div>
         <?php endif; ?>
