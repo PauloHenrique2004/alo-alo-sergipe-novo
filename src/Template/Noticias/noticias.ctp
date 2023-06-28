@@ -27,7 +27,7 @@
                                             </ul>
 
                                             <div class="title">
-                                                <h2 class="h4 descN"><a href="/noticia/<?= $nomeCategoria->categoria ?>/<?= $nome ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
+                                                <h2 class="h4 descN"><a href="/noticia/<?= strtolower($nomeCategoria->categoria) ?>/<?= $nome ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
                                             </div>
                                         </div>
                                     </div>
