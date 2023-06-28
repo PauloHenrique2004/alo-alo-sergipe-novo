@@ -4695,7 +4695,7 @@ ul.header--menu-links.nav > li.open > a:focus {
 }
 
 .post--item.post--layout-1 .post--img:hover .thumb:before {
-    opacity: 0.9;
+    opacity: 0.7;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 }
 
