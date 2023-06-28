@@ -2,6 +2,7 @@
     <div class="container box_1170" style="text-align: center;">
         <div class="section-top-border">
             <h3 class="mb-30">Pesquisa</h3>
+
             <div class="row">
                 <?php foreach ($pesquisaNoticia as $noticia): ?>
                     <div class="col-md-12">
@@ -41,7 +42,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center">
                     <div class="paginator">
                         <ul class="pagination">
                             <?= $this->Paginator->numbers() ?>
@@ -51,6 +52,16 @@
             </div>
 
         </div>
+
+
+<!--        --><?php //debug($pesquisaNoticia); exit();?>
+
+        <?php if (count($pesquisaNoticia) === 0 && count($pesquisaAgenda) === 0): ?>
+            <div class="page--title pd--30-0" style="padding-bottom: 56px;">
+                <h2 class="h2"><span style="font-weight: 100;">Não foi possível encontrar conteúdo com o termo</span> <?= $_GET['pesquisa'] ?></h2>
+                <div class="content"></div>
+            </div>
+        <?php endif; ?>
 
     </div>
 </div>
@@ -64,6 +75,8 @@
         color: #fff;
         background: #000;
         border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .pagination a{
