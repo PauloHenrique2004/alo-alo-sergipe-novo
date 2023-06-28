@@ -33,7 +33,7 @@ use Cake\View\Helper\UrlHelper;
                     <?php
                     echo $this->Form->control('categoria_id', ['options' => $categorias]);
                     echo $this->Form->control('titulo_resumo', ['required' => true,'label' => 'Título resumo']);
-//                    echo $this->Form->control('uuid');
+                    //                    echo $this->Form->control('uuid');
                     echo $this->Form->control('titulo',['label' => 'Título']);
                     echo $this->Form->control('descricao', ['required' => true]);
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date', 'required' => true,'value' => $noticia->data->i18nFormat('yyyy-MM-dd')]);
@@ -41,7 +41,7 @@ use Cake\View\Helper\UrlHelper;
                     echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa']);?>
                     <div class="col-md-12">
                         <a href="/files/Noticias/imagem/<?= $noticia->imagem ?>" target="_blank">
-                           <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" style="width: 80px;border-radius: 10px; ">
+                            <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" style="width: 80px;border-radius: 10px; ">
                         </a>
                     </div>
 
@@ -56,12 +56,14 @@ use Cake\View\Helper\UrlHelper;
                     <?php if(!empty($noticia->banner_imagem)): ?>
                         <div class="col-md-12">
                             <a href="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" target="_blank">
-                              <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px;border-radius: 10px;">
+                                <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px;border-radius: 10px;">
                             </a>
                         </div>
                     <?php endif; ?>
                     <div class="col-md-12">
-                        <?php echo "<span style='color: red; position: absolute; margin-top: -18px; margin-bottom: 20px;'>Adicionar imagens com as dimensões 1200 x 830px</span><br>";?>
+                        <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
+Adicionar imagem caso queira que seja exibida no banner principal do site , dimensões 1200 x 830px
+</span><br>";?>
                     </div>
 
                     <div class="col-md-12">
@@ -71,7 +73,7 @@ use Cake\View\Helper\UrlHelper;
                     <?php if(!empty($noticia->imagem_visualizacao)): ?>
                         <div class="col-md-12">
                             <a href="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" target="_blank">
-                              <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" style="width: 120px;border-radius: 10px;">
+                                <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" style="width: 120px;border-radius: 10px;">
                             </a>
                         </div>
                     <?php endif; ?>
