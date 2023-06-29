@@ -38,54 +38,56 @@ use Cake\View\Helper\UrlHelper;
                     echo $this->Form->control('descricao', ['required' => true]);
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date', 'required' => true,'value' => $noticia->data->i18nFormat('yyyy-MM-dd')]);
                     echo $this->Form->control('fonte');
-                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa']);?>
-                    <div class="col-md-12">
+
+                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa', 'class' => 'margin-customizada']);?>
+                    <di>
                         <a href="/files/Noticias/imagem/<?= $noticia->imagem ?>" target="_blank">
                             <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" style="width: 80px;border-radius: 10px; ">
                         </a>
-                    </div>
-
-                    <div class="col-md-12">
-                        <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
-                    </div>
-
-                    <div class="col-md-12">
-                        <?php echo $this->Form->control('banner_imagem', ['type' => 'file']);?>
-                    </div>
-
-                    <?php if(!empty($noticia->banner_imagem)): ?>
-                        <div class="col-md-12">
-                            <a href="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" target="_blank">
-                                <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px;border-radius: 10px;">
-                            </a>
-                        </div>
-                    <?php endif; ?>
-                    <div class="col-md-12">
+                    </di>
+                    <div>
                         <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
-Adicionar a imagem caso queira que a notícia exiba no banner principal , dimensões 1200 x 830px
-</span><br>";?>
+                            Adicionar imagens com as dimensões 1920 x 1280px
+                            </span><br>";?>
                     </div>
 
-                    <div class="col-md-12">
+
+                    <div style="margin-bottom: 20px !important; margin-top: 20px">
+                        <?php echo $this->Form->control('banner_imagem', ['type' => 'file']);?>
+                        <?php if(!empty($noticia->banner_imagem)): ?>
+                            <div>
+                                <a href="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" target="_blank">
+                                    <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px;border-radius: 10px;">
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <div>
+                            <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
+                            Adicionar a imagem caso queira que a notícia exiba no banner principal , dimensões 1200 x 830px
+                            </span><br>";?>
+                        </div>
+                    </div>
+
+                    <div>
                         <?php echo $this->Form->control('imagem_visualizacao', ['type' => 'file', ['required' => true]]); ?>
                     </div>
 
                     <?php if(!empty($noticia->imagem_visualizacao)): ?>
-                        <div class="col-md-12">
+                        <div>
                             <a href="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" target="_blank">
                                 <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" style="width: 120px;border-radius: 10px;">
                             </a>
                         </div>
                     <?php endif; ?>
 
-                    <div class="col-md-12" style="margin-bottom: 30px">
+                    <div style="margin-bottom: 30px">
                         <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
                     </div>
 
                     <?php foreach ($noticiaRelacionda as $rel): ?>
                         <div class="noticia-global">
                             <div class="col-md-10">
-                                <div class="form-group input select">
+                                <div class="form-group input select inp-rel">
                                     <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
                                     <select name="noticias_relacionadas_ids[]" class="form-control" id="noticias_relacionadas_ids">
                                         <?php foreach ($noticias as $value): ?>
@@ -105,9 +107,10 @@ Adicionar a imagem caso queira que a notícia exiba no banner principal , dimens
 
                     <span class="add-noticia"></span>
 
-                    <div class="col-md-12">
-                        <button type="button" class="btn btn-warning btn-add-noticia-rel">Adicionar relacionada</button>
+                    <div>
+                        <button type="button" class="btn btn-warning btn-add-noticia-rel" style="width: 100%">Adicionar relacionada</button>
                     </div>
+
                     <!-- /.box-body -->
 
                     <div class="col-md-12" style="text-align: right">
@@ -151,7 +154,7 @@ Adicionar a imagem caso queira que a notícia exiba no banner principal , dimens
         const html = `
           <div class="noticia-global">
             <div class="col-md-10">
-                <div class="form-group input select">
+                <div class="form-group input select inp-rel">
                     <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
                     <select name="noticias_relacionadas_ids[]" class="form-control" id="noticias_relacionadas_ids">
                         <?php foreach ($noticias as $value): ?>
@@ -164,7 +167,7 @@ Adicionar a imagem caso queira que a notícia exiba no banner principal , dimens
             </div>
             <div class="col-md-2 adicionada">
                  <div style="height: 25px"></div>
-                  <button type="button" class="btn-danger btn btn-deletar-vantagem">Remover vantagem</button>
+                  <button type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada</button>
             </div>
           </div>
             `;
@@ -237,4 +240,16 @@ Adicionar a imagem caso queira que a notícia exiba no banner principal , dimens
         margin-top: 20px !important;
         border-top: 1px solid #d2d6de;
     }
+
+    .inp-rel{
+        margin-left: -16px !important;
+    }
+
+    .btn-deletar-vantagem{
+        margin-left: 10px !important;
+    }
+
+    /*.margin-customizada{*/
+    /*    margin-top: 23px !important;*/
+    /*}*/
 </style>

@@ -48,6 +48,11 @@
                             <span style="text-align: justify">
                                 <?= $noticia->descricao ?>
                             </span>
+
+                            <ul class="nav meta">
+                                <li>Fonte: <?= $noticia->fonte ?></li>
+                            </ul>
+
                         </div>
 
                     </div>
