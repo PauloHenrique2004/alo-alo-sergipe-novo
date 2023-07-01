@@ -39,32 +39,44 @@ use Cake\View\Helper\UrlHelper;
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date', 'required' => true,'value' => $noticia->data->i18nFormat('yyyy-MM-dd')]);
                     echo $this->Form->control('fonte');
 
-                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa', 'class' => 'margin-customizada']);?>
-                    <di>
-                        <a href="/files/Noticias/imagem/<?= $noticia->imagem ?>" target="_blank">
-                            <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" style="width: 80px;border-radius: 10px; ">
-                        </a>
-                    </di>
+                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa', 'class' => 'margin-customizada', 'required' => true]);?>
                     <div>
-                        <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
+                        <?php if (!empty($noticia->imagem)): ?>
+                            <div style="margin-bottom: 10px">
+                                <a href="/files/Noticias/imagem/<?= $noticia->imagem ?>" target="_blank">
+                                    <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" style="width: 80px;border-radius: 10px; ">
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div>
+                        <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px; margin-top: -10px;'>
                             Adicionar imagens com as dimensões 1920 x 1280px
                             </span><br>";?>
                     </div>
 
 
+
                     <div style="margin-bottom: 20px !important; margin-top: 20px">
-                        <?php echo $this->Form->control('banner_imagem', ['type' => 'file']);?>
-                        <?php if(!empty($noticia->banner_imagem)): ?>
-                            <div>
+                        <?php echo $this->Form->control('banner_imagem', ['type' => 'file']); ?>
+                        <?php if (!empty($noticia->banner_imagem)): ?>
+                            <div style="width: fit-content; margin-bottom: 10px">
                                 <a href="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" target="_blank">
-                                    <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px;border-radius: 10px;">
+                                    <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px; border-radius: 10px;">
                                 </a>
+                                <div>
+                                    <?php echo $this->Form->button('Excluir', [
+                                        'type' => 'button',
+                                        'class' => 'delete-image-button fa fa-trash',
+                                        'data-coluna' => 'banner_imagem',
+                                        'data-id' => $noticia->id,
+                                        'onClick' => 'deleteImage(this);'
+                                    ]); ?>
+                                </div>
                             </div>
                         <?php endif; ?>
-                        <div>
-                            <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>
-                            Adicionar a imagem caso queira que a notícia exiba no banner principal , dimensões 1200 x 830px
-                            </span><br>";?>
+                        <div style="margin-top: -10px;">
+                            <?php echo "<span style='color: red; position: absolute; margin-bottom: 20px;'>Adicionar a imagem caso queira que a notícia exiba no banner principal, dimensões 1200 x 830px</span><br>"; ?>
                         </div>
                     </div>
 
@@ -73,14 +85,23 @@ use Cake\View\Helper\UrlHelper;
                     </div>
 
                     <?php if(!empty($noticia->imagem_visualizacao)): ?>
-                        <div>
+                        <div style="margin-bottom: 10px">
                             <a href="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" target="_blank">
                                 <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" style="width: 120px;border-radius: 10px;">
                             </a>
+                            <div>
+                                <?php echo $this->Form->button('Excluir', [
+                                    'type' => 'button',
+                                    'class' => 'delete-image-button fa fa-trash',
+                                    'data-coluna' => 'imagem_visualizacao',
+                                    'data-id' => $noticia->id,
+                                    'onClick' => 'deleteImage(this);'
+                                ]); ?>
+                            </div>
                         </div>
                     <?php endif; ?>
 
-                    <div style="margin-bottom: 30px">
+                    <div style="margin-bottom: 30px; margin-top: -10px;">
                         <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
                     </div>
 
@@ -228,6 +249,28 @@ use Cake\View\Helper\UrlHelper;
 
     bindDatePicker();
 
+
+
+    function deleteImage(button) {
+        var id = button.getAttribute('data-id');
+        var coluna = button.getAttribute('data-coluna');
+
+        if (confirm('Tem certeza de que deseja excluir a imagem?')) {
+            // Faça uma chamada AJAX para excluir a imagem usando a URL do controlador
+            // por exemplo, usando jQuery $.ajax()
+            $.ajax({
+                url: `/admin/noticias/delete-image?id=${id}&coluna=${coluna}`,
+                type: 'DELETE',
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (error) {
+                    alert('Erro ao tentar excluir a imagem, por favor tente novamente.')
+                }
+            });
+        }
+    }
+
 </script>
 <?php $this->end() ?>
 
@@ -247,6 +290,16 @@ use Cake\View\Helper\UrlHelper;
 
     .btn-deletar-vantagem{
         margin-left: 10px !important;
+    }
+
+    .delete-image-button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
     }
 
     /*.margin-customizada{*/

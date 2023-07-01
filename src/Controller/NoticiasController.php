@@ -5,6 +5,7 @@ use Cake\Event\Event;
 
 use App\Controller\AppController;
 
+
 /**
  * Noticias Controller
  *
@@ -39,6 +40,8 @@ class NoticiasController extends AppController
 
         $this->set(compact('noticia', 'relacionados','title', 'ehMobile'));
     }
+
+
 
 
 

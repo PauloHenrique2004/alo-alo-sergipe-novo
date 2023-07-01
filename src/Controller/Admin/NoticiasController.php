@@ -2,8 +2,11 @@
 namespace App\Controller\Admin;
 
 use Cake\View\Helper\UrlHelper;
+use Cake\Filesystem\File;
 
 use Ramsey\Uuid\Uuid;
+use Cake\Datasource\ConnectionManager;
+
 
 /**
  * Noticias Controller
@@ -104,6 +107,7 @@ class NoticiasController extends AdminController
 
         $categorias = $this->Noticias->Categorias->find('list', ['limit' => 200]);
         $this->set(compact('noticia', 'categorias'));
+
     }
 
 
@@ -122,7 +126,8 @@ class NoticiasController extends AdminController
         $noticia = $this->Noticias->get($id, [
             'contain' => []
         ]);
-
+//        $imagePath = 'files/Noticias/banner_imagem/' . $noticia->banner_imagem;
+//        debug($imagePath); exit();
         $this->loadModel('NoticiaRelacionadas');
         $noticiaRelacionda = $this->NoticiaRelacionadas->find()->where(['noticia_id' => $noticia->id]);
 
@@ -194,5 +199,76 @@ class NoticiasController extends AdminController
         return "$currentDir/files/Noticias/{$coluna}/$target";
 
     }
+
+    public function deleteImage()
+    {
+        $id = $this->request->getQuery('id');
+        $coluna = $this->request->getQuery('coluna');
+
+        // Verifica se o ID é válido (você pode adicionar lógica adicional aqui, se necessário)
+        if (!$this->Noticias->exists(['id' => $id])) {
+            $this->Flash->error('ID inválido.');
+            return $this->redirect($this->referer());
+        }
+
+        // Obtém a notícia pelo ID
+        $noticia = $this->Noticias->get($id);
+
+        // Verifica se a imagem existe
+        if (!empty($noticia[$coluna])) {
+
+            // Remove a imagem do diretório
+            $imagePath = WWW_ROOT . "files/Noticias/{$coluna}/" . $noticia[$coluna];
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+
+            $conn = ConnectionManager::get('default');
+            $conn->execute("UPDATE noticias SET {$coluna} = NULL WHERE id = {$id}");
+
+            $this->Flash->success('Imagem excluída com sucesso.');
+        } else {
+            $this->Flash->error('A imagem não existe.');
+        }
+
+        return $this->redirect($this->referer());
+    }
+
+
+
+//    public function deleteImage($id)
+//    {
+//        $this->loadModel('Noticias');
+//        // Verifica se o ID é válido (você pode adicionar lógica adicional aqui, se necessário)
+//        if (!$this->Noticias->exists(['id' => $id])) {
+//            $this->Flash->error('ID inválido.');
+//            return $this->redirect($this->referer());
+//        }
+//
+//        // Obtém a notícia pelo ID
+//        $noticia = $this->Noticias->get($id);
+//
+//
+//        // Verifica se a imagem existe
+//        if (!empty($noticia->banner_imagem)) {
+//            // Remove a imagem do diretório
+//            $imagePath = WWW_ROOT . 'files/Noticias/banner_imagem/' . $noticia->banner_imagem;
+//            if (file_exists($imagePath)) {
+//                unlink($imagePath);
+//            }
+//
+//            // Remove a referência à imagem no registro do banco de dados
+//            $noticia->unsetProperty('banner_imagem');
+//            if ($this->Noticias->save($noticia)) {
+//                $this->Flash->success('Imagem excluída com sucesso.');
+//            } else {
+//                $this->Flash->error('Erro ao excluir a imagem.');
+//            }
+//        } else {
+//            $this->Flash->error('A imagem não existe.');
+//        }
+//
+//        return $this->redirect($this->referer());
+//    }
 
 }
