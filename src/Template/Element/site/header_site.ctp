@@ -136,7 +136,6 @@
                                         $nomeOutros = preg_replace('/\s+/', '-', $nomeOutros);
 
                                         $nomeOutros = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeOutros);
-
                                         ?>
 
                                         <li><a href="/noticias/<?= strtolower($nomeOutros) ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
