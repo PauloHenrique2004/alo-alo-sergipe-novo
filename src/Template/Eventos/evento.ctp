@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <!-- Main Content Start -->
-            <div class="main--content col-md-8" data-sticky-content="true">
+            <div class="main--content col-md-8">
                 <div class="sticky-content-inner">
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
@@ -41,58 +41,56 @@
                         </div>
 
                     </div>
+                    <div class="main--content col-md-12">
+                        <div class="main-content--section pbottom--30">
+                            <div class="post--related ptop--30">
+                                <div class="post--items-title" data-ajax="tab">
+                                    <h2 class="h4">Veja mais eventos</h2>
+                                </div>
+                                <div class="post--items post--items-2">
+                                    <ul class="nav row">
+                                        <?php foreach ($maisEventos as $item): ?>
+                                            <?php $nome = Cake\Utility\Text::slug(strtolower($item->titulo)); ?>
+
+                                            <li class="col-sm-6 pbottom--30">
+                                                <div class="post--item post--layout-1">
+                                                    <div class="post--img">
+                                                        <a href="/evento/<?= $nome ?>/<?= $item->id ?>" class="thumb"><img src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li>
+                                                                    <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
+                                                                        <?= $evento->data ?>
+                                                                    </a>
+                                                                </li>
+
+                                                            </ul>
+                                                            <div class="title">
+                                                                <h3 class="h4">
+                                                                    <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
+                                                                        <?= $item->titulo ?>
+                                                                    </a>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <div class="preloader bg--color-0--b" data-preloader="1">
+                                        <div class="preloader--inner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Main Sidebar Start -->
             <?= $this->element('site/sidebar') ?>
             <!-- Main Sidebar End -->
-        </div>
-
-        <div class="main--content col-md-12">
-            <div class="main-content--section pbottom--30">
-                <div class="post--related ptop--30">
-                    <div class="post--items-title" data-ajax="tab">
-                        <h2 class="h4">Veja mais eventos</h2>
-                    </div>
-                    <div class="post--items post--items-2" data-ajax-content="outer">
-                        <ul class="nav row" data-ajax-content="inner">
-
-                            <?php foreach ($maisEventos as $item): ?>
-                                <?php $nome = Cake\Utility\Text::slug(strtolower($item->titulo)); ?>
-
-                                <li class="col-sm-4 pbottom--30">
-                                    <div class="post--item post--layout-1">
-                                        <div class="post--img">
-                                            <a href="/evento/<?= $nome ?>/<?= $item->id ?>" class="thumb"><img src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
-                                            <div class="post--info">
-                                                <ul class="nav meta">
-                                                    <li>
-                                                        <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
-                                                            <?= $evento->data ?>
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                                <div class="title">
-                                                    <h3 class="h4">
-                                                        <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
-                                                            <?= $item->titulo ?>
-                                                        </a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <div class="preloader bg--color-0--b" data-preloader="1">
-                            <div class="preloader--inner"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
