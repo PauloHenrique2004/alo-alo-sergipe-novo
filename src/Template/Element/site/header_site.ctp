@@ -12,7 +12,6 @@
                     <!-- Header Topbar Social Start -->
                     <ul class="header--topbar-social nav hidden-sm hidden-xxs">
                         <?php foreach ($configuracoes as $configuracoe): ?>
-
                             <?php if(!empty($configuracoe->facebook)): ?>
                                 <li><a href="<?= $configuracoe->facebook ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <?php endif; ?>
@@ -100,7 +99,24 @@
                     <!-- Header Menu Links Start -->
                     <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent" style="background: #000 !important;">
                         <?php foreach ($categorias as $categoria): ?>
-                            <li><a href="/noticias/<?= strtolower($categoria->categoria) ?>/<?= $categoria->id ?>"><?= $categoria->categoria ?></a></li>
+
+                            <?php
+
+                            // Remove acentos e caracteres especiais usando a biblioteca iconv
+                            $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $categoria->categoria);
+
+                            $nome = preg_replace('/\s+/', '-', $nome);
+
+                            $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                            ?>
+
+                            <li>
+                                <a href="/noticias/<?= strtolower($nome) ?>/<?= $categoria->id ?>">
+                                    <?= $categoria->categoria ?>
+                                </a>
+                            </li>
+
                         <?php endforeach; ?>
                         <li><a href="/albuns">Galerias</a></li>
                         <li><a href="/alo-alo-tv">Alô Alô TV</a></li>
@@ -113,7 +129,17 @@
 
                                 <ul class="dropdown-menu">
                                     <?php foreach ($categoriaOutros as $value): ?>
-                                        <li><a href="/noticias/<?= strtolower($value->categoria) ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
+
+                                        <?php
+                                        $nomeOutros = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $categoria->categoria);
+
+                                        $nomeOutros = preg_replace('/\s+/', '-', $nomeOutros);
+
+                                        $nomeOutros = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                        ?>
+
+                                        <li><a href="/noticias/<?= strtolower($nomeOutros) ?>/<?= $value->id ?>"><?= $value->categoria ?></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </li>
