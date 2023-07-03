@@ -135,7 +135,7 @@
 
                                         $nomeOutros = preg_replace('/\s+/', '-', $nomeOutros);
 
-                                        $nomeOutros = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+                                        $nomeOutros = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeOutros);
 
                                         ?>
 
