@@ -39,63 +39,55 @@
                         </div>
 
                     </div>
-                </div>
-                <div class="main-content--section pbottom--30">
-                    <div class="container">
-                        <div class="row">
-                            <!-- Main Content Start -->
-                            <div class="main--content col-md-12 col-sm-12" data-sticky-content="true">
-                                <div class="sticky-content-inner">
-                                    <!-- Post Items Start -->
-                                    <div class="post--items post--items-2 pd--30-0">
-                                        <ul class="nav row AdjustRow">
-                                            <?php foreach ($fotos as $foto): ?>
-                                                <li class="col-md-6 col-sm-12 col-xs-6 col-xss-12" style="margin-top: 25px;">
-                                                    <!-- Post Item Start -->
-                                                    <div class="post--item post--layout-1 post--title-large">
-                                                        <div class="post--img">
-                                                            <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
-                                                                <img class="card-img rounded-0 img-galeria-2" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
-                                                            </a>
-                                                            <div class="post--info">
-                                                                <ul class="nav meta">
-                                                                    <li>
-                                                                        <?= $foto->data ?>
-                                                                    </li>
-                                                                </ul>
-                                                                <div class="title">
-                                                                    <h2 class="h4">
-                                                                        <a href="/files/Fotos/imagem/<?= $foto->imagem ?>">
-                                                                            <?= $foto->titulo ?>
-                                                                        </a>
-                                                                    </h2>
-                                                                </div>
-                                                            </div>
+                    <div class="main--content col-md-12 col-sm-12">
+                        <div class="sticky-content-inner">
+                            <!-- Post Items Start -->
+                            <div class="post--items post--items-2 pd--30-0">
+                                <ul class="nav row AdjustRow">
+                                    <?php foreach ($fotos as $foto): ?>
+                                        <li class="col-md-6 col-sm-12 col-xs-6 col-xss-12" style="margin-top: 25px;">
+                                            <!-- Post Item Start -->
+                                            <div class="post--item post--layout-1 post--title-large">
+                                                <div class="post--img">
+                                                    <a href="/files/Fotos/imagem/<?= $foto->imagem ?>" data-lightbox="roadtrip">
+                                                        <img class="card-img rounded-0 img-galeria-2" src="/files/Fotos/imagem/<?= $foto->imagem ?>" alt="capa">
+                                                    </a>
+                                                    <div class="post--info">
+                                                        <ul class="nav meta">
+                                                            <li>
+                                                                <?= $foto->data ?>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="title">
+                                                            <h2 class="h4">
+                                                                <a href="/files/Fotos/imagem/<?= $foto->imagem ?>">
+                                                                    <?= $foto->titulo ?>
+                                                                </a>
+                                                            </h2>
                                                         </div>
                                                     </div>
-                                                    <!-- Post Item End -->
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
-                                    <!-- Post Items End -->
-
-                                    <!-- Pagination Start -->
-                                    <div class="pagination--wrapper clearfix bdtop--1 bd--color-2">
-                                        <div class="row">
-                                            <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
-                                                <div class="paginator">
-                                                    <ul class="pagination">
-                                                        <?= $this->Paginator->numbers() ?>
-                                                    </ul>
                                                 </div>
                                             </div>
+                                            <!-- Post Item End -->
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <!-- Post Items End -->
+
+                            <!-- Pagination Start -->
+                            <div class="pagination--wrapper clearfix bdtop--1 bd--color-2">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                                        <div class="paginator">
+                                            <ul class="pagination">
+                                                <?= $this->Paginator->numbers() ?>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Pagination End -->
                                 </div>
                             </div>
-                            <!-- Main Content End -->
+                            <!-- Pagination End -->
                         </div>
                     </div>
                 </div>
