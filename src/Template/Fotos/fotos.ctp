@@ -60,9 +60,7 @@
                                                         </ul>
                                                         <div class="title">
                                                             <h2 class="h4">
-                                                                <a data-lightbox="roadtrip" href="/files/Fotos/imagem/<?= $foto->imagem ?>">
                                                                     <?= $foto->titulo ?>
-                                                                </a>
                                                             </h2>
                                                         </div>
                                                     </div>
