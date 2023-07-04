@@ -125,7 +125,7 @@
 
                         <?php if (!empty($exibirMenumais) && $exibirMenumais->menu_outros == 1): ?>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mais<i class="fa flm fa-angle-down"></i></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-transform: uppercase">Mais<i class="fa flm fa-angle-down"></i></a>
 
                                 <ul class="dropdown-menu">
                                     <?php foreach ($categoriaOutros as $value): ?>
