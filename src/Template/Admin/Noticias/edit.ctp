@@ -39,7 +39,7 @@ use Cake\View\Helper\UrlHelper;
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date', 'required' => true,'value' => $noticia->data->i18nFormat('yyyy-MM-dd')]);
                     echo $this->Form->control('fonte');
 
-                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa', 'class' => 'margin-customizada', 'required' => true]);?>
+                    echo $this->Form->control('imagem', ['type' => 'file', 'label' => 'Capa', 'class' => 'margin-customizada']);?>
                     <div>
                         <?php if (!empty($noticia->imagem)): ?>
                             <div style="margin-bottom: 10px">
