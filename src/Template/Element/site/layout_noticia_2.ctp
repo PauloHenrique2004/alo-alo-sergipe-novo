@@ -15,7 +15,7 @@
                 <div class="post--item post--layout-2">
                     <div class="post--img">
                         <a href="/noticia/<?= strtolower($categoria->categoria)?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
-                            <img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt="">
+                            <img class="img-principal" src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt="">
                         </a>
                         <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
                             <?= $categoria->categoria ?>
@@ -62,7 +62,8 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
+                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="thumb">
+                                    <img class="img-min" src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">

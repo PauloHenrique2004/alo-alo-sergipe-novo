@@ -13,9 +13,10 @@
 
                 <li class="col-md-4 col-xs-6 col-xxs-12">
                     <!-- Post Item Start -->
-                    <div class="post--item post--layout-1">
+                    <div class="post--item post--layout-1 l3">
                         <div class="post--img">
-                            <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                            <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb">
+                                <img class="img-media-l3" src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                             <div class="post--info">
                                 <ul class="nav meta">
