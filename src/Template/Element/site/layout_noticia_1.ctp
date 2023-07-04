@@ -16,7 +16,8 @@
                     <div class="post--img">
                         <?php $nome = Cake\Utility\Text::slug(strtolower($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo)); ?>
 
-                        <a href="/noticia/<?= strtolower($categoria->categoria)?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
+                        <a href="/noticia/<?= strtolower($categoria->categoria)?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
+                            <img class="img-principal" src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt=""></a>
                         <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
                             <?= $categoria->categoria ?>
                         </a>
@@ -64,7 +65,8 @@
                     <li class="col-xs-6">
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $value->id ?>" class="thumb">
+                                    <img class="img-min" src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
@@ -119,7 +121,7 @@
                     <div class="post--item post--layout-1">
                         <div class="post--img">
                             <a href="/noticia/<?= strtolower($proximaCategoria->categoria) ?>/<?= $nome2 ?>/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->id ?>" class="thumb">
-                                <img src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->imagem ?>" alt="">
+                                <img class="img-principal" src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->imagem ?>" alt="">
                             </a>
                             <a  href="/noticia/<?= strtolower($proximaCategoria->categoria) ?>/<?= $nome2?>/<?= $categoriaNoticiasLayout1($proximaCategoria->id,1)[0]->id ?>" class="cat hover-fff">
                                 <?= $proximaCategoria->categoria ?>
@@ -163,7 +165,9 @@
                         <li class="col-xs-6">
                             <div class="post--item post--layout-2">
                                 <div class="post--img">
-                                    <a href="/noticia/<?= strtolower($proximaCategoria->categoria) ?>/<?= $nome3 ?>/<?= $value->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $value->imagem ?>" alt=""></a>
+                                    <a href="/noticia/<?= strtolower($proximaCategoria->categoria) ?>/<?= $nome3 ?>/<?= $value->id ?>" class="thumb">
+                                        <img class="img-min" src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="">
+                                    </a>
 
                                     <div class="post--info">
                                         <ul class="nav meta">

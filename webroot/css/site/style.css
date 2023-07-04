@@ -7573,3 +7573,21 @@ body.logged-in .YouTubePopUp-Wrap{
 }
 
 
+
+@media(min-width: 768px) {
+    .img-principal{
+        width: 100%;
+        height: 243px;
+        object-fit: cover;
+    }
+}
+
+
+.img-min{
+    height: 111px !important;
+    object-fit: cover;
+}
+
+
+
+

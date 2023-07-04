@@ -39,7 +39,6 @@
                       'value' => (!empty($albun->data) ? $albun->data->i18nFormat('yyyy-MM-dd') : '')
                   ]
               );
-              
               echo $this->Form->control('imagem', ['type' => 'file']);
               echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";
               ?>
