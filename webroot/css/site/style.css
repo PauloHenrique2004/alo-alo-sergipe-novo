@@ -7583,6 +7583,12 @@ body.logged-in .YouTubePopUp-Wrap{
 }
 
 
+@media(max-width: 767px){
+    .img-principal{
+        height: 245px !important;
+    }
+}
+
 .img-min{
     height: 111px !important;
     object-fit: cover;
@@ -7591,6 +7597,7 @@ body.logged-in .YouTubePopUp-Wrap{
 @media(min-width: 768px) {
     .img-media-l3{
         height: 162px !important;
+        object-fit: cover !important;
     }
 }
 
@@ -7599,6 +7606,33 @@ body.logged-in .YouTubePopUp-Wrap{
         margin-bottom: 20px;
     }
 }
+
+@media(min-width: 768px) {
+    .banner-principal{
+        height: 389px !important;
+        object-fit: cover !important;
+    }
+}
+
+@media(min-width: 768px) {
+    .img-ultimas-noticias{
+        height: 185px !important;
+        object-fit: cover !important;
+    }
+}
+
+
+    .noticias-sidebar{
+        height: 70px !important;
+        object-fit: cover !important;
+    }
+
+
+
+
+
+
+
 
 
 

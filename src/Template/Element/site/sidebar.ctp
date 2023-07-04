@@ -112,7 +112,7 @@
                             <div class="post--item post--layout-3">
                                 <div class="post--img">
                                     <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
-                                        <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
+                                        <img class="noticias-sidebar" src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                     </a>
 
                                     <div class="post--info">

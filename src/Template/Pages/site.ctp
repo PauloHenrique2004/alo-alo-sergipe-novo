@@ -15,7 +15,7 @@
                             <div class="post--img">
                                 <?php $nome = Cake\Utility\Text::slug(strtolower($noticiaBanner->titulo_resumo)); ?>
                                 <a class="thumb hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
-                                    <img src="/files/Noticias/banner_imagem/<?= $noticiaBanner->banner_imagem ?>" alt="Banner_topo">
+                                    <img class="banner-principal" src="/files/Noticias/banner_imagem/<?= $noticiaBanner->banner_imagem ?>" alt="Banner_topo">
                                 </a>
                                 <a class="cat" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria)?>/<?= $nome?>/<?= $noticiaBanner->id ?>">
                                     <?= $noticiaBanner->categoria->categoria ?>
@@ -60,7 +60,7 @@
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
                                             <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>" class="thumb">
-                                                <img src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
+                                                <img class="img-ultimas-noticias" src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                             </a>
 
                                             <a class="cat hover-fff" href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>">
