@@ -7628,6 +7628,19 @@ body.logged-in .YouTubePopUp-Wrap{
     }
 
 
+    @media(min-width: 768px){
+        .img-detalhe-noticias{
+            height: 500px;
+            object-fit: cover !important;
+        }
+    }
+
+@media(min-width: 768px){
+    .img-rel{
+        height: 210px;
+        object-fit: cover !important;
+    }
+}
 
 
 

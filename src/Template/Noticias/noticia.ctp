@@ -27,9 +27,9 @@
                     <div class="post--item post--single post--title-largest pd--30-0">
                         <div class="post--img">
                             <?php if(!empty($noticia->imagem_visualizacao)): ?>
-                                <img style="width: -webkit-fill-available;" src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" alt="">
+                                <img class="img-detalhe-noticias" style="width: -webkit-fill-available;" src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" alt="">
                             <?php else: ?>
-                                <img style="width: -webkit-fill-available;" src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
+                                <img class="img-detalhe-noticias" style="width: -webkit-fill-available;" src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="">
                             <?php endif; ?>
 
                         </div>
@@ -71,7 +71,8 @@
                                         <li class="col-sm-6 pbottom--30">
                                             <div class="post--item post--layout-1">
                                                 <div class="post--img">
-                                                    <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb"><img src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
+                                                    <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb">
+                                                        <img class="img-rel" src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
                                                     <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>"
                                                        class="cat"><?= $noticiaRelacionada->noticia->categoria->categoria ?></a> <a href="#" class="icon"></a>
                                                     <div class="post--info">
