@@ -7642,6 +7642,14 @@ body.logged-in .YouTubePopUp-Wrap{
     }
 }
 
+@media(min-width: 768px){
+    .img-evento{
+        height: 240px !important;
+        object-fit: cover !important;
+    }
+}
+
+
 
 
 

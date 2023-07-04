@@ -19,7 +19,7 @@
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
                         <div class="post--img">
-                            <img style="width: -webkit-fill-available;" src="/files/Eventos/imagem/<?= $evento->imagem ?>" alt="">
+                            <img class="img-detalhe-noticias" style="width: -webkit-fill-available;" src="/files/Eventos/imagem/<?= $evento->imagem ?>" alt="">
                         </div>
 
 
@@ -55,7 +55,8 @@
                                             <li class="col-sm-6 pbottom--30">
                                                 <div class="post--item post--layout-1">
                                                     <div class="post--img">
-                                                        <a href="/evento/<?= $nome ?>/<?= $item->id ?>" class="thumb"><img src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
+                                                        <a href="/evento/<?= $nome ?>/<?= $item->id ?>" class="thumb">
+                                                            <img class="img-rel" src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
                                                         <div class="post--info">
                                                             <ul class="nav meta">
                                                                 <li>

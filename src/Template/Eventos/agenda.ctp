@@ -16,7 +16,7 @@
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
                                             <a href="/evento/<?= $nome ?>/<?= $value->id ?>">
-                                                <img class="card-img rounded-0 hover-fff" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
+                                                <img class="card-img rounded-0 hover-fff img-evento" src="/files/Eventos/capa/<?= $value->capa ?>" alt="capa">
                                             </a>
 
                                             <div class="post--info">

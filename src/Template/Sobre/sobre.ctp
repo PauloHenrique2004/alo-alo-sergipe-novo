@@ -20,7 +20,7 @@
                     <!-- Post Item Start -->
                     <div class="post--item post--single post--title-largest pd--30-0">
                         <div class="post--img">
-                            <img src="/files/Sobre/imagem/<?= $sobre->imagem ?>" alt="" style="width: -webkit-fill-available;">
+                            <img class="img-detalhe-noticias" src="/files/Sobre/imagem/<?= $sobre->imagem ?>" alt="" style="width: -webkit-fill-available;">
                         </div>
 
                         <div class="post--info">
