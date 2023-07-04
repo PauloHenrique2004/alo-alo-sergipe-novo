@@ -27,7 +27,7 @@
           <!-- /.box-header -->
           <!-- form start -->
           <?php echo $this->Form->create($categoria, ['role' => 'form']); ?>
-            <?php $option = ['' => null,'1' => 'Slider com 3 imagens', '2' => 'Slider com imagens lado a lado', '3' => 'Slider com 4 imagens']; ?>
+            <?php $option = ['' => null,'1' => 'Layout 1', '2' => 'Layout 2', '3' => 'Layout 3']; ?>
             <div class="box-body">
               <?php
                 echo $this->Form->control('categoria');
@@ -41,12 +41,86 @@
             </div>
             <!-- /.box-body -->
 
+
+
+
+
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <h4>Layout 1</h4>-->
+<!--                        <img src="/images/l1.png" alt="Imagem 1">-->
+<!--                    </td>-->
+<!--                    <td style="margin-top: -268px;">-->
+<!--                        <h4>Layout 2</h4>-->
+<!--                        <img src="/images/l2.png" alt="Imagem 2">-->
+<!--                    </td>-->
+<!---->
+<!--                    <td style="margin-top: -342px;">-->
+<!--                        <h4>Layout 3</h4>-->
+<!--                        <img src="/images/l3.png" alt="Imagem 3">-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </table>-->
+
+            <div class="container" style="float: left; margin-top: 80px">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h4 style="padding-left:24px ">Layout 1</h4>
+                        <img src="/images/l01.png" alt="Imagem 1">
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 style="padding-left: 18px">Layout 2</h4>
+                        <img src="/images/l02.png" alt="Imagem 1">
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <h4 style="padding-left: 26px">Layout 3</h4>
+                        <img src="/images/l03.png" alt="Imagem 1">
+                    </div>
+
+                </div>
+            </div>
+
+
+
+<!--            <div class="row">-->
+<!---->
+<!--                <div class="col-md-2">-->
+<!--                    <img src="/images/l1.png" width="140px">-->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+
           <?php echo $this->Form->submit(__('Submit')); ?>
 
           <?php echo $this->Form->end(); ?>
+
+
+
         </div>
         <!-- /.box -->
       </div>
   </div>
   <!-- /.row -->
 </section>
+
+<style>
+    table {
+        width: 80%;
+    }
+
+    td {
+        display: inline-block;
+        width: 30%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
