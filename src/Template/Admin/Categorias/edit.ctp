@@ -42,27 +42,6 @@
             <!-- /.box-body -->
 
 
-
-
-
-<!--            <table>-->
-<!--                <tr>-->
-<!--                    <td>-->
-<!--                        <h4>Layout 1</h4>-->
-<!--                        <img src="/images/l1.png" alt="Imagem 1">-->
-<!--                    </td>-->
-<!--                    <td style="margin-top: -268px;">-->
-<!--                        <h4>Layout 2</h4>-->
-<!--                        <img src="/images/l2.png" alt="Imagem 2">-->
-<!--                    </td>-->
-<!---->
-<!--                    <td style="margin-top: -342px;">-->
-<!--                        <h4>Layout 3</h4>-->
-<!--                        <img src="/images/l3.png" alt="Imagem 3">-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--            </table>-->
-
             <div class="container" style="float: left; margin-top: 80px">
                 <div class="row">
                     <div class="col-md-2">
@@ -84,15 +63,6 @@
                 </div>
             </div>
 
-
-
-<!--            <div class="row">-->
-<!---->
-<!--                <div class="col-md-2">-->
-<!--                    <img src="/images/l1.png" width="140px">-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
 
           <?php echo $this->Form->submit(__('Submit')); ?>
 
