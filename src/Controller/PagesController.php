@@ -146,7 +146,7 @@ class PagesController extends AppController
         $this->loadModel('Eventos');
 
         $this->paginate = [
-            'limit' => 3,
+            'limit' => 20,
             'order' => [
                 'id' => 'DESC'
             ]

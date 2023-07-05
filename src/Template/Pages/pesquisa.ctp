@@ -5,20 +5,40 @@
 
             <div class="row">
                 <?php foreach ($pesquisaNoticia as $noticia): ?>
+
+                    <?php
+                    // Remove acentos e caracteres especiais usando a biblioteca iconv
+                    $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticiaBanner->categoria->categoria);
+
+                    $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                    $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                    // Remove acentos e caracteres especiais usando a biblioteca iconv
+                    $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticia->titulo_resumo);
+
+                    $nome = str_replace(' ', '-', $nome);
+
+                    $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                    ?>
+
+
                     <div class="col-md-12">
                         <div class="single-defination">
 
                             <?php if(!empty($noticia->titulo)): ?>
-                                <a href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
+                                <a href="/noticia/<?= strtolower($nomeCategoria)?>/<?= strtolower($nome)?>/<?= $noticia->id ?>">
                                     <h4 class="mb-20"><?= $noticia->titulo ?></h4>
                                 </a>
                             <?php elseif (!empty($noticia->titulo_resumo)): ?>
-                                <a href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
+                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome)?>/<?= $noticia->id ?>">
                                     <h4 class="mb-20"><?= $noticia->titulo_resumo ?></h4>
                                 </a>
                             <?php endif; ?>
 
-                            <a href="/noticia/<?= $noticiaBanner->categoria->categoria ?>/<?= $noticia->titulo_resumo ?>/<?= $noticia->id ?>">
+                            <a href="/noticia/<?= strtolower($nomeCategoria)?>/<?= strtolower($nome) ?>/<?= $noticia->id ?>">
                                 <p> <?= strlen($noticia->descricao) > 180 ? strip_tags(substr( $noticia->descricao,  0, 180))."..." : strip_tags($noticia->descricao) ?></p>
                             </a>
                         </div>
@@ -27,14 +47,26 @@
 
 
                 <?php foreach ($pesquisaAgenda as $agenda): ?>
+
+                    <?php
+                    // Remove acentos e caracteres especiais usando a biblioteca iconv
+                    $nome2 = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $agenda->titulo);
+
+                    $nome2 = str_replace(' ', '-', $nome2);
+
+                    $nome2 = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome2);
+
+                    ?>
+
+
                     <div class="col-md-12">
                         <div class="single-defination">
-                            <a href="/evento/<?= $agenda->id ?>">
+                            <a href="/evento/<?= strtolower($nome2)?>/<?= $agenda->id ?>">
                                 <h4 class="mb-20"><?= $agenda->titulo ?></h4>
                             </a>
 
-                            <a href="/evento/<?= $agenda->id ?>">
-                                <p> <?= $agenda->titulo ?></p>
+                            <a href="/evento/<?= strtolower($nome2)?>/<?= $agenda->id ?>">
+                            <p> <?= $agenda->titulo ?></p>
                             </a>
                         </div>
                     </div>
@@ -42,7 +74,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center">
+                <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-bottom: 70px">
                     <div class="paginator">
                         <ul class="pagination">
                             <?= $this->Paginator->numbers() ?>
