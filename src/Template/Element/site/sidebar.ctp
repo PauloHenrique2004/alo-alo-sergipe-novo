@@ -140,7 +140,7 @@
 
                                         <div class="title">
                                             <h3 class="h4">
-                                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
+                                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
                                                     <?= $ultimasNoticia->titulo_resumo ?>
                                                 </a>
                                             </h3>
