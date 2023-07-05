@@ -5,30 +5,49 @@
     </div>
     <!-- Post Items Title End -->
 
-     <?php $nome = Cake\Utility\Text::slug(strtolower($categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo)); ?>
+    <?php
+    // Remove acentos e caracteres especiais usando a biblioteca iconv
+    $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $categoria->categoria);
 
-    <!-- Post Items Start -->
+    $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+    $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+    // Remove acentos e caracteres especiais usando a biblioteca iconv
+    $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo);
+
+    $nome = str_replace(' ', '-', $nome);
+
+    $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+    ?>
+
     <div class="post--items post--items-2" data-ajax-content="outer">
         <ul class="nav row" data-ajax-content="inner">
             <li class="col-md-6">
                 <!-- Post Item Start -->
                 <div class="post--item post--layout-2">
                     <div class="post--img">
-                        <a href="/noticia/<?= strtolower($categoria->categoria)?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
+                        <a href="/noticia/<?= strtolower($nomeCategoria)?>/<?= strtolower($nome) ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="thumb">
                             <img class="img-principal" src="/files/Noticias/imagem/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->imagem ?>" alt="">
                         </a>
-                        <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
+                        <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="cat">
                             <?= $categoria->categoria ?>
                         </a>
 
                         <div class="post--info">
                             <ul class="nav meta">
-                                <li><a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>"><?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?></a></li>
+                                <li>
+                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>">
+                                        <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->data ?>
+                                    </a>
+                                </li>
                             </ul>
 
                             <div class="title">
                                 <h3 class="h4" style="min-height: 90px">
-                                    <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link">
+                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $categoriaNoticiasLayout1($categoria->id,1)[0]->id ?>" class="btn-link">
                                         <?= $categoriaNoticiasLayout1($categoria->id,1)[0]->titulo_resumo  ?>
                                     </a>
                                 </h3>
@@ -48,7 +67,23 @@
                     </li>
                     <?php foreach ($categoriaNoticiasLayout1($categoria->id) as $value):?>
 
-                    <?php $nome2 = Cake\Utility\Text::slug(strtolower($value->titulo_resumo)); ?>
+                    <?php
+                    // Remove acentos e caracteres especiais usando a biblioteca iconv
+                    $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $categoria->categoria);
+
+                    $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                    $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                    // Remove acentos e caracteres especiais usando a biblioteca iconv
+                    $nome2 = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value->titulo_resumo);
+
+                    $nome2 = str_replace(' ', '-', $nome);
+
+                    $nome2 = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                    ?>
 
                     <?php
                     foreach ($categoriaNoticiasLayout1($categoria->id) as $item) {
@@ -62,12 +97,12 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-2">
                             <div class="post--img">
-                                <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="thumb">
+                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome2) ?>/<?= $value->id ?>" class="thumb">
                                     <img class="img-min" src="/files/Noticias/imagem/<?= $value->imagem ?>" alt="img"></a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>">
+                                        <li><a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome2) ?>/<?= $value->id ?>">
                                                 <?= $value->data ?>
                                             </a>
                                         </li>
@@ -75,7 +110,7 @@
 
                                     <div class="title">
                                         <h3 class="h4" style="min-height: 90px;">
-                                            <a href="/noticia/<?= strtolower($categoria->categoria) ?>/<?= $nome2 ?>/<?= $value->id ?>" class="btn-link">
+                                            <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome2) ?>/<?= $value->id ?>" class="btn-link">
                                                 <?= $value->titulo_resumo ?>
                                             </a>
                                         </h3>
