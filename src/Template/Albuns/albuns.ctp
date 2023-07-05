@@ -9,27 +9,38 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($albuns as $albun): ?>
-                                <?php $nome = Cake\Utility\Text::slug(strtolower($albun->titulo)); ?>
+
+                                <?php
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $albun->titulo);
+
+                                $nome = str_replace(' ', '-', $nome);
+
+                                $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+
+                                ?>
+
 
                                 <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                     <!-- Post Item Start -->
                                     <div class="post--item post--layout-1 post--title-large">
                                         <div class="post--img">
-                                            <a href="/fotos/<?= $nome ?>/<?= $albun->id ?>">
+                                            <a href="/fotos/<?=  strtolower($nome); ?>/<?= $albun->id ?>">
                                                 <img class="card-img rounded-0" src="/files/Albuns/imagem/<?= $albun->imagem ?>" alt="capa" style="height: 240px; object-fit: cover; width: 100%;">
                                             </a>
 
                                             <div class="post--info">
                                                 <ul class="nav meta">
                                                     <li>
-                                                        <a class="hover-fff" href="/fotos/<?= $nome ?>/<?= $albun->id ?>">
+                                                        <a class="hover-fff" href="/fotos/<?=  strtolower($nome); ?>/<?= $albun->id ?>">
                                                             <?= $albun->data ?>
                                                         </a>
                                                     </li>
                                                 </ul>
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/fotos/<?= $nome ?>/<?= $albun->id ?>" class="btn-link hover-fff">
+                                                        <a href="/fotos/<?=  strtolower($nome); ?>/<?= $albun->id ?>" class="btn-link hover-fff">
                                                             <?= $albun->titulo ?>
                                                         </a>
                                                     </h2>
@@ -37,7 +48,7 @@
 
                                                 <div class="title">
                                                     <h2 class="h4">
-                                                        <a href="/fotos/<?= $nome ?>/<?= $albun->id ?>" class="btn-link hover-fff">
+                                                        <a href="/fotos/<?=  strtolower($nome); ?>/<?= $albun->id ?>" class="btn-link hover-fff">
                                                             Ver álbum
                                                         </a>
                                                     </h2>
