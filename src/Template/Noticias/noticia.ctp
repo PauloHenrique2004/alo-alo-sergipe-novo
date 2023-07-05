@@ -1,11 +1,18 @@
+<?php
+// Remove acentos e caracteres especiais usando a biblioteca iconv
+$nomeCategoriaTopo = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticia->categoria->categoria);
 
+$nomeCategoriaTopo = preg_replace('/\s+/', '-', $nomeCategoriaTopo);
+
+$nomeCategoriaTopo = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoriaTopo);
+?>
 <!-- Main Breadcrumb Start -->
 <div class="main--breadcrumb" style="text-align: center;">
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/" class="btn-link"><i class="fa fm fa-home"></i>Home</a></li>
             <li>
-                <a href="/noticias/<?= $noticia->categoria->categoria ?>/<?= $noticia->categoria->id ?>" class="btn-link">
+                <a href="/noticias/<?= strtolower($nomeCategoriaTopo) ?>/<?= $noticia->categoria->id ?>" class="btn-link">
                     <?= $noticia->categoria->categoria ?>
                 </a>
             </li>
@@ -20,7 +27,7 @@
     <div class="container">
         <div class="row">
             <!-- Main Content Start -->
-<!--            <div class="main--content col-md-8" data-sticky-content="true">-->
+            <!--            <div class="main--content col-md-8" data-sticky-content="true">-->
             <div class="main--content col-md-8">
                 <div class="sticky-content-inner">
                     <!-- Post Item Start -->
