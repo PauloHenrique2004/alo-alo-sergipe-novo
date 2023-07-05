@@ -59,11 +59,11 @@ class NoticiasController extends AppController
         $noticias = $this->paginate( $this->Noticias->find('all')->where([ 'categoria_id' => $categoriaId ]));
 
         $this->loadModel('Categorias');
-        $nomeCategoria = $this->Categorias->get($categoriaId);
+        $nomeCategorias = $this->Categorias->get($categoriaId);
 
-        $title = $nomeCategoria->categoria;
+        $title = $nomeCategorias->categoria;
 
-        $this->set(compact('noticias','nomeCategoria','title'));
+        $this->set(compact('noticias','nomeCategorias','title'));
 
 
     }

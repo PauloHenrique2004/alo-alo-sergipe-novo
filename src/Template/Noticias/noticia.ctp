@@ -66,26 +66,44 @@
                                 <ul class="nav row" data-ajax-content="inner">
 
                                     <?php foreach ($relacionados as $noticiaRelacionada): ?>
-                                        <?php $nome = Cake\Utility\Text::slug(strtolower(strtolower($noticiaRelacionada->noticia->titulo_resumo))); ?>
+
+                                        <?php
+                                        // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                        $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticiaRelacionada->noticia->categoria->categoria);
+
+                                        $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                                        $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                                        // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                        $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticia->titulo_resumo);
+
+                                        $nome = str_replace(' ', '-', $nome);
+
+                                        $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                        ?>
+
 
                                         <li class="col-sm-6 pbottom--30">
                                             <div class="post--item post--layout-1">
                                                 <div class="post--img">
-                                                    <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb">
+                                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaRelacionada->noticia->id ?>" class="thumb">
                                                         <img class="img-rel" src="/files/Noticias/imagem/<?= $noticiaRelacionada->noticia->imagem ?>" alt="" data-rjs="2"></a>
-                                                    <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>"
-                                                       class="cat"><?= $noticiaRelacionada->noticia->categoria->categoria ?></a> <a href="#" class="icon"></a>
+                                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>"
+                                                       class="cat"><?= strtolower($nomeCategoria) ?></a> <a href="#" class="icon"></a>
                                                     <div class="post--info">
                                                         <ul class="nav meta">
                                                             <li>
-                                                                <a class="hover-fff" href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>">
+                                                                <a class="hover-fff" href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaRelacionada->noticia->id ?>">
                                                                     <?= $noticiaRelacionada->noticia->data ?>
                                                                 </a>
                                                             </li>
                                                         </ul>
                                                         <div class="title">
                                                             <h3 class="h4">
-                                                                <a href="/noticia/<?= strtolower($noticiaRelacionada->noticia->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
+                                                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
                                                                     <?= $noticiaRelacionada->noticia->titulo ?>
                                                                 </a>
                                                             </h3>

@@ -9,25 +9,52 @@
                     <div class="post--items post--items-2 pd--30-0">
                         <ul class="nav row AdjustRow">
                             <?php foreach ($noticias as $noticia): ?>
-                            <?php $nome = Cake\Utility\Text::slug(strtolower(strtolower($noticia->titulo_resumo)));
 
-                            ?>
+                                <?php
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $nomeCategorias->categoria);
+
+                                $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                                $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticia->titulo_resumo);
+
+                                $nome = str_replace(' ', '-', $nome);
+
+                                $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                ?>
+
                             <li class="col-md-4 col-sm-12 col-xs-4 col-xss-12" style="margin-top: 25px;">
                                 <!-- Post Item Start -->
                                 <div class="post--item post--layout-1 post--title-large">
                                     <div class="post--img">
-                                        <a href="/noticia/<?= strtolower($nomeCategoria->categoria) ?>/<?= $nome ?>/<?= $noticia->id ?>" class="thumb">
+                                        <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticia->id ?>" class="thumb">
                                             <img src="/files/Noticias/imagem/<?= $noticia->imagem ?>" alt="" style="height: 244px; object-fit: cover;">
                                         </a>
-                                        <a href="/noticia/<?= strtolower($nomeCategoria->categoria) ?>/<?= $nome ?>/<?= $noticia->id ?>" class="cat"><?= $nomeCategoria->categoria ?></a>
+
+                                        <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticia->id ?>" class="cat">
+                                            <?= $nomeCategorias->categoria ?>
+                                        </a>
 
                                         <div class="post--info">
                                             <ul class="nav meta">
-                                                <li><a href="/noticia/<?= strtolower($nomeCategoria->categoria) ?>/<?= $nome ?>/<?= $noticia->id ?>"><?= $noticia->data ?></a></li>
+                                                <li>
+                                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticia->id ?>">
+                                                        <?= $noticia->data ?>
+                                                    </a>
+                                                </li>
                                             </ul>
 
                                             <div class="title">
-                                                <h2 class="h4 descN"><a href="/noticia/<?= strtolower($nomeCategoria->categoria) ?>/<?= $nome ?>/<?= $noticia->id ?>" class="btn-link"><?= $noticia->titulo_resumo ?> </a></h2>
+                                                <h2 class="h4 descN">
+                                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticia->id ?>" class="btn-link">
+                                                        <?= $noticia->titulo_resumo ?>
+                                                    </a>
+                                                </h2>
                                             </div>
                                         </div>
                                     </div>
