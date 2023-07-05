@@ -50,17 +50,26 @@
                                 <div class="post--items post--items-2">
                                     <ul class="nav row">
                                         <?php foreach ($maisEventos as $item): ?>
-                                            <?php $nome = Cake\Utility\Text::slug(strtolower($item->titulo)); ?>
+
+                                            <?php
+                                            // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                            $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $item->titulo);
+
+                                            $nome = str_replace(' ', '-', $nome);
+
+                                            $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                            ?>
 
                                             <li class="col-sm-6 pbottom--30">
                                                 <div class="post--item post--layout-1">
                                                     <div class="post--img">
-                                                        <a href="/evento/<?= $nome ?>/<?= $item->id ?>" class="thumb">
+                                                        <a href="/evento/<?= strtolower($nome) ?>/<?= $item->id ?>" class="thumb">
                                                             <img class="img-rel" src="/files/Eventos/capa/<?= $item->capa ?>" alt="" data-rjs="2"></a>
                                                         <div class="post--info">
                                                             <ul class="nav meta">
                                                                 <li>
-                                                                    <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
+                                                                    <a class="hover-fff" href="/evento/<?= strtolower($nome) ?>/<?= $item->id ?>">
                                                                         <?= $evento->data ?>
                                                                     </a>
                                                                 </li>
@@ -68,7 +77,7 @@
                                                             </ul>
                                                             <div class="title">
                                                                 <h3 class="h4">
-                                                                    <a class="hover-fff" href="/evento/<?= $nome ?>/<?= $item->id ?>">
+                                                                    <a class="hover-fff" href="/evento/<?= strtolower($nome) ?>/<?= $item->id ?>">
                                                                         <?= $item->titulo ?>
                                                                     </a>
                                                                 </h3>
