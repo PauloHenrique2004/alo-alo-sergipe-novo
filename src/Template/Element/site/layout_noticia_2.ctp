@@ -78,9 +78,9 @@
                     // Remove acentos e caracteres especiais usando a biblioteca iconv
                     $nome2 = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value->titulo_resumo);
 
-                    $nome2 = str_replace(' ', '-', $nome);
+                    $nome2 = str_replace(' ', '-', $nome2);
 
-                    $nome2 = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+                    $nome2 = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome2);
 
                     ?>
 
