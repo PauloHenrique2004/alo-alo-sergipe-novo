@@ -75,7 +75,6 @@
 
                     $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
 
-
                     // Remove acentos e caracteres especiais usando a biblioteca iconv
                     $nome2 = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value->titulo_resumo);
 
