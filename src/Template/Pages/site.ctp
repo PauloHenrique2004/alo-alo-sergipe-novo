@@ -13,21 +13,40 @@
                         <!-- Post Item Start -->
                         <div class="post--item post--layout-1 post--title-larger">
                             <div class="post--img">
-                                <?php $nome = Cake\Utility\Text::slug(strtolower($noticiaBanner->titulo_resumo)); ?>
-                                <a class="thumb hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
+
+                                <?php
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticiaBanner->categoria->categoria);
+
+                                $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                                $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticiaBanner->titulo_resumo);
+
+                                $nome = str_replace(' ', '-', $nome);
+
+                                $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                ?>
+
+                                <a class="thumb hover-fff" href="/noticia/<?= strtolower($nomeCategoria); ?>/<?= strtolower($nome) ?>/<?= $noticiaBanner->id ?>">
                                     <img class="banner-principal" src="/files/Noticias/banner_imagem/<?= $noticiaBanner->banner_imagem ?>" alt="Banner_topo">
                                 </a>
-                                <a class="cat" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria)?>/<?= $nome?>/<?= $noticiaBanner->id ?>">
+
+                                <a class="cat" href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaBanner->id ?>">
                                     <?= $noticiaBanner->categoria->categoria ?>
                                 </a>
 
                                 <div class="post--info">
                                     <ul class="nav meta">
-                                        <li><a class="hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>"> <?= $noticiaBanner->data ?></a></li>
+                                        <li><a class="hover-fff" href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaBanner->id ?>"> <?= $noticiaBanner->data ?></a></li>
                                     </ul>
                                     <div class="title">
                                         <h2 class="h4">
-                                            <a class="btn-link hover-fff" href="/noticia/<?= strtolower($noticiaBanner->categoria->categoria) ?>/<?= $nome ?>/<?= $noticiaBanner->id ?>">
+                                            <a class="btn-link hover-fff" href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaBanner->id ?>">
                                                 <?= $noticiaBanner->titulo ?>
                                             </a>
                                         </h2>
@@ -45,14 +64,21 @@
                         <div class="row gutter--15">
                             <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
                                 <?php
-                                //          $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE',$ultimasNoticia->titulo_resumo );
+
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
+                                $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $ultimasNoticia->categoria->categoria);
+
+                                $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                                $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                                // Remove acentos e caracteres especiais usando a biblioteca iconv
                                 $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $ultimasNoticia->titulo_resumo);
 
-                                $nome = preg_replace('/\s+/', '-', $nome);
+                                $nome = str_replace(' ', '-', $nome);
 
                                 $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
-
-                                $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE',$ultimasNoticia->categoria->categoria );
                                 ?>
 
                                 <div class="col-xs-6 col-xss-12">

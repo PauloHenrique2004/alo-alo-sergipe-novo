@@ -22,7 +22,7 @@
                     $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $item->titulo_resumo);
 
                     $nome = str_replace(' ', '-', $nome);
-                    
+
                     $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
 
                     ?>
