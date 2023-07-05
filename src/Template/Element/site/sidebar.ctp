@@ -105,25 +105,42 @@
                 <ul class="nav" data-ajax-content="inner">
 
                     <?php foreach ($ultimasNoticias as $ultimasNoticia): ?>
-                        <?php $nome = Cake\Utility\Text::slug(strtolower($ultimasNoticia->titulo_resumo)); ?>
+
+                        <?php
+                        // Remove acentos e caracteres especiais usando a biblioteca iconv
+                        $nomeCategoria = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $ultimasNoticia->categoria->categoria);
+
+                        $nomeCategoria = preg_replace('/\s+/', '-', $nomeCategoria);
+
+                        $nomeCategoria = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoria);
+
+
+                        // Remove acentos e caracteres especiais usando a biblioteca iconv
+                        $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $ultimasNoticia->titulo_resumo);
+
+                        $nome = str_replace(' ', '-', $nome);
+
+                        $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                        ?>
 
                         <li>
                             <!-- Post Item Start -->
                             <div class="post--item post--layout-3">
                                 <div class="post--img">
-                                    <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="thumb">
+                                    <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>" class="thumb">
                                         <img class="noticias-sidebar" src="/files/Noticias/imagem/<?= $ultimasNoticia->imagem ?>" alt="">
                                     </a>
 
                                     <div class="post--info">
                                         <ul class="nav meta">
-                                            <li><a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->categoria->categoria ?></a></li>
-                                            <li><a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->data ?></a></li>
+                                            <li><a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->categoria->categoria ?></a></li>
+                                            <li><a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $ultimasNoticia->id ?>"><?= $ultimasNoticia->data ?></a></li>
                                         </ul>
 
                                         <div class="title">
                                             <h3 class="h4">
-                                                <a href="/noticia/<?= strtolower($ultimasNoticia->categoria->categoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
+                                                <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= $nome ?>/<?= $ultimasNoticia->id ?>" class="btn-link">
                                                     <?= $ultimasNoticia->titulo_resumo ?>
                                                 </a>
                                             </h3>
