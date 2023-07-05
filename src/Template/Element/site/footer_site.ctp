@@ -210,7 +210,7 @@
                         <?= $this->Form->create(null, ['role' => 'form', 'url' =>['controller' => 'Contacts', 'action' => 'anuncieConosoco'],'class' => 'formAnuncie']) ?>
                         <input type="text" name="nome" placeholder="Nome" class="form-control" autocomplete="off" required="" aria-required="true">
                         <input type="text" name="tel" placeholder="Telefone" class="form-control" autocomplete="off" required="" aria-required="true">
-                        <input type="email" name="email" placeholder="email" class="form-control" autocomplete="off" required="" aria-required="true">
+                        <input type="email" name="email" placeholder="E-mail" class="form-control" autocomplete="off" required="" aria-required="true">
                         <textarea style="width: -webkit-fill-available; margin-top: 20px;background: #fff; border: none; padding-left: 20px;"
                                   class="single-textarea input-anuncie" name="mensagem" placeholder="Mensagem" required=""></textarea>
                         <div class="recaptcha recaptcha-anuncie" style="justify-content: center; margin-bottom: 20px; margin-top: 20px;">
