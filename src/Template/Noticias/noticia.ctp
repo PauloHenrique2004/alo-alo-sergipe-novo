@@ -84,11 +84,14 @@ $nomeCategoriaTopo = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoriaTopo);
 
 
                                         // Remove acentos e caracteres especiais usando a biblioteca iconv
-                                        $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticia->titulo_resumo);
+                                        $nome = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $noticiaRelacionada->noticia->titulo_resumo);
 
                                         $nome = str_replace(' ', '-', $nome);
 
                                         $nome = preg_replace('/[^a-zA-Z0-9\-]/', '', $nome);
+
+                                       // dd($nome);
+
 
                                         ?>
 
@@ -111,7 +114,7 @@ $nomeCategoriaTopo = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoriaTopo);
                                                         <div class="title">
                                                             <h3 class="h4">
                                                                 <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome) ?>/<?= $noticiaRelacionada->noticia->id ?>" class="btn-link hover-fff">
-                                                                    <?= $noticiaRelacionada->noticia->titulo ?>
+                                                                    <?= $noticiaRelacionada->noticia->titulo_resumo ?>
                                                                 </a>
                                                             </h3>
                                                         </div>
