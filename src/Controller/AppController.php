@@ -167,9 +167,9 @@ class AppController extends Controller
 
     public function publicidade(){
         $this->loadModel('Publicidades');
-        $publicidadeTopo = $this->Publicidades->find()->where(['local' => 1])->order('rand()')->limit(1);
-        $publicidadeLateral = $this->Publicidades->find()->where(['local' => 2])->order('rand()')->limit(1);
-        $publicidadeAbaixoBannerPrincipal = $this->Publicidades->find()->where(['local' => 3])->limit(1);
+        $publicidadeTopo = $this->Publicidades->find()->where(['local' => 1])->order('rand()')->order('rand()')->limit(1);
+        $publicidadeLateral = $this->Publicidades->find()->where(['local' => 2])->order('rand()')->order('rand()')->limit(1);
+        $publicidadeAbaixoBannerPrincipal = $this->Publicidades->find()->where(['local' => 3])->order('rand()')->limit(1);
         $this->set(compact('publicidadeTopo', 'publicidadeLateral','publicidadeAbaixoBannerPrincipal'));
     }
 
