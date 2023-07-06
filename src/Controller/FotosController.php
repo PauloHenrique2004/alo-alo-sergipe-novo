@@ -22,9 +22,9 @@ class FotosController extends AppController
         $album =  $this->Albuns->get($albun_id);
 
         $this->paginate = [
-            'limit'=> 6,
+            'limit'=> 4,
         ];
-        
+
         $this->viewBuilder()->setLayout('site');
         $fotos =  $this->paginate($this->Fotos->find()->where(['albun_id' => $albun_id]));
         $title = $album->titulo;

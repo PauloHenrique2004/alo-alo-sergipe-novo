@@ -76,7 +76,7 @@
                             <!-- Pagination Start -->
                             <div class="pagination--wrapper clearfix bdtop--1 bd--color-2">
                                 <div class="row">
-                                    <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px;">
+                                    <div class="col-md-12 col-xs-12" style="display: flex; justify-content: center; margin-top: 53px; padding-bottom: 50px">
                                         <div class="paginator">
                                             <ul class="pagination">
                                                 <?= $this->Paginator->numbers() ?>
