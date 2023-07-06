@@ -52,6 +52,7 @@
                   <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('titulo_resumo') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('capa') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('data') ?></th>
               </tr>
             </thead>
             <tbody>
@@ -60,6 +61,7 @@
                   <td><?= h($noticia->titulo) ?></td>
                   <td><?= h($noticia->titulo_resumo) ?></td>
                     <td><img style="width: 70px; border-radius: 10px" src="/files/Noticias/imagem/<?= $noticia->imagem ?>"></td>
+                    <td><?= h($noticia->data) ?></td>
                   <td class="actions text-right">
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $noticia->id], ['class'=>'btn btn-warning']) ?>
                       <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $noticia->id], ['confirm' => __('Are you sure you want to delete # {0}?', $noticia->id), 'class'=>'btn btn-danger']) ?>

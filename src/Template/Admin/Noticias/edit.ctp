@@ -65,7 +65,7 @@ use Cake\View\Helper\UrlHelper;
                                     <img src="/files/Noticias/banner_imagem/<?= $noticia->banner_imagem ?>" style="width: 120px; border-radius: 10px;">
                                 </a>
                                 <div>
-                                    <?php echo $this->Form->button('Excluir', [
+                                    <?php echo $this->Form->button(' Excluir', [
                                         'type' => 'button',
                                         'class' => 'delete-image-button fa fa-trash',
                                         'data-coluna' => 'banner_imagem',
@@ -90,7 +90,7 @@ use Cake\View\Helper\UrlHelper;
                                 <img src="/files/Noticias/imagem_visualizacao/<?= $noticia->imagem_visualizacao ?>" style="width: 120px;border-radius: 10px;">
                             </a>
                             <div>
-                                <?php echo $this->Form->button('Excluir', [
+                                <?php echo $this->Form->button(' Excluir', [
                                     'type' => 'button',
                                     'class' => 'delete-image-button fa fa-trash',
                                     'data-coluna' => 'imagem_visualizacao',
