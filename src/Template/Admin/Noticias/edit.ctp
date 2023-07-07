@@ -107,33 +107,32 @@ use Cake\View\Helper\UrlHelper;
                     </div>
 
 
-                        <div class="noticia-global">
-                            <div class="col-md-12">
-                                <div class="form-group input select inp-rel">
-                                    <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
-                                    <select name="noticias_relacionadas_ids[]" class="form-control select2-input slc-rel" id="noticias_relacionadas_ids"  multiple="multiple" >
-                                        <?php foreach ($noticiaRelacionda as $rel): ?>
-                                        <?php foreach ($noticias as $value): ?>
-                                            <option <?= $value->id == $rel->noticia_relacionada_id ? "selected='selected'" : '' ?>
-                                                    value="<?= $value->id ?>"><?= $value->titulo ?></option>
-                                        <?php endforeach; ?>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
+                    <div class="noticia-global">
+                        <div class="col-md-12">
+                            <div class="form-group input select inp-rel">
+                                <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
+                                <select name="noticias_relacionadas_ids[]" class="form-control select2-input slc-rel" id="noticias_relacionadas_ids"  multiple="multiple" >
+
+                                    <?php foreach ($noticias as $value): ?>
+                                        <?php $relacionada = $noticiaEstaRelacionada($noticia, $value->id); ?>
+                                        <option <?= $relacionada ? "selected='selected'" : '' ?> value="<?= $value->id ?>"><?= $value->titulo ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
-<!--                            <div class="col-md-2 adicionada">-->
-<!--                                <div class="space"></div>-->
-<!--                                <button style="margin-left: 9px" type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada-->
-<!--                                </button>-->
-<!--                            </div>-->
                         </div>
+                        <!--                            <div class="col-md-2 adicionada">-->
+                        <!--                                <div class="space"></div>-->
+                        <!--                                <button style="margin-left: 9px" type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada-->
+                        <!--                                </button>-->
+                        <!--                            </div>-->
+                    </div>
 
 
-<!--                    <span class="add-noticia"></span>-->
+                    <!--                    <span class="add-noticia"></span>-->
 
-<!--                    <div>-->
-<!--                        <button type="button" class="btn btn-warning btn-add-noticia-rel" style="width: 100%">Adicionar relacionada</button>-->
-<!--                    </div>-->
+                    <!--                    <div>-->
+                    <!--                        <button type="button" class="btn btn-warning btn-add-noticia-rel" style="width: 100%">Adicionar relacionada</button>-->
+                    <!--                    </div>-->
 
                     <!-- /.box-body -->
 

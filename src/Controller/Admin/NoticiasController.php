@@ -138,6 +138,9 @@ class NoticiasController extends AdminController
         $this->loadModel('NoticiaRelacionadas');
         $noticiaRelacionda = $this->NoticiaRelacionadas->find()->where(['noticia_id' => $noticia->id]);
 
+        $noticiaEstaRelacionada = function ($noticia, $noticiaRelacionadaId) {
+            return $this->NoticiaRelacionadas->exists(['noticia_id' => $noticia->id, 'noticia_relacionada_id' => $noticiaRelacionadaId]);
+        };
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $noticia = $this->Noticias->patchEntity($noticia, $this->request->getData());
@@ -164,7 +167,7 @@ class NoticiasController extends AdminController
         }
         $url = 'http://' . $_SERVER['SERVER_NAME'] . "$noticia->banner_imagem";
         $categorias = $this->Noticias->Categorias->find('list', ['limit' => 200]);
-        $this->set(compact('noticia', 'categorias','noticiaRelacionda','url', 'noticias'));
+        $this->set(compact('noticia', 'categorias','noticiaRelacionda','url', 'noticias', 'noticiaEstaRelacionada'));
     }
 
     /**
