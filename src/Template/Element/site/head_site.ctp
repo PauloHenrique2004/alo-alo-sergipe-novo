@@ -14,10 +14,13 @@
     <meta name="keywords" content="Alô Alô Sergipe, notícias Sergipe, eventos Sergipe, cultura Sergipe, política Sergipe, esportes Sergipe">
 
 
+
     <?php if($_SERVER['REQUEST_URI'] == '/'): ?>
         <meta property="og:image" content="https://<?= $_SERVER['HTTP_HOST'] . '/images/meta.png' ?>"/>
         <meta property="og:title" content= "alÔ alÔ Sergipe"/>
         <meta property="og:description" content="alÔ alÔ Sergipe, seu portal!"/>
+    <?php else: ?>
+        <?= $this->fetch('script-head'); ?>
     <?php endif; ?>
 
     <!-- ==== Favicons ==== -->

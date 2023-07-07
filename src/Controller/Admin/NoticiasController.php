@@ -42,11 +42,6 @@ class NoticiasController extends AdminController
 
         $where = [];
 
-//        if (isset($_GET['pesquisa'])) {
-//            $query = '"%' . $_GET['pesquisa'] . '%"';
-//            $where[] = 'Noticias.titulo LIKE' . $query ;
-//        }
-
         if (isset($_GET['pesquisa']) && !empty($_GET['pesquisa']) ) {
             $searchTerm = $_GET['pesquisa'];
             $query = "'%" . $searchTerm . "%'";
@@ -66,22 +61,10 @@ class NoticiasController extends AdminController
             $where[] = (['Noticias.data <= ' => $dataFinal]);
         }
 
-
-//        if (isset($_GET['data-inicial']) && isset($_GET['data-final'])) {
-//            $dataInicial = $_GET['data-inicial'];
-//            $dataFinal = $_GET['data-final'];
-//            $query->where(function ($exp, $q) use ($dataInicial, $dataFinal) {
-//                return $exp->between('Noticias.data', $dataInicial, $dataFinal, 'date');
-//            });
-//        }
-
-
-
         if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
             $where['Noticias.categoria_id'] = $_GET['categoria'];
         }
 
-//        var_dump($where); exit();
 
         $noticias = $this->paginate($this->Noticias->find()->where($where));
 
