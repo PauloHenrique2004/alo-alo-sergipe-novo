@@ -53,6 +53,30 @@ class NoticiasController extends AdminController
             $where[] = "(Noticias.titulo LIKE " . $query . "OR Noticias.titulo_resumo LIKE" . $query . ')';
         }
 
+
+        // Verifica se foi enviada uma data inicial
+        if (!empty($_GET['data-inicial'])) {
+            $dataInicial = $this->request->getQuery('data-inicial');
+            $where[] = (['Noticias.data >= ' => $dataInicial]);
+        }
+
+        // Verifica se foi enviada uma data final
+        if (!empty($_GET['data-final'])) {
+            $dataFinal = $this->request->getQuery('data-final');
+            $where[] = (['Noticias.data <= ' => $dataFinal]);
+        }
+
+
+//        if (isset($_GET['data-inicial']) && isset($_GET['data-final'])) {
+//            $dataInicial = $_GET['data-inicial'];
+//            $dataFinal = $_GET['data-final'];
+//            $query->where(function ($exp, $q) use ($dataInicial, $dataFinal) {
+//                return $exp->between('Noticias.data', $dataInicial, $dataFinal, 'date');
+//            });
+//        }
+
+
+
         if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
             $where['Noticias.categoria_id'] = $_GET['categoria'];
         }

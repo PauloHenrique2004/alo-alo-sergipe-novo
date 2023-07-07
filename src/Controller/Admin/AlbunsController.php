@@ -100,7 +100,6 @@ class AlbunsController extends AdminController
         $this->set(compact('albun'));
     }
 
-
     /**
      * Delete method
      *

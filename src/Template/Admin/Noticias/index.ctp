@@ -16,32 +16,47 @@
           <h3 class="box-title"><?php echo __('List'); ?></h3>
 
           <div class="box-tools">
-            <form action="<?php echo $this->Url->build(); ?>" method="GET" id="seachF">
-                         <div class="input-group input-group-sm" style="width: 150px;">
-                             <?php
-                             if (isset($_GET['pesquisa'])) {
-                                 $pesquisa = $_GET['pesquisa'];
-                             } else {
-                                 $pesquisa = '';
-                             }
-                             ?>
-                             <div class="input-group input-group-sm" style="float: left; margin-right: 20px;width: 150px;position: absolute;right: 145px;">
-                                 <select name="categoria" class="form-control">
-                                     <option selected="" value="">Categoria</option>
-                                     <?php foreach ($categorias as $categoria): ?>
-                                         <option value="<?= $categoria->id ?>" <?= ($categoriaId == $categoria->id) ? 'selected' : '' ?>>
-                                             <?= $categoria->categoria ?>
-                                         </option>
-                                     <?php endforeach; ?>
-                                 </select>
-                             </div>
-                             <input type="text" name="pesquisa" class="form-control pull-right" value="<?= $pesquisa ?>" placeholder="<?php echo __('Pesquisar'); ?>">
 
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
-            </form>
+              <form action="<?php echo $this->Url->build(); ?>" method="GET" id="searchF" style="display: flex; align-items: center;">
+
+                  <div class="input-group input-group-sm" style="display: flex;">
+                      <?php
+                      // Obter os valores dos parâmetros de pesquisa
+                      $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
+                      $dataInicial = isset($_GET['data-inicial']) ? $_GET['data-inicial'] : '';
+                      $dataFinal = isset($_GET['data-final']) ? $_GET['data-final'] : '';
+                      ?>
+
+                      <div class="input-group" style="margin-right: 10px; display: flex; align-items: center;">
+                          <label for="data-inicial" style="margin-right: 5px;">De</label>
+                          <input type="date" name="data-inicial" class="form-control" value="<?= $dataInicial ?>" placeholder="Data Inicial">
+                      </div>
+
+                      <div class="input-group" style="margin-right: 10px; display: flex; align-items: center;">
+                          <label for="data-final" style="margin-right: 5px;">A</label>
+                          <input type="date" name="data-final" class="form-control" value="<?= $dataFinal ?>" placeholder="Data Final">
+                      </div>
+
+                      <div class="input-group" style="margin-right: 10px; width: 100%;">
+                          <select name="categoria" class="form-control">
+                              <option selected="" value="">Categoria</option>
+                              <?php foreach ($categorias as $categoria): ?>
+                                  <option value="<?= $categoria->id ?>" <?= ($categoriaId == $categoria->id) ? 'selected' : '' ?>>
+                                      <?= $categoria->categoria ?>
+                                  </option>
+                              <?php endforeach; ?>
+                          </select>
+                      </div>
+
+                      <input style="height: 34px;" type="text" name="pesquisa" class="form-control" value="<?= $pesquisa ?>" placeholder="<?php echo __('Pesquisar'); ?>">
+
+                      <div class="input-group-btn">
+                          <button style="height: 34px; margin-left: -21px" type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                  </div>
+
+              </form>
+
           </div>
         </div>
         <!-- /.box-header -->
