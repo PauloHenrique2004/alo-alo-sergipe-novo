@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 <?php
 /**
  * @var \App\View\AppView $this
@@ -105,32 +106,34 @@ use Cake\View\Helper\UrlHelper;
                         <?php echo "<span style='color: red; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";?>
                     </div>
 
-                    <?php foreach ($noticiaRelacionda as $rel): ?>
+
                         <div class="noticia-global">
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 <div class="form-group input select inp-rel">
                                     <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
-                                    <select name="noticias_relacionadas_ids[]" class="form-control" id="noticias_relacionadas_ids">
+                                    <select name="noticias_relacionadas_ids[]" class="form-control select2-input slc-rel" id="noticias_relacionadas_ids"  multiple="multiple" >
+                                        <?php foreach ($noticiaRelacionda as $rel): ?>
                                         <?php foreach ($noticias as $value): ?>
                                             <option <?= $value->id == $rel->noticia_relacionada_id ? "selected='selected'" : '' ?>
                                                     value="<?= $value->id ?>"><?= $value->titulo ?></option>
                                         <?php endforeach; ?>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2 adicionada">
-                                <div class="space"></div>
-                                <button style="margin-left: 9px" type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada
-                                </button>
-                            </div>
+<!--                            <div class="col-md-2 adicionada">-->
+<!--                                <div class="space"></div>-->
+<!--                                <button style="margin-left: 9px" type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada-->
+<!--                                </button>-->
+<!--                            </div>-->
                         </div>
-                    <?php endforeach; ?>
 
-                    <span class="add-noticia"></span>
 
-                    <div>
-                        <button type="button" class="btn btn-warning btn-add-noticia-rel" style="width: 100%">Adicionar relacionada</button>
-                    </div>
+<!--                    <span class="add-noticia"></span>-->
+
+<!--                    <div>-->
+<!--                        <button type="button" class="btn btn-warning btn-add-noticia-rel" style="width: 100%">Adicionar relacionada</button>-->
+<!--                    </div>-->
 
                     <!-- /.box-body -->
 
@@ -147,6 +150,21 @@ use Cake\View\Helper\UrlHelper;
 </section>
 
 <?php $this->start('scriptBottom')?>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.select2-input').select2();
+
+        $('.slc-rel').on('click', () => {
+            setTimeout(() => { $('.select2-input').select2(); }, 100)
+        });
+
+    });
+</script>
+
+
 <?php echo $this->Html->script([
     'ckeditor/ckeditor',
 ]); ?>
@@ -166,39 +184,38 @@ use Cake\View\Helper\UrlHelper;
 <!--    })-->
 <!--</script>-->
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
 
 
 <script>
-    $('.btn-add-noticia-rel').click(function () {
-        const html = `
-          <div class="noticia-global">
-            <div class="col-md-10">
-                <div class="form-group input select inp-rel">
-                    <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
-                    <select name="noticias_relacionadas_ids[]" class="form-control" id="noticias_relacionadas_ids">
-                        <?php foreach ($noticias as $value): ?>
-                            <?php if($noticia->id !== $value->id): ?>
-                            <option value="<?= $value->id ?>"><?= $value->titulo ?></option>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2 adicionada">
-                 <div style="height: 25px"></div>
-                  <button type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada</button>
-            </div>
-          </div>
-            `;
-
-        $('.add-noticia').append(html);
-    });
-    $('body').on('click', '.noticia-global', function (e) {
-        if (e.target.tagName == 'BUTTON')
-            $(e.target).parent().parent().remove();
-    });
+    //$('.btn-add-noticia-rel').click(function () {
+    //    const html = `
+    //      <div class="noticia-global">
+    //        <div class="col-md-10">
+    //            <div class="form-group input select inp-rel">
+    //                <label class="control-label" for="noticias_relacionadas_ids">Notícias relacionadas</label>
+    //                <select name="noticias_relacionadas_ids[]" class="form-control" id="noticias_relacionadas_ids">
+    //                    <?php //foreach ($noticias as $value): ?>
+    //                        <?php //if($noticia->id !== $value->id): ?>
+    //                        <option value="<?//= $value->id ?>//"><?//= $value->titulo ?>//</option>
+    //                        <?php //endif; ?>
+    //                    <?php //endforeach; ?>
+    //                </select>
+    //            </div>
+    //        </div>
+    //        <div class="col-md-2 adicionada">
+    //             <div style="height: 25px"></div>
+    //              <button type="button" class="btn-danger btn btn-deletar-vantagem">Remover relacionada</button>
+    //        </div>
+    //      </div>
+    //        `;
+    //
+    //    $('.add-noticia').append(html);
+    //});
+    //$('body').on('click', '.noticia-global', function (e) {
+    //    if (e.target.tagName == 'BUTTON')
+    //        $(e.target).parent().parent().remove();
+    //});
 
 
     $('.string-date').attr('type', 'date');
@@ -275,6 +292,10 @@ use Cake\View\Helper\UrlHelper;
 <?php $this->end() ?>
 
 <style>
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__display{
+        color: #000 !important;
+    }
     .space{
         height: 25px;
     }
