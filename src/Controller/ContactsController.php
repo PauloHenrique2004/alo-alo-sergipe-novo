@@ -21,8 +21,8 @@ class ContactsController extends AppController
                     $formData = $this->request->getData();
                         $email = new Email('default');
                         $email->setFrom(['naoresponda@aloalosergipe.com.br' => 'Anuncie conosco'])
-                            ->setTo('paulo.henrik.oliver@gmail.com')
-                            ->setSubject('Alo Alo Sergipe - anuncie conosco')
+                            ->setTo('atendimento@aloalosergipe.com.br')
+                            ->setSubject('Alô Alô Sergipe - anuncie conosco')
                             ->send('Nome: ' . $formData['nome']
                                 . "\n" . ' Email:' . $formData['email']
                                 . "\n" . ' Telefone: ' . $formData['tel']
