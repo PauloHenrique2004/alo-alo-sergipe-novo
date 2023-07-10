@@ -32,7 +32,7 @@
               <?php
                 echo $this->Form->control('categoria');
                 echo $this->Form->control('menu_ordem');
-                echo $this->Form->control('menu_outros');
+                echo $this->Form->control('menu_outros',['label' => 'Menu Mais']);
                 echo $this->Form->control('ocultar');
                 echo $this->Form->control('exibir_ultimas_noticias');
                 echo '<label class="control-label" for="layout">layout</label>';
