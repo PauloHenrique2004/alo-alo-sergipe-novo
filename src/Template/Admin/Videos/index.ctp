@@ -32,7 +32,7 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                  <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('titulo',['label' => 'Título']) ?></th>
                   <th scope="col"><?= $this->Paginator->sort('link') ?></th>
               </tr>
             </thead>

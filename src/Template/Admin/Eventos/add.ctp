@@ -31,7 +31,6 @@
                     <?php
                     echo $this->Form->control('titulo', ['label' => 'Título']);
                     echo $this->Form->control('descricao', ['label' => 'Descrição']);
-                    echo $this->Form->control('data');
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date']);
                     echo $this->Form->control('capa', ['type' => 'file']);
                     echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";

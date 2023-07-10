@@ -65,7 +65,7 @@ class PublicidadesController extends AdminController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Publicidade'));
+            $this->Flash->error('Erro ao salvar, por favor tente novamente');
         }
         $this->set(compact('publicidade'));
     }
@@ -94,7 +94,7 @@ class PublicidadesController extends AdminController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Publicidade'));
+            $this->Flash->error('Erro ao salvar, por favor tente novamente');
         }
         $this->set(compact('publicidade'));
     }

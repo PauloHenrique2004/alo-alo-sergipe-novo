@@ -28,7 +28,7 @@
           <?php echo $this->Form->create($sobre, ['type' => 'file']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('titulo');
+                echo $this->Form->control('titulo', ['label' => 'Título']);
                 echo $this->Form->control('descricao', ['label' => 'Descrição'] );
                 echo $this->Form->control('imagem', ['type' => 'file']);
                 echo "<span style='color: red; margin-top: -15px; position: absolute;'>Adicionar imagens com as dimensões 1920 x 1280px</span><br>";

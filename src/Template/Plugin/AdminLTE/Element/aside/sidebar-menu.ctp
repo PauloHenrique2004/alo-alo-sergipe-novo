@@ -61,7 +61,7 @@
     <li>
         <a href="<?php echo $this->Url->build('/admin/noticias'); ?>">
             <i class="fa fa-circle-o"></i>
-            <span>Noticias</span>
+            <span>Notícias</span>
             <span class="pull-right-container">
       </span>
         </a>
@@ -88,7 +88,7 @@
     <li>
         <a href="<?php echo $this->Url->build('/admin/newsletters'); ?>">
             <i class="fa fa-circle-o"></i>
-            <span>Newsletters</span>
+            <span>Newsletter</span>
             <span class="pull-right-container">
       </span>
         </a>

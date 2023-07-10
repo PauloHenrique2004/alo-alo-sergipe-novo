@@ -30,7 +30,7 @@
             <div class="box-body">
               <?php
               echo $this->Form->control('role_id', ['options' => $roles, 'empty' => true,'value' => 1, 'type' => 'hidden']);
-              echo $this->Form->control('username');
+              echo $this->Form->control('username', ['label' => 'Título']);
               echo $this->Form->control('email');
               echo $this->Form->control('password');
               ?>

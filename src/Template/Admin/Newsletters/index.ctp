@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Newsletters
+    Newsletter
       <div class="pull-right" style="background: #3c8dbc; border-radius: 7px;"><a href="/admin/newsletters/form-newsletter" class="fa fa-envelope" style="color: #fff;font-size: 14px; padding: 11px;"></a></div>
   </h1>
 </section>

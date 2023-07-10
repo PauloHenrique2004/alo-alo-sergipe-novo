@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Descricao Video
+        Descrição videos
       <small><?php echo __('Edit'); ?></small>
     </h1>
     <ol class="breadcrumb">
@@ -29,7 +29,7 @@
           <?php echo $this->Form->create($descricaoVideo, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('tittulo');
+                echo $this->Form->control('tittulo', ['label' => 'Tìtulo']);
                 echo $this->Form->control('descricao');
               ?>
             </div>

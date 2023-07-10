@@ -34,9 +34,8 @@ use Cake\View\Helper\UrlHelper;
                     <?php
                     echo $this->Form->control('categoria_id', ['options' => $categorias]);
                     echo $this->Form->control('titulo_resumo', ['required' => true,'label' => 'Título resumo']);
-                    //                    echo $this->Form->control('uuid');
                     echo $this->Form->control('titulo',['label' => 'Título']);
-                    echo $this->Form->control('descricao', ['required' => true]);
+                    echo $this->Form->control('descricao', ['required' => true,'label' => 'Descrição']);
                     echo $this->Form->control('data', ['type' => 'string', 'class' => 'form-control string-date', 'required' => true,'value' => $noticia->data->i18nFormat('yyyy-MM-dd')]);
                     echo $this->Form->control('fonte');
 
@@ -82,7 +81,7 @@ use Cake\View\Helper\UrlHelper;
                     </div>
 
                     <div>
-                        <?php echo $this->Form->control('imagem_visualizacao', ['type' => 'file', ['required' => true]]); ?>
+                        <?php echo $this->Form->control('imagem_visualizacao', ['type' => 'file','required' => true,'label' => 'Visualização']); ?>
                     </div>
 
                     <?php if(!empty($noticia->imagem_visualizacao)): ?>

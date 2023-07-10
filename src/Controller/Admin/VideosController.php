@@ -66,11 +66,11 @@ class VideosController extends AdminController
             $video->link = $video_id;
 
             if ($this->Videos->save($video)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Video'));
+                $this->Flash->success('Salvo com sucesso');
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Video'));
+            $this->Flash->error('Erro ao salvar, por favor tente novamente');
         }
         $this->set(compact('video'));
     }
@@ -113,11 +113,13 @@ class VideosController extends AdminController
 
             if ($this->Videos->save($video)) {
 
-                $this->Flash->success(__('The {0} has been saved.', 'Video'));
+                $this->Flash->success('Salvo com sucesso');
+
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Video'));
+            $this->Flash->error('Erro ao salvar, por favor tente novamente');
+
         }
         $this->set(compact('video'));
     }

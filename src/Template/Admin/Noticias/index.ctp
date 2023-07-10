@@ -64,8 +64,8 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                  <th scope="col"><?= $this->Paginator->sort('titulo') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('titulo_resumo') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('titulo',['Título']) ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('titulo_resumo',['Título resumo']) ?></th>
                   <th scope="col"><?= $this->Paginator->sort('capa') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('data') ?></th>
               </tr>

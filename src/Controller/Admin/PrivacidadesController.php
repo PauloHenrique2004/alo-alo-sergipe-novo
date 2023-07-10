@@ -75,11 +75,12 @@ class PrivacidadesController extends AdminController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $privacidade = $this->Privacidades->patchEntity($privacidade, $this->request->getData());
             if ($this->Privacidades->save($privacidade)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Privacidade'));
+                $this->Flash->success('Salvo com sucesso');
 
                 return $this->redirect('/admin/privacidades/edit/1');
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Privacidade'));
+            $this->Flash->error('Erro ao salvar, por favor tente novamente');
+
         }
         $this->set(compact('privacidade'));
     }
