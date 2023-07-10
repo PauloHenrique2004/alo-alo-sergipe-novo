@@ -128,7 +128,7 @@ class NewslettersController extends AdminController
             $formData = $this->request->getData();
 
             $email = new Email('newsletter');
-            $email->setFrom(['naoresponda@vidavc.com.br' => 'Vida e Você'])
+            $email->setFrom(['naoresponda@aloalosergipe.com.br' => 'Anuncie conosco'])
                 ->setTo($enviarPara)
                 ->setEmailFormat('html')
                 ->setSubject($formData['assunto'])
