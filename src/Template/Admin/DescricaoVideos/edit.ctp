@@ -29,8 +29,8 @@
           <?php echo $this->Form->create($descricaoVideo, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('tittulo', ['label' => 'Tìtulo']);
-                echo $this->Form->control('descricao');
+                echo $this->Form->control('tittulo', ['label' => 'Título']);
+                echo $this->Form->control('descricao',['label' => 'Descrição']);
               ?>
             </div>
             <!-- /.box-body -->
