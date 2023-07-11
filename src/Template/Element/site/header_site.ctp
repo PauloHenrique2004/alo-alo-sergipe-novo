@@ -121,7 +121,7 @@
                         <?php endforeach; ?>
                         <li><a style="text-transform: uppercase" href="/albuns">Galerias</a></li>
                         <li><a style="text-transform: uppercase" href="/alo-alo-tv">Alô Alô TV</a></li>
-                        <li><a  style="text-transform: uppercase"href="/agenda">Eventos</a></li>
+                        <li><a  style="text-transform: uppercase"href="/eventos">Eventos</a></li>
                         <li><a style="text-transform: uppercase" href="/sobre/1">Sobre nós</a></li>
 
                         <?php if (!empty($exibirMenumais) && $exibirMenumais->menu_outros == 1): ?>
