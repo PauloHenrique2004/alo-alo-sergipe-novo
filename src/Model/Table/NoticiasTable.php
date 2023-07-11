@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Event\Event;
+use Intervention\Image\ImageManagerStatic as Image;
 
 /**
  * Noticias Model
@@ -102,6 +104,31 @@ class NoticiasTable extends Table
 
 
         return $validator;
+    }
+
+
+    public function beforeSave(Event $event, $entity, $options)
+    {
+        if ($entity->imagem) {
+            $path = WWW_ROOT . 'files/Noticias/imagem/' . $entity->imagem;
+         //   dd($path);
+            if (file_exists($path)) {
+                $image = Image::make($path);
+
+                // Defina a largura e a altura desejadas para a imagem redimensionada
+                $novaLargura = 1400;
+                $novaAltura = 880;
+
+                $image->resize($novaLargura, $novaAltura, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+
+                $image->save($path);
+            }
+        }
+
+        return true;
     }
 
     /**

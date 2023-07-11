@@ -29,6 +29,7 @@
         "custom/instagram-php-scraper": "^0.10.0",
         "google/recaptcha": "^1.2",
         "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
         "josegonzalez/cakephp-upload": "^4.0",
         "maiconpinto/cakephp-adminlte-theme": "^1.1",
         "mobiledetect/mobiledetectlib": "2.*",
