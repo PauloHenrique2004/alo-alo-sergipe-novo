@@ -53,7 +53,7 @@ $nomeCategoriaTopo = preg_replace('/[^a-zA-Z0-9\-]/', '', $nomeCategoriaTopo);
                         </div>
 
                         <div class="post--content">
-                            <span style="text-align: justify">
+                            <span style="text-align: justify; color: #000">
                                 <?= $noticia->descricao ?>
                             </span>
 
