@@ -81,7 +81,7 @@ use Cake\View\Helper\UrlHelper;
                     </div>
 
                     <div>
-                        <?php echo $this->Form->control('imagem_visualizacao', ['type' => 'file','required' => true,'label' => 'Visualização']); ?>
+                        <?php echo $this->Form->control('imagem_visualizacao', ['type' => 'file','label' => 'Visualização']); ?>
                     </div>
 
                     <?php if(!empty($noticia->imagem_visualizacao)): ?>
