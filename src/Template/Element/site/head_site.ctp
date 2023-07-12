@@ -24,7 +24,7 @@
     <?php endif; ?>
 
     <!-- ==== Favicons ==== -->
-    <link rel="icon" href="/images/iconeA.png" type="image/png">
+    <link rel="icon" href="/images/favicon-alo.png" type="image/png">
 
     <!-- ==== Google Font ==== -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">

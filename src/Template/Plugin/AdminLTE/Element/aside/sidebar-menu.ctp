@@ -139,7 +139,7 @@
     <li>
         <a href="<?php echo $this->Url->build('/admin/privacidades/edit/1'); ?>">
             <i class="fa fa-circle-o"></i>
-            <span>Política de privicidade</span>
+            <span>Política de privacidade</span>
             <span class="pull-right-container">
       </span>
         </a>

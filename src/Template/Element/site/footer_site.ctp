@@ -112,7 +112,8 @@
         <div class="social--bg bg--color-3"></div>
 
         <div class="container">
-            <p class="text float--left">&copy; <?= date('Y') ?>  Alô Alô Sergipe. Todos os direitos reservados.</p>
+            <p class="text float--left spr"><span style=" margin-right: 3px;"><span style="font-family:Corbel,'Traditional Arabic','Segoe UI',Tahoma,Verdana,Arial,'Ifao N Copte',Aharoni,'Levenim MT',David,Andalus,'Microsoft Uighur','Simplified Arabic',Sylfaen,'Estrangelo Edessa','Mv Boli','Mongolian Baiti','Microsoft Yi Baiti',Nyala,'Ethiopia Jiret','Tifinagh-Ircam Unicode','Ebrima','Hapax Berbère',Gadugi,'Plantagenet Cherokee',Euphemia, 'Aboriginal Sans',AfSans,AfPaiNutaaq,Pigiarniq,'Nimala UI',Utsaah,Kokila,Mangal,Chandas,Vrinda,'Shonar Bangla',Rupali,SolaimanLipi,Raavi,Shruti,Tunga,Kartika,Kalinga,'Iskoola Pota',Latha,Vijaya,Vani,Gautami,Leelawadee,'Khmer UI',DaunPenh,MoolBoran, 'CDT Khmer','Lao UI',DokChampa,'Saysettha OT',LontaraOT,'Microsoft Tai Le','Microsoft New Tai Lue','Dai Banna SIL Light','Dai Banna SIL Book','Microsoft PhagsPa','Microsoft Himalaya','Tibetan Machine Uni',Meiryo,'Meiryo UI',Gulim,'Malgun Gothic','Microsoft JhengHei','Microsoft YaHei','Microsoft YaHei UI',MingLiU,SimSun,'MS PGothic',Padauk,Myanmar3,Parabaik,'Win Uni Innwa',Yunghkio,Thanlwin,'MyMyanmar Unicode','WinUni Innwa',Myanmar2,'Masterpiece Uni Sans','BPG Classic Medium','DejaVu Sans','MPH 2B Damase','Aramaic Imperial Yeb','Hebrew Paleo Siloam','Segoe UI Symbol','Arial Unicode MS',Code2000,Code2001,FreeSans,'Lucida Sans Console',sans-serif">®</span></span><span><?= date('Y') ?> Alô Alô Sergipe. Todos os direitos reservados.</span></p>
+
 
             <ul class="nav social float--right">
                 <p>Desenvolvido <i style="color: #f27420" class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://wetech.com.br/" target="_blank" style="color: #f27420"> Wetech</a>
@@ -225,7 +226,6 @@
         </div>
     </div>
 </div>
-
 
 <!--LGPD-->
 <div class="custom-container-lgpd" style="display: flex;">
@@ -424,6 +424,13 @@
             margin-top: 19px;
         }
     }
+
+    span[data-text="®️"] {
+        display: inline-block;
+        padding-right: 0;
+        font-size: 30px;
+    }
+
 
 
 
