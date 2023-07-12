@@ -60,6 +60,15 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4NFKMH0P9"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Z4NFKMH0P9'); </script>
+    <?php foreach ($configuracoes as $configuracoe): ?>
+        <?php if(!empty($configuracoe->google_analytics)): ?>
+            <?= $configuracoe->google_analytics ?>
+        <?php endif; ?>
+
+        <?php if(!empty($configuracoe->google_ads)): ?>
+            <?= $configuracoe->google_ads ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
 </head>
 <body>
 

@@ -117,7 +117,7 @@
     <li class="treeview">
         <a href="#">
             <i class="fa fa-circle-o"></i>
-            <span>Videos</span>
+            <span>Vídeos</span>
             <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i></span>
         </a>
@@ -125,12 +125,12 @@
 
             <li class="">
                 <a href="<?php echo $this->Url->build('/admin/videos'); ?>">
-                    <i class="fa fa-circle"></i>Videos</a>
+                    <i class="fa fa-circle"></i>Vídeos</a>
             </li>
 
             <li class="">
                 <a href="<?php echo $this->Url->build('/admin/descricao-videos/edit/1'); ?>">
-                    <i class="fa fa-circle"></i>Descrição videos home</a>
+                    <i class="fa fa-circle"></i>Descrição vídeos home</a>
             </li>
         </ul>
     </li>

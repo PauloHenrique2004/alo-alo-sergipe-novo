@@ -34,7 +34,7 @@
                 echo $this->Form->control('menu_ordem');
                 echo $this->Form->control('menu_outros',['label' => 'Menu Mais']);
                 echo $this->Form->control('ocultar');
-                echo $this->Form->control('exibir_ultimas_noticias');
+                echo $this->Form->control('exibir_ultimas_noticias',['label' => 'Exibir últimas notícias']);
                 echo '<label class="control-label" for="layout">layout</label>';
                 echo $this->Form->select('layout', $option, ['class' => 'form-control']);
               ?>
