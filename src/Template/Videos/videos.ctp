@@ -88,3 +88,11 @@
 
 </script>
 <?php $this->end(); ?>
+
+<style>
+    @media(min-width: 769px){
+        .post--info .title .h4 {
+            min-height: 110px !important;
+        }
+    }
+</style>
