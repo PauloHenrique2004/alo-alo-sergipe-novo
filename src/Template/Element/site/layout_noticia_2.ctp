@@ -108,7 +108,7 @@
                                     </ul>
 
                                     <div class="title">
-                                        <h3 class="h4" style="min-height: 90px;">
+                                        <h3 class="h4" style="min-height: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                             <a href="/noticia/<?= strtolower($nomeCategoria) ?>/<?= strtolower($nome2) ?>/<?= $value->id ?>" class="btn-link">
                                                 <?= $value->titulo_resumo ?>
                                             </a>
